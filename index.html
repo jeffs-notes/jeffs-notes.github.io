@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Gospel Study Notes</title>
+<meta name="description" content="Personal gospel study notes from Jeff McMullin.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Figtree:wght@500;600;700&family=Literata:ital,opsz,wght@0,7..72,400;0,7..72,600;1,7..72,400&display=swap" rel="stylesheet">
+<style>
+/* Layout idea: one narrow column. A short statement of what the site is, then a plain list of notes, one row per note. */
+:root {
+  --bg: #f5f7f6;
+  --surface: #ffffff;
+  --ink: #1b2523;
+  --muted: #586764;
+  --accent: #1d5c54;
+  --rule: #d3dcd9;
+  --font-display: "Figtree", "Segoe UI", system-ui, sans-serif;
+  --font-body: "Literata", Georgia, "Times New Roman", serif;
+  color-scheme: light;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #111716;
+    --surface: #182120;
+    --ink: #e5ecea;
+    --muted: #9caba7;
+    --accent: #7fc7b9;
+    --rule: #2a3734;
+    color-scheme: dark;
+  }
+}
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--bg); color: var(--ink); font-family: var(--font-body); font-size: 1.0625rem; line-height: 1.65; }
+a { color: var(--accent); }
+a:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 3px; }
+.page { max-width: 42rem; margin: 0 auto; padding: 1.5rem 1.25rem 4rem; }
+nav.site { display: flex; flex-wrap: wrap; gap: 1.25rem; font-family: var(--font-display); font-size: 0.9rem; font-weight: 600; padding-bottom: 2.5rem; }
+nav.site a { text-decoration: none; }
+nav.site a[aria-current="page"] { color: var(--ink); }
+h1, h2 { font-family: var(--font-display); line-height: 1.2; margin: 0; text-wrap: balance; }
+h1 { font-size: clamp(2rem, 6vw, 2.75rem); font-weight: 700; letter-spacing: -0.01em; margin-bottom: 0.75rem; }
+.deck { font-size: 1.15rem; color: var(--muted); margin: 0 0 2.5rem; }
+h2.section { font-size: 0.8125rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); margin-bottom: 0.75rem; }
+ul.notes { list-style: none; margin: 0; padding: 0; display: grid; gap: 0.75rem; }
+ul.notes li { background: var(--surface); border: 1px solid var(--rule); border-radius: 8px; padding: 1rem 1.25rem; }
+ul.notes a { font-family: var(--font-display); font-size: 1.25rem; font-weight: 700; text-decoration: none; }
+ul.notes a:hover { text-decoration: underline; }
+ul.notes p { margin: 0.25rem 0 0; color: var(--muted); }
+footer { margin-top: 3rem; padding-top: 1.25rem; border-top: 1px solid var(--rule); font-family: var(--font-display); font-size: 0.875rem; color: var(--muted); line-height: 1.55; }
+footer p { margin: 0 0 0.5rem; }
+</style>
+</head>
+<body>
+<div class="page">
+
+<nav class="site" aria-label="Site">
+  <a href="index.html" aria-current="page">Notes</a>
+  <a href="about.html">About</a>
+</nav>
+
+<header>
+  <h1>Gospel Study Notes</h1>
+  <p class="deck">This is where I share my personal gospel study notes.</p>
+</header>
+
+<main>
+  <h2 class="section">Notes</h2>
+  <ul class="notes">
+
+    <li>
+      <a href="how-a-testimony-grows.html">How a Testimony Grows</a>
+      <p>Twenty questions about knowing, believing, and waiting on the Lord.</p>
+    </li>
+
+    <!-- To add a note, copy the block below, remove the comment marks, and change the file name, title, and description.
+    <li>
+      <a href="file-name.html">Title of the Note</a>
+      <p>One sentence about what the note covers.</p>
+    </li>
+    -->
+
+  </ul>
+</main>
+
+<footer>
+  <p>These notes are my own and are not an official publication of The Church of Jesus Christ of Latter-day Saints. <a href="about.html">About these notes</a></p>
+</footer>
+
+</div>
+</body>
+</html>
