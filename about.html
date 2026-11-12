@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>About | Gospel Study Notes</title>
+<meta name="description" content="About Jeff McMullin and these gospel study notes.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Figtree:wght@500;600;700&family=Literata:ital,opsz,wght@0,7..72,400;0,7..72,600;1,7..72,400&display=swap" rel="stylesheet">
+<style>
+/* Layout idea: one narrow reading column with three short sections: who I am, whose views these are, and how the notes are made. */
+:root {
+  --bg: #f5f7f6;
+  --surface: #ffffff;
+  --ink: #1b2523;
+  --muted: #586764;
+  --accent: #1d5c54;
+  --rule: #d3dcd9;
+  --font-display: "Figtree", "Segoe UI", system-ui, sans-serif;
+  --font-body: "Literata", Georgia, "Times New Roman", serif;
+  color-scheme: light;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #111716;
+    --surface: #182120;
+    --ink: #e5ecea;
+    --muted: #9caba7;
+    --accent: #7fc7b9;
+    --rule: #2a3734;
+    color-scheme: dark;
+  }
+}
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--bg); color: var(--ink); font-family: var(--font-body); font-size: 1.0625rem; line-height: 1.7; }
+a { color: var(--accent); }
+a:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 3px; }
+.page { max-width: 42rem; margin: 0 auto; padding: 1.5rem 1.25rem 4rem; }
+nav.site { display: flex; flex-wrap: wrap; gap: 1.25rem; font-family: var(--font-display); font-size: 0.9rem; font-weight: 600; padding-bottom: 2.5rem; }
+nav.site a { text-decoration: none; }
+nav.site a[aria-current="page"] { color: var(--ink); }
+h1, h2 { font-family: var(--font-display); line-height: 1.2; margin: 0; text-wrap: balance; }
+h1 { font-size: clamp(2rem, 6vw, 2.75rem); font-weight: 700; letter-spacing: -0.01em; margin-bottom: 1.5rem; }
+h2 { font-size: 1.2rem; font-weight: 700; margin: 2rem 0 0.5rem; }
+p { margin: 0 0 1.1rem; }
+</style>
+</head>
+<body>
+<div class="page">
+
+<nav class="site" aria-label="Site">
+  <a href="index.html">Notes</a>
+  <a href="about.html" aria-current="page">About</a>
+</nav>
+
+<main>
+  <h1>About</h1>
+
+  <p>My name is Jeff McMullin. I am a member of The Church of Jesus Christ of Latter-day Saints, and I currently serve as president of the Bloomington Indiana Stake.</p>
+  <p>This site is where I share my personal gospel study notes.</p>
+
+  <h2>These are my own thoughts</h2>
+  <p>Everything here is my own. These notes do not represent an official position of The Church of Jesus Christ of Latter-day Saints, and this is not an official Church website. For the Church’s teachings, please go to <a href="https://www.churchofjesuschrist.org">ChurchofJesusChrist.org</a>.</p>
+
+  <h2>How I make these notes</h2>
+  <p>I use AI to help me study and to create these notes. I read, review, and edit as I go, so that each note reflects my own study and thinking. Even so, there may be mistakes in notes.</p>
+  <p>If you find a mistake, it is mine. If you find a mistake, and know me, let me know and I'll fix it.</p>
+</main>
+
+</div>
+</body>
+</html>
