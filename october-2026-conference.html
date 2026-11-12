@@ -72,7 +72,17 @@ header.hero { padding:32px 0 28px; border-bottom:1px solid var(--rule); margin-b
 .eyebrow { font-size:.85rem; letter-spacing:.08em; text-transform:uppercase; color:var(--accent-2); font-weight:600; margin-bottom:.8rem; }
 .hero p.sub { font-family:var(--font-display); font-size:1.25rem; color:var(--ink-2); margin:1rem 0 0; max-width:60ch; }
 .hero .meta { font-size:.9rem; color:var(--ink-2); margin-top:1rem; }
-section { margin:0 0 56px; }
+section { margin:0 0 20px; }
+details.sec > summary { list-style:none; display:flex; align-items:baseline; gap:.6rem; margin:0; padding:.55rem 0; border-bottom:1px solid var(--rule); font-size:1rem; }
+details.sec > summary::-webkit-details-marker { display:none; }
+details.sec > summary::before { content:"▸"; color:var(--accent); font-size:1.1rem; transition:transform .15s; }
+details.sec[open] > summary::before { transform:rotate(90deg); }
+details.sec > summary h2 { margin:0; }
+details.sec > summary:hover h2 { text-decoration:underline; }
+details.sec[open] > summary { margin-bottom:1.1rem; }
+details.sec[open] { margin-bottom:36px; }
+footer details.sec > summary { border-bottom:0; } footer details.sec > summary h2 { font-size:1.1rem; }
+@media print { details.sec > summary::before { display:none; } }
 .lead { background:var(--wash); border-left:4px solid var(--accent); padding:20px 24px; border-radius:0 8px 8px 0; font-family:var(--font-display); font-size:1.2rem; line-height:1.45; }
 .lead p:last-child { margin:0; }
 .stats { display:grid; grid-template-columns:repeat(auto-fit, minmax(140px,1fr)); gap:12px; margin:20px 0 0; }
@@ -147,10 +157,9 @@ footer { font-size:.85rem; color:var(--ink-2); border-top:1px solid var(--rule);
 <div class="wrap">
 <nav class="side" aria-label="Page sections">
   <ol>
-    <li><a href="#network">Two network views</a></li>
     <li><a href="#purpose">Purpose</a></li>
     <li><a href="#message">Central message</a></li>
-    <li><a href="#method">How this was done</a></li>
+    <li><a href="#network">How the themes connect</a></li>
     <li><a href="#talks">The sixteen messages</a></li>
     <li class="grp">The ten themes</li>
     <li><a href='#theme-1'>1. Jesus Christ Is the Way</a></li>
@@ -166,6 +175,7 @@ footer { font-size:.85rem; color:var(--ink-2); border-top:1px solid var(--rule);
     <li class="grp">Connections</li>
     <li><a href="#textual">Shared scriptures and quotations</a></li>
     <li><a href="#emphases">Five teachings to carry forward</a></li>
+    <li><a href="#method">How this was done</a></li>
     <li><a href="#sources">Sources</a></li>
   </ol>
 </nav>
@@ -178,8 +188,33 @@ footer { font-size:.85rem; color:var(--ink-2); border-top:1px solid var(--rule);
   <p class="meta"><em>This page works on a mobile phone but is best viewed on a computer or large tablet.</em></p>
 </header>
 
+<section id="purpose">
+<details class="sec">
+  <summary><h2>Purpose</h2></summary>
+  <p>Each general conference brings a set of messages from the First Presidency and the Quorum of the Twelve Apostles. Sixteen were given in October 2026. Heard one at a time over two days, they can feel like sixteen separate sermons. Read together, they turn out to be a few teachings spoken many times, from many directions, by men who prepared independently of one another.</p>
+  <p>This page is a map of those teachings. It names the themes that run across the sixteen talks, shows where the Brethren reinforced one another, gives each speaker's own words on each theme, and suggests where to start for anyone who wants to go back to the talks with a plan. It is meant for any member who already knows what general conference is and would like to see the whole of it at once.</p>
+</details>
+</section>
+
+<section id="message">
+<details class="sec">
+  <summary><h2>The central message</h2></summary>
+  <div class="lead">
+    <p>Thirteen of the sixteen messages pointed to the same place: come closer to Jesus Christ. The Brethren did not teach trust, love, covenants, courage, or testimony as separate programs. Each was tied to drawing nearer to the Savior, and nearly every other theme in this analysis is connected to that one more strongly than to any other.</p>
+    <p>Beneath that, three teachings stood out: God's promises are sure and no faithful person is excluded from them; those who are drifting or doubting are to be loved with truth and patience, not argued with or abandoned; and covenants, sealed by the Holy Spirit of Promise, are what bind us to Him and to each other.</p>
+  </div>
+  <div class="stats">
+    <div class="stat"><b>16</b><span>messages from the First Presidency and the Twelve</span></div>
+    <div class="stat"><b>10</b><span>cross-cutting themes identified</span></div>
+    <div class="stat"><b>13 of 16</b><span>talks pointed to Christ as the way</span></div>
+    <div class="stat"><b>6</b><span>talks paired Christ with trusting His promises, the strongest link</span></div>
+  </div>
+</details>
+</section>
+
 <section id="network">
-  <h2>How the themes connect</h2>
+<details class="sec">
+  <summary><h2>How the themes connect</h2></summary>
   <p>Two views of the same analysis, explained in full below. The first asks which <em>talks</em> taught the same things; the second asks which <em>themes</em> traveled together inside the same talk. Hover a node or a line for detail; the sliders hide weaker links; the chips filter by theme or by speaker.</p>
 
   <div class="netbox">
@@ -207,66 +242,38 @@ footer { font-size:.85rem; color:var(--ink-2); border-top:1px solid var(--rule);
     <p class="cap" style="margin-top:10px">"Christ the Way" is the heaviest partner of every other theme except "Integrity / Choices." Its tie to "Trust Promises" is the single strongest pair in the conference, made by six different talks. "Integrity / Choices" is the most self-contained theme: only three talks taught it, and it rarely traveled with the others.</p>
   </div>
   <div class="tip" id="tip"></div>
-</section>
-
-<section id="purpose">
-  <h2>Purpose</h2>
-  <p>Each general conference brings a set of messages from the First Presidency and the Quorum of the Twelve Apostles. Sixteen were given in October 2026. Heard one at a time over two days, they can feel like sixteen separate sermons. Read together, they turn out to be a few teachings spoken many times, from many directions, by men who prepared independently of one another.</p>
-  <p>This page is a map of those teachings. It names the themes that run across the sixteen talks, shows where the Brethren reinforced one another, gives each speaker's own words on each theme, and suggests where to start for anyone who wants to go back to the talks with a plan. It is meant for any member who already knows what general conference is and would like to see the whole of it at once.</p>
-</section>
-
-<section id="message">
-  <h2>The central message</h2>
-  <div class="lead">
-    <p>Thirteen of the sixteen messages pointed to the same place: come closer to Jesus Christ. The Brethren did not teach trust, love, covenants, courage, or testimony as separate programs. Each was tied to drawing nearer to the Savior, and nearly every other theme in this analysis is connected to that one more strongly than to any other.</p>
-    <p>Beneath that, three teachings stood out: God's promises are sure and no faithful person is excluded from them; those who are drifting or doubting are to be loved with truth and patience, not argued with or abandoned; and covenants, sealed by the Holy Spirit of Promise, are what bind us to Him and to each other.</p>
-  </div>
-  <div class="stats">
-    <div class="stat"><b>16</b><span>messages from the First Presidency and the Twelve</span></div>
-    <div class="stat"><b>10</b><span>cross-cutting themes identified</span></div>
-    <div class="stat"><b>13 of 16</b><span>talks pointed to Christ as the way</span></div>
-    <div class="stat"><b>6</b><span>talks paired Christ with trusting His promises, the strongest link</span></div>
-  </div>
-</section>
-
-<section id="method">
-  <h2>How this analysis was done</h2>
-  <ol class="method">
-    <li><strong>Read all sixteen talks</strong> in the November 2026 <em>Liahona</em>: the three members of the First Presidency (President Oaks twice, including his closing remarks), and the thirteen members of the Quorum of the Twelve who spoke.</li>
-    <li><strong>Named each talk's core topic</strong>, then looked for the themes that appeared in more than one talk. Ten themes emerged. A theme had to be taught by at least three of the Brethren to be counted.</li>
-    <li><strong>Coded every talk against every theme</strong> as a major emphasis, also touched, or absent. A talk counts as touching a theme only when a quotation from it plainly teaches that theme; a shared word or a passing phrase is not enough. This matrix is what the connection views below are drawn from.</li>
-    <li><strong>Collected a representative quotation from each speaker under each theme</strong>, given in full sentences. Every quotation was checked word for word against the source text, and each secondhand quotation (an apostle quoting a prior Church leader) is labeled as such.</li>
-    <li><strong>Traced shared scriptures, stories, and quotations</strong> across talks, since two speakers reaching for the same passage independently is a signal worth teaching from.</li>
-  </ol>
-  <p class="note">The theme list and the coding are one reader's judgment, offered as a study aid. The quotations are exact; the groupings are interpretive.</p>
+</details>
 </section>
 
 <section id="talks">
-  <h2>The sixteen messages</h2>
+<details class="sec">
+  <summary><h2>The sixteen messages</h2></summary>
   <p>In order of delivery.</p>
   <div class="tablewrap"><table>
     <thead><tr><th>#</th><th>Speaker</th><th>Title</th><th>Session</th><th>Core topic</th></tr></thead>
-    <tbody><tr><td class='num'>1</td><td>Elder Gerrit W. Gong<span class='pill tw'>Twelve</span></td><td class='ttl'>Come to the Lord in His Holy House</td><td>Sat AM</td><td class='muted'>Temple doctrine (eternal families, agency, Holy Spirit of Promise) and five elements of "personal temple culture"</td></tr>
-<tr><td class='num'>2</td><td>Elder Gérald Caussé<span class='pill tw'>Twelve</span></td><td class='ttl'>The Gift of Testimony</td><td>Sat AM</td><td class='muted'>Every member a witness of Christ; testimony as a gift to be shared; testimony and love go together</td></tr>
-<tr><td class='num'>3</td><td>Elder Ulisses Soares<span class='pill tw'>Twelve</span></td><td class='ttl'>A Higher and Holier Fast</td><td>Sat AM</td><td class='muted'>Isaiah 58; fasting joined with prayer and generous fast offerings draws us to the Lord and to others</td></tr>
-<tr><td class='num'>4</td><td>President D. Todd Christofferson<span class='pill fp'>First Presidency</span></td><td class='ttl'>O Be Wise</td><td>Sat AM</td><td class='muted'>Gambling—its spread through smartphones, its effect on youth, its moral wrong; "Where will this lead?"</td></tr>
-<tr><td class='num'>5</td><td>Elder Dale G. Renlund<span class='pill tw'>Twelve</span></td><td class='ttl'>"How Long Will It Be Ere They Believe Me?"</td><td>Sat PM</td><td class='muted'>Trusting God's promises instead of fixating on "cold oatmeal"; no asterisk excludes you</td></tr>
-<tr><td class='num'>6</td><td>Elder Patrick Kearon<span class='pill tw'>Twelve</span></td><td class='ttl'>Jesus Lives to Lift</td><td>Sat PM</td><td class='muted'>Gliding analogy: avoid spiritual "sink," find spiritual "lift"; the Savior loves to lift</td></tr>
-<tr><td class='num'>7</td><td>Elder Ronald A. Rasband<span class='pill tw'>Twelve</span></td><td class='ttl'>Love Like Jesus</td><td>Sat PM</td><td class='muted'>For those grieving over loved ones who have strayed; love is the answer; "He's got this"</td></tr>
-<tr><td class='num'>8</td><td>President Henry B. Eyring<span class='pill fp'>First Presidency</span></td><td class='ttl'>"Fear Not, I Am with Thee"</td><td>Sun AM</td><td class='muted'>The Lord keeps His promise to succor us—usually through faithful disciples</td></tr>
-<tr><td class='num'>9</td><td>Elder Neil L. Andersen<span class='pill tw'>Twelve</span></td><td class='ttl'>Courage Born of Our Faith in Jesus Christ</td><td>Sun AM</td><td class='muted'>Faith produces courage; courage strengthens faith; stillness in a world of commotion</td></tr>
-<tr><td class='num'>10</td><td>Elder Quentin L. Cook<span class='pill tw'>Twelve</span></td><td class='ttl'>Integrity and Virtue Lead to Happiness</td><td>Sun AM</td><td class='muted'>Integrity, virtue, and happiness are linked; coarse communication; daily repentance</td></tr>
-<tr><td class='num'>11</td><td>President Dallin H. Oaks<span class='pill fp'>First Presidency</span></td><td class='ttl'>The Gospel of Jesus Christ Is for All</td><td>Sun AM</td><td class='muted'>Christ is the way; concern for those of diminishing faith; faith and science; the Book of Mormon witness that grace is for all</td></tr>
-<tr><td class='num'>12</td><td>President Dieter F. Uchtdorf<span class='pill fp'>First Presidency</span></td><td class='ttl'>Christ-Centered Unity</td><td>Sun PM</td><td class='muted'>Baptism and sacrament make us a covenant people; Christ unites, Satan divides</td></tr>
-<tr><td class='num'>13</td><td>Elder David A. Bednar<span class='pill tw'>Twelve</span></td><td class='ttl'>Sealed by the Holy Spirit of Promise</td><td>Sun PM</td><td class='muted'>Ordinances and covenants as "credentials"; the ratifying seal; a faithful spouse cannot be robbed of promised blessings</td></tr>
-<tr><td class='num'>14</td><td>Elder Gary E. Stevenson<span class='pill tw'>Twelve</span></td><td class='ttl'>Fruit to Make One Happy</td><td>Sun PM</td><td class='muted'>To children: three fruits—child of God, plan of happiness, gift of the Holy Ghost; love, share, invite</td></tr>
-<tr><td class='num'>15</td><td>Elder Clark G. Gilbert<span class='pill tw'>Twelve</span></td><td class='ttl'>Teach Truth with Love</td><td>Sun PM</td><td class='muted'>Five principles for standing for truth with love (amplifying President Oaks)</td></tr>
-<tr><td class='num'>16</td><td>President Dallin H. Oaks<span class='pill fp'>First Presidency</span></td><td class='ttl'>Closing Remarks</td><td>Sun PM</td><td class='muted'>Study and act on the talks; Salt Lake Temple open house April 2027; testimony of truth and the covenant path</td></tr></tbody>
+    <tbody><tr><td class='num'>1</td><td>Elder Gerrit W. Gong<span class='pill tw'>Twelve</span></td><td class='ttl'><a href="https://www.churchofjesuschrist.org/study/liahona/2026/11/12gong?lang=eng">Come to the Lord in His Holy House</a></td><td>Sat AM</td><td class='muted'>Temple doctrine (eternal families, agency, Holy Spirit of Promise) and five elements of "personal temple culture"</td></tr>
+<tr><td class='num'>2</td><td>Elder Gérald Caussé<span class='pill tw'>Twelve</span></td><td class='ttl'><a href="https://www.churchofjesuschrist.org/study/liahona/2026/11/14causse?lang=eng">The Gift of Testimony</a></td><td>Sat AM</td><td class='muted'>Every member a witness of Christ; testimony as a gift to be shared; testimony and love go together</td></tr>
+<tr><td class='num'>3</td><td>Elder Ulisses Soares<span class='pill tw'>Twelve</span></td><td class='ttl'><a href="https://www.churchofjesuschrist.org/study/liahona/2026/11/17soares?lang=eng">A Higher and Holier Fast</a></td><td>Sat AM</td><td class='muted'>Isaiah 58; fasting joined with prayer and generous fast offerings draws us to the Lord and to others</td></tr>
+<tr><td class='num'>4</td><td>President D. Todd Christofferson<span class='pill fp'>First Presidency</span></td><td class='ttl'><a href="https://www.churchofjesuschrist.org/study/liahona/2026/11/19christofferson?lang=eng">O Be Wise</a></td><td>Sat AM</td><td class='muted'>Gambling—its spread through smartphones, its effect on youth, its moral wrong; "Where will this lead?"</td></tr>
+<tr><td class='num'>5</td><td>Elder Dale G. Renlund<span class='pill tw'>Twelve</span></td><td class='ttl'><a href="https://www.churchofjesuschrist.org/study/liahona/2026/11/21renlund?lang=eng">"How Long Will It Be Ere They Believe Me?"</a></td><td>Sat PM</td><td class='muted'>Trusting God's promises instead of fixating on "cold oatmeal"; no asterisk excludes you</td></tr>
+<tr><td class='num'>6</td><td>Elder Patrick Kearon<span class='pill tw'>Twelve</span></td><td class='ttl'><a href="https://www.churchofjesuschrist.org/study/liahona/2026/11/27kearon?lang=eng">Jesus Lives to Lift</a></td><td>Sat PM</td><td class='muted'>Gliding analogy: avoid spiritual "sink," find spiritual "lift"; the Savior loves to lift</td></tr>
+<tr><td class='num'>7</td><td>Elder Ronald A. Rasband<span class='pill tw'>Twelve</span></td><td class='ttl'><a href="https://www.churchofjesuschrist.org/study/liahona/2026/11/210rasband?lang=eng">Love Like Jesus</a></td><td>Sat PM</td><td class='muted'>For those grieving over loved ones who have strayed; love is the answer; "He's got this"</td></tr>
+<tr><td class='num'>8</td><td>President Henry B. Eyring<span class='pill fp'>First Presidency</span></td><td class='ttl'><a href="https://www.churchofjesuschrist.org/study/liahona/2026/11/41eyring?lang=eng">"Fear Not, I Am with Thee"</a></td><td>Sun AM</td><td class='muted'>The Lord keeps His promise to succor us—usually through faithful disciples</td></tr>
+<tr><td class='num'>9</td><td>Elder Neil L. Andersen<span class='pill tw'>Twelve</span></td><td class='ttl'><a href="https://www.churchofjesuschrist.org/study/liahona/2026/11/43andersen?lang=eng">Courage Born of Our Faith in Jesus Christ</a></td><td>Sun AM</td><td class='muted'>Faith produces courage; courage strengthens faith; stillness in a world of commotion</td></tr>
+<tr><td class='num'>10</td><td>Elder Quentin L. Cook<span class='pill tw'>Twelve</span></td><td class='ttl'><a href="https://www.churchofjesuschrist.org/study/liahona/2026/11/46cook?lang=eng">Integrity and Virtue Lead to Happiness</a></td><td>Sun AM</td><td class='muted'>Integrity, virtue, and happiness are linked; coarse communication; daily repentance</td></tr>
+<tr><td class='num'>11</td><td>President Dallin H. Oaks<span class='pill fp'>First Presidency</span></td><td class='ttl'><a href="https://www.churchofjesuschrist.org/study/liahona/2026/11/49oaks?lang=eng">The Gospel of Jesus Christ Is for All</a></td><td>Sun AM</td><td class='muted'>Christ is the way; concern for those of diminishing faith; faith and science; the Book of Mormon witness that grace is for all</td></tr>
+<tr><td class='num'>12</td><td>President Dieter F. Uchtdorf<span class='pill fp'>First Presidency</span></td><td class='ttl'><a href="https://www.churchofjesuschrist.org/study/liahona/2026/11/51uchtdorf?lang=eng">Christ-Centered Unity</a></td><td>Sun PM</td><td class='muted'>Baptism and sacrament make us a covenant people; Christ unites, Satan divides</td></tr>
+<tr><td class='num'>13</td><td>Elder David A. Bednar<span class='pill tw'>Twelve</span></td><td class='ttl'><a href="https://www.churchofjesuschrist.org/study/liahona/2026/11/54bednar?lang=eng">Sealed by the Holy Spirit of Promise</a></td><td>Sun PM</td><td class='muted'>Ordinances and covenants as "credentials"; the ratifying seal; a faithful spouse cannot be robbed of promised blessings</td></tr>
+<tr><td class='num'>14</td><td>Elder Gary E. Stevenson<span class='pill tw'>Twelve</span></td><td class='ttl'><a href="https://www.churchofjesuschrist.org/study/liahona/2026/11/57stevenson?lang=eng">Fruit to Make One Happy</a></td><td>Sun PM</td><td class='muted'>To children: three fruits—child of God, plan of happiness, gift of the Holy Ghost; love, share, invite</td></tr>
+<tr><td class='num'>15</td><td>Elder Clark G. Gilbert<span class='pill tw'>Twelve</span></td><td class='ttl'><a href="https://www.churchofjesuschrist.org/study/liahona/2026/11/59gilbert?lang=eng">Teach Truth with Love</a></td><td>Sun PM</td><td class='muted'>Five principles for standing for truth with love (amplifying President Oaks)</td></tr>
+<tr><td class='num'>16</td><td>President Dallin H. Oaks<span class='pill fp'>First Presidency</span></td><td class='ttl'><a href="https://www.churchofjesuschrist.org/study/liahona/2026/11/510oaks?lang=eng">Closing Remarks</a></td><td>Sun PM</td><td class='muted'>Study and act on the talks; Salt Lake Temple open house April 2027; testimony of truth and the covenant path</td></tr></tbody>
   </table></div>
+</details>
 </section>
 
 <section id="themes">
-  <h2>The ten themes</h2>
+<details class="sec">
+  <summary><h2>The ten themes</h2></summary>
   <p>Each theme opens with a short answer to the question <em>what is this about?</em>, then names the one or two talks to listen to first, then gives what each speaker actually said. Many talks appear under several themes; that overlap is the connection.</p>
   
 <article class="theme" id="theme-1">
@@ -436,18 +443,20 @@ footer { font-size:.85rem; color:var(--ink-2); border-top:1px solid var(--rule);
 <li><span class='who'>Elder Gilbert</span><p>"After nearly two hours of listening, going right through our next meeting, I began to better understand their struggles and I could feel their heartfelt strivings."</p></li></ul></details></div>
   </div>
 </article>
+</details>
 </section>
 
-
-
 <section id="textual">
-  <h2>Shared scriptures, stories, and quotations</h2>
+<details class="sec">
+  <summary><h2>Shared scriptures, stories, and quotations</h2></summary>
   <p>Places where two or more of the Brethren reached for the same passage or the same prophetic statement. They are worth noticing because they show the Spirit working across independent preparation, and they make natural starting points for family or personal study.</p>
   <ol class="conn"><li><strong>Holy Spirit of Promise (D&amp;C 132:7)</strong> — Elder Gong made it his third doctrinal foundation; Elder Bednar made it the center of his entire talk. Both also addressed the hard question of a sealing where one spouse is unfaithful: Gong—"God will not require a woman or man to be sealed or live in an eternal relationship he or she does not choose"; Bednar—"Can the unrighteous exercise of moral agency by another person rob me of what God has promised? The answer to this question is an emphatic no!"</li><li><strong>Alma the Younger remembering his father's words (Alma 36:17)</strong> — Elder Caussé used it to show how a remembered testimony becomes "the spark of hope"; Elder Rasband used it to show the power of a parent's persistent prayers for a wayward child. Together: <em>your testimony, borne now, may be what a loved one remembers later.</em></li><li><strong>Mosiah 18:8–9 (bear one another's burdens / stand as witnesses)</strong> — President Eyring, President Uchtdorf, and Elder Caussé all quoted the baptismal covenant from Alma's sermon at the waters of Mormon.</li><li><strong>Weekly sacrament as protection</strong> — President Oaks, President Uchtdorf, and Elder Andersen each pointed to the weekly renewal of covenants as a simple, protective practice. Elder Kearon quoted President Oaks's BYU counsel on the same point in his notes.</li><li><strong>Lehi's dream and the tree of life</strong> — Elder Rasband (the mist of darkness and the great and spacious building), Elder Stevenson (the fruit "desirable to make one happy"), and Elder Gilbert ("Stay at the tree . . . eating the fruit is a happy thing").</li><li><strong>President Oaks's April 2026 talk "Alive in Christ"</strong> — quoted by Elder Rasband, Elder Cook, and Elder Gilbert on peacemaking and on standing for truth without surrendering values.</li><li><strong>President Oaks's "Where will this lead?"</strong> — President Christofferson built his gambling message on President Oaks's "opportunity cost" framing; Elder Andersen quoted President Oaks's own turning-point decision to accept a demanding calling.</li><li><strong>Faith → courage → faith</strong> — Elder Andersen's thesis ("faith strengthened his courage, and his decision brought increasing faith") is echoed in Elder Gilbert's opening: "It takes courage to stand for truth. It takes even more courage to stand for truth with love."</li><li><strong>Happiness and joy as the fruit of discipleship</strong> — Elder Cook (integrity → happiness), Elder Stevenson ("fruit to make one happy"), Elder Renlund ("joy in our here and now"), Elder Gong ("happy and forever"), and Elder Kearon ("soar in the joy of the Lord").</li><li><strong>President Nelson's teachings carried forward</strong> — "Peacemakers Needed" (Cook, Gilbert), "the covenant path" (Oaks, Cook), "spiritual momentum" (Uchtdorf), "Hear Him" (Gilbert), and the gathering as "the greatest work on earth" (Uchtdorf).</li></ol>
+</details>
 </section>
 
 <section id="emphases">
-  <h2>Five teachings to carry forward</h2>
+<details class="sec">
+  <summary><h2>Five teachings to carry forward</h2></summary>
   <p>If you take only a few things from this conference, these five carry its weight. They are the teachings the most Brethren returned to, and each has a talk or two that will bring it back to mind.</p>
   <ol class="emph">
     <li><strong>Draw closer to Jesus Christ; He is the way.</strong> (Oaks, Kearon, Rasband, Uchtdorf, Soares) The simplest message, and the one every other theme hangs on. Elder Kearon's picture of lift and sink gives it a vocabulary you can use day to day.</li>
@@ -457,10 +466,26 @@ footer { font-size:.85rem; color:var(--ink-2); border-top:1px solid var(--rule);
     <li><strong>Be a peaceable, united people, online and in person.</strong> (Uchtdorf, Cook, Gilbert, Rasband) Elder Cook's warning about coarse communication and President Uchtdorf's "if we are not one, we are not His" speak directly to how we treat one another, in the pews and on our phones.</li>
   </ol>
   <p class="note">One narrower teaching deserves its own mention, especially for parents and for youth and young adults: <strong>President Christofferson's warning on gambling and sports betting</strong> in "O Be Wise." It is unusual for a member of the First Presidency to spend a full conference address on a single behavior; the figures he cited on boys aged 11 to 17 and on young adult women explain why he did.</p>
+</details>
+</section>
+
+<section id="method">
+<details class="sec">
+  <summary><h2>How this analysis was done</h2></summary>
+  <ol class="method">
+    <li><strong>Read all sixteen talks</strong> in the November 2026 <em>Liahona</em>: the three members of the First Presidency (President Oaks twice, including his closing remarks), and the thirteen members of the Quorum of the Twelve who spoke.</li>
+    <li><strong>Named each talk's core topic</strong>, then looked for the themes that appeared in more than one talk. Ten themes emerged. A theme had to be taught by at least three of the Brethren to be counted.</li>
+    <li><strong>Coded every talk against every theme</strong> as a major emphasis, also touched, or absent. A talk counts as touching a theme only when a quotation from it plainly teaches that theme; a shared word or a passing phrase is not enough. This matrix is what the connection views are drawn from.</li>
+    <li><strong>Collected a representative quotation from each speaker under each theme</strong>, given in full sentences. Every quotation was checked word for word against the source text, and each secondhand quotation (an apostle quoting a prior Church leader) is labeled as such.</li>
+    <li><strong>Traced shared scriptures, stories, and quotations</strong> across talks, since two speakers reaching for the same passage independently is a signal worth teaching from.</li>
+  </ol>
+  <p class="note">The theme list and the coding are one reader's judgment, offered as a study aid. The quotations are exact; the groupings are interpretive.</p>
+</details>
 </section>
 
 <footer id="sources">
-  <h2 style="font-size:1.1rem">Sources</h2>
+<details class="sec">
+  <summary><h2>Sources</h2></summary>
   <p><a href="https://www.churchofjesuschrist.org/study/liahona/2026/11?lang=eng"><em>Liahona</em>, November 2026</a> (general conference issue), The Church of Jesus Christ of Latter-day Saints. All quotations are from this issue. Scriptural references follow the speakers' own citations.</p>
   <p>The sixteen talks these notes draw on:</p>
   <ul class="talks">
@@ -482,6 +507,7 @@ footer { font-size:.85rem; color:var(--ink-2); border-top:1px solid var(--rule);
     <li>President Oaks, <a href="https://www.churchofjesuschrist.org/study/liahona/2026/11/510oaks?lang=eng"><em>Closing Remarks</em></a></li>
   </ul>
   <p>These notes are my own and are not an official publication of The Church of Jesus Christ of Latter-day Saints. <a href="about.html">About these notes</a></p>
+</details>
 </footer>
 </main>
 </div>
@@ -581,6 +607,19 @@ const B = buildNet(document.getElementById('netB'), TOP, {
   filter: () => SPK ? {edge: e=>e.talks.includes(SPK), node: n=>n.major.includes(SPK)||n.minor.includes(SPK)} : null,
   slider: document.getElementById('thrB'), sliderOut: document.getElementById('thrBv')
 });
+
+// Sections start collapsed; following a link into one opens it.
+function openFor(hash) {
+  if (!hash || hash.length < 2) return;
+  const t = document.getElementById(decodeURIComponent(hash.slice(1))); if (!t) return;
+  const d = t.matches('details.sec') ? t : (t.querySelector(':scope > details.sec') || t.closest('details.sec'));
+  if (d && !d.open) d.open = true;
+  t.scrollIntoView();
+}
+window.addEventListener('hashchange', ()=>openFor(location.hash));
+document.addEventListener('click', ev=>{ const a = ev.target.closest && ev.target.closest('a[href^="#"]'); if (a) openFor(a.getAttribute('href')); });
+openFor(location.hash);
+window.addEventListener('beforeprint', ()=>document.querySelectorAll('details').forEach(d=>d.open=true));
 
 // Theme chips for the talk network
 const chips = document.getElementById('chips'), panel = document.getElementById('themePanel');
