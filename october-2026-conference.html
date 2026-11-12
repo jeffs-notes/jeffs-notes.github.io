@@ -131,7 +131,7 @@ svg.net { width:100%; height:auto; display:block; border:1px solid var(--rule); 
 .node text { font-size:12px; fill:var(--ink); pointer-events:none; paint-order:stroke; stroke:var(--paper); stroke-width:3px; stroke-linejoin:round; font-family:var(--font-body); }
 .node text.cnt { font-size:11px; font-weight:600; fill:#fff; stroke:none; text-anchor:middle; dominant-baseline:central; }
 .dim { opacity:.08 !important; }
-.tip { position:fixed; pointer-events:none; background:var(--card); color:var(--ink); border:1px solid var(--rule); border-radius:6px; padding:8px 10px; font-size:.82rem; line-height:1.4; max-width:420px; box-shadow:0 4px 14px rgba(0,0,0,.14); display:none; z-index:9; }
+.tip { position:fixed; pointer-events:none; background:var(--card); color:var(--ink); border:1px solid var(--rule); border-radius:6px; padding:8px 10px; font-size:.82rem; line-height:1.4; max-width:min(420px, calc(100vw - 16px)); box-shadow:0 4px 14px rgba(0,0,0,.14); display:none; z-index:9; }
 .tip ul { margin:4px 0 0 14px; padding:0; }
 ol.conn, ol.emph { padding-left:1.3rem; } ol.conn li, ol.emph li { margin-bottom:.8rem; }
 ol.emph li { font-size:1.02rem; }
@@ -476,8 +476,13 @@ let SEL = null; let SPK = null;
 const NS = 'http://www.w3.org/2000/svg';
 const tip = document.getElementById('tip');
 const el = (t,a) => { const e = document.createElementNS(NS,t); for (const k in a) e.setAttribute(k,a[k]); return e; };
-function show(ev,h) { tip.innerHTML=h; tip.style.display='block'; tip.style.left=Math.min(ev.clientX+14, window.innerWidth-340)+'px'; tip.style.top=Math.min(ev.clientY+14, window.innerHeight-tip.offsetHeight-10)+'px'; }
-function hide() { tip.style.display='none'; }
+let active = null; // element whose tooltip is showing
+function show(ev,h) { active=ev.currentTarget; tip.innerHTML=h; tip.style.display='block'; tip.style.left=Math.max(8, Math.min(ev.clientX+14, window.innerWidth-tip.offsetWidth-8))+'px'; tip.style.top=Math.max(8, Math.min(ev.clientY+14, window.innerHeight-tip.offsetHeight-10))+'px'; }
+function hide() { tip.style.display='none'; active=null; }
+// Touch screens never fire mouseleave, so close the tooltip on a tap elsewhere or on scroll.
+function dismiss(ev) { if (active && !(ev && ev.target instanceof Node && active.contains(ev.target))) active.dispatchEvent(new Event('mouseleave')); }
+document.addEventListener('pointerdown', dismiss);
+window.addEventListener('scroll', ()=>dismiss(), {passive:true});
 
 function buildNet(svg, D, opts) {
   const byId = Object.fromEntries(D.nodes.map(n=>[n.id,n]));
