@@ -1,0 +1,273 @@
+node,type,n_chapters,degree,weighted_degree,books,chapters
+Jesus Christ,divine,234,270,1397,"1Ne,2Ne,Jac,Eno,Jar,Omn,WoM,Mos,Alm,Hel,3Ne,4Ne,Mor,Eth,Mni",1 Nephi 1 1 Nephi 2 1 Nephi 3 1 Nephi 4 1 Nephi 5 1 Nephi 6 1 Nephi 7 1 Nephi 8 1 Nephi 9 1 Nephi 10 1 Nephi 11 1 Nephi 12 1 Nephi 13 1 Nephi 14 1 Nephi 15 1 Nephi 16 1 Nephi 17 1 Nephi 18 1 Nephi 19 1 Nephi 20 1 Nephi 21 1 Nephi 22 2 Nephi 1 2 Nephi 2 2 Nephi 3 2 Nephi 4 2 Nephi 5 2 Nephi 6 2 Nephi 7 2 Nephi 8 2 Nephi 9 2 Nephi 10 2 Nephi 11 2 Nephi 12 2 Nephi 13 2 Nephi 14 2 Nephi 15 2 Nephi 16 2 Nephi 17 2 Nephi 18 2 Nephi 19 2 Nephi 20 2 Nephi 21 2 Nephi 22 2 Nephi 23 2 Nephi 24 2 Nephi 25 2 Nephi 26 2 Nephi 27 2 Nephi 28 2 Nephi 29 2 Nephi 30 2 Nephi 31 2 Nephi 32 2 Nephi 33 Jacob 1 Jacob 2 Jacob 3 Jacob 4 Jacob 5 Jacob 6 Jacob 7 Enos 1 Jarom 1 Omni 1 Words of Mormon 1 Mosiah 1 Mosiah 2 Mosiah 3 Mosiah 4 Mosiah 5 Mosiah 6 Mosiah 7 Mosiah 8 Mosiah 9 Mosiah 10 Mosiah 11 Mosiah 12 Mosiah 13 Mosiah 14 Mosiah 15 Mosiah 16 Mosiah 17 Mosiah 18 Mosiah 19 Mosiah 20 Mosiah 21 Mosiah 23 Mosiah 24 Mosiah 25 Mosiah 26 Mosiah 27 Mosiah 28 Mosiah 29 Alma 1 Alma 2 Alma 3 Alma 4 Alma 5 Alma 6 Alma 7 Alma 8 Alma 9 Alma 10 Alma 11 Alma 12 Alma 13 Alma 14 Alma 15 Alma 16 Alma 17 Alma 18 Alma 19 Alma 20 Alma 21 Alma 22 Alma 23 Alma 24 Alma 25 Alma 26 Alma 27 Alma 28 Alma 29 Alma 30 Alma 31 Alma 32 Alma 33 Alma 34 Alma 35 Alma 36 Alma 37 Alma 38 Alma 39 Alma 40 Alma 41 Alma 42 Alma 43 Alma 44 Alma 45 Alma 46 Alma 47 Alma 48 Alma 49 Alma 50 Alma 53 Alma 54 Alma 55 Alma 56 Alma 57 Alma 58 Alma 60 Alma 61 Alma 62 Alma 63 Helaman 1 Helaman 3 Helaman 4 Helaman 5 Helaman 6 Helaman 7 Helaman 8 Helaman 9 Helaman 10 Helaman 11 Helaman 12 Helaman 13 Helaman 14 Helaman 15 Helaman 16 3 Nephi 1 3 Nephi 2 3 Nephi 3 3 Nephi 4 3 Nephi 5 3 Nephi 6 3 Nephi 7 3 Nephi 8 3 Nephi 9 3 Nephi 10 3 Nephi 11 3 Nephi 12 3 Nephi 13 3 Nephi 14 3 Nephi 15 3 Nephi 16 3 Nephi 17 3 Nephi 18 3 Nephi 19 3 Nephi 20 3 Nephi 21 3 Nephi 22 3 Nephi 23 3 Nephi 24 3 Nephi 25 3 Nephi 26 3 Nephi 27 3 Nephi 28 3 Nephi 29 3 Nephi 30 4 Nephi 1 Mormon 1 Mormon 2 Mormon 3 Mormon 4 Mormon 5 Mormon 6 Mormon 7 Mormon 8 Mormon 9 Ether 1 Ether 2 Ether 3 Ether 4 Ether 5 Ether 6 Ether 7 Ether 8 Ether 9 Ether 10 Ether 11 Ether 12 Ether 13 Ether 14 Ether 15 Moroni 1 Moroni 2 Moroni 3 Moroni 4 Moroni 5 Moroni 6 Moroni 7 Moroni 8 Moroni 9 Moroni 10
+Holy Ghost,divine,108,137,719,"1Ne,2Ne,Jac,Jar,WoM,Mos,Alm,Hel,3Ne,4Ne,Mor,Eth,Mni",1 Nephi 1 1 Nephi 2 1 Nephi 3 1 Nephi 4 1 Nephi 5 1 Nephi 7 1 Nephi 10 1 Nephi 11 1 Nephi 12 1 Nephi 13 1 Nephi 14 1 Nephi 15 1 Nephi 17 1 Nephi 19 1 Nephi 20 1 Nephi 22 2 Nephi 1 2 Nephi 2 2 Nephi 4 2 Nephi 21 2 Nephi 26 2 Nephi 28 2 Nephi 31 2 Nephi 32 2 Nephi 33 Jacob 4 Jacob 6 Jacob 7 Jarom 1 Words of Mormon 1 Mosiah 2 Mosiah 3 Mosiah 4 Mosiah 5 Mosiah 13 Mosiah 15 Mosiah 18 Mosiah 21 Mosiah 25 Mosiah 27 Mosiah 28 Alma 4 Alma 5 Alma 7 Alma 8 Alma 9 Alma 11 Alma 12 Alma 13 Alma 14 Alma 16 Alma 17 Alma 18 Alma 19 Alma 21 Alma 22 Alma 24 Alma 30 Alma 31 Alma 32 Alma 34 Alma 36 Alma 38 Alma 39 Alma 40 Alma 45 Alma 61 Helaman 4 Helaman 5 Helaman 6 Helaman 10 Helaman 13 Helaman 16 3 Nephi 7 3 Nephi 9 3 Nephi 11 3 Nephi 12 3 Nephi 15 3 Nephi 16 3 Nephi 18 3 Nephi 19 3 Nephi 20 3 Nephi 21 3 Nephi 26 3 Nephi 27 3 Nephi 28 3 Nephi 29 3 Nephi 30 4 Nephi 1 Mormon 1 Mormon 2 Mormon 3 Mormon 5 Mormon 7 Ether 2 Ether 4 Ether 5 Ether 12 Ether 15 Moroni 2 Moroni 3 Moroni 4 Moroni 5 Moroni 6 Moroni 7 Moroni 8 Moroni 9 Moroni 10
+Satan / the devil,divine,69,118,467,"1Ne,2Ne,Jac,Omn,Mos,Alm,Hel,3Ne,4Ne,Mor,Eth,Mni",1 Nephi 12 1 Nephi 13 1 Nephi 14 1 Nephi 15 1 Nephi 22 2 Nephi 1 2 Nephi 2 2 Nephi 4 2 Nephi 7 2 Nephi 9 2 Nephi 10 2 Nephi 24 2 Nephi 26 2 Nephi 28 2 Nephi 30 2 Nephi 33 Jacob 3 Jacob 7 Omni 1 Mosiah 3 Mosiah 4 Mosiah 16 Mosiah 26 Alma 5 Alma 8 Alma 9 Alma 10 Alma 11 Alma 12 Alma 14 Alma 15 Alma 16 Alma 27 Alma 28 Alma 30 Alma 34 Alma 37 Alma 39 Alma 40 Alma 41 Alma 46 Alma 48 Alma 54 Helaman 3 Helaman 5 Helaman 6 Helaman 7 Helaman 8 Helaman 12 Helaman 13 Helaman 16 3 Nephi 1 3 Nephi 2 3 Nephi 6 3 Nephi 7 3 Nephi 9 3 Nephi 11 3 Nephi 12 3 Nephi 18 3 Nephi 21 3 Nephi 27 3 Nephi 28 4 Nephi 1 Mormon 1 Mormon 5 Ether 8 Ether 15 Moroni 7 Moroni 9
+Angel(s) (unnamed),angel,61,109,450,"1Ne,2Ne,Jac,Omn,Mos,Alm,Hel,3Ne,Mni",1 Nephi 1 1 Nephi 3 1 Nephi 4 1 Nephi 7 1 Nephi 11 1 Nephi 12 1 Nephi 13 1 Nephi 14 1 Nephi 15 1 Nephi 16 1 Nephi 17 1 Nephi 19 2 Nephi 2 2 Nephi 4 2 Nephi 6 2 Nephi 9 2 Nephi 10 2 Nephi 25 2 Nephi 31 2 Nephi 32 Jacob 3 Jacob 7 Omni 1 Mosiah 3 Mosiah 4 Mosiah 5 Mosiah 26 Mosiah 27 Alma 8 Alma 9 Alma 10 Alma 11 Alma 12 Alma 13 Alma 17 Alma 18 Alma 19 Alma 21 Alma 24 Alma 27 Alma 29 Alma 30 Alma 32 Alma 36 Alma 38 Alma 39 Alma 40 Helaman 5 Helaman 10 Helaman 13 Helaman 14 Helaman 16 3 Nephi 7 3 Nephi 9 3 Nephi 11 3 Nephi 17 3 Nephi 19 3 Nephi 27 3 Nephi 28 Moroni 7 Moroni 10
+God the Father,divine,60,97,354,"1Ne,2Ne,Jac,Eno,Mos,Alm,Hel,3Ne,Mor,Eth,Mni",1 Nephi 11 1 Nephi 13 1 Nephi 14 1 Nephi 22 2 Nephi 19 2 Nephi 25 2 Nephi 31 2 Nephi 32 2 Nephi 33 Jacob 4 Jacob 7 Enos 1 Mosiah 2 Mosiah 3 Mosiah 7 Mosiah 15 Mosiah 16 Alma 5 Alma 9 Alma 11 Alma 13 Alma 56 Helaman 5 Helaman 14 Helaman 16 3 Nephi 1 3 Nephi 9 3 Nephi 11 3 Nephi 12 3 Nephi 13 3 Nephi 14 3 Nephi 15 3 Nephi 16 3 Nephi 17 3 Nephi 18 3 Nephi 19 3 Nephi 20 3 Nephi 21 3 Nephi 23 3 Nephi 24 3 Nephi 26 3 Nephi 27 3 Nephi 28 3 Nephi 29 Mormon 5 Mormon 6 Mormon 7 Mormon 9 Ether 3 Ether 4 Ether 5 Ether 12 Moroni 2 Moroni 3 Moroni 4 Moroni 5 Moroni 7 Moroni 8 Moroni 9 Moroni 10
+Nephi (son of Lehi),mortal,51,91,391,"1Ne,2Ne,Jac,WoM,Mos,Alm,Hel,Mor",1 Nephi 1 1 Nephi 2 1 Nephi 3 1 Nephi 4 1 Nephi 5 1 Nephi 6 1 Nephi 7 1 Nephi 8 1 Nephi 9 1 Nephi 10 1 Nephi 11 1 Nephi 12 1 Nephi 13 1 Nephi 14 1 Nephi 15 1 Nephi 16 1 Nephi 17 1 Nephi 18 1 Nephi 19 1 Nephi 22 2 Nephi 1 2 Nephi 2 2 Nephi 3 2 Nephi 4 2 Nephi 5 2 Nephi 6 2 Nephi 11 2 Nephi 25 2 Nephi 26 2 Nephi 29 2 Nephi 30 2 Nephi 31 2 Nephi 32 2 Nephi 33 Jacob 1 Jacob 2 Jacob 3 Jacob 7 Words of Mormon 1 Mosiah 10 Mosiah 17 Mosiah 24 Mosiah 25 Alma 3 Alma 10 Alma 47 Alma 50 Helaman 5 Helaman 7 Mormon 1 Mormon 8
+Lehi (father of Nephi),mortal,44,86,381,"1Ne,2Ne,Jac,Eno,Mos,Alm,Hel,3Ne",1 Nephi 1 1 Nephi 2 1 Nephi 3 1 Nephi 4 1 Nephi 5 1 Nephi 6 1 Nephi 7 1 Nephi 8 1 Nephi 9 1 Nephi 10 1 Nephi 11 1 Nephi 12 1 Nephi 13 1 Nephi 14 1 Nephi 15 1 Nephi 16 1 Nephi 17 1 Nephi 18 1 Nephi 19 1 Nephi 22 2 Nephi 1 2 Nephi 2 2 Nephi 4 Jacob 1 Jacob 2 Enos 1 Mosiah 1 Mosiah 2 Mosiah 6 Mosiah 28 Mosiah 29 Alma 9 Alma 10 Alma 18 Alma 28 Alma 36 Alma 56 Helaman 4 Helaman 5 Helaman 8 3 Nephi 1 3 Nephi 2 3 Nephi 5 3 Nephi 10
+Alma (the younger),mortal,38,92,296,"Mos,Alm,Hel,3Ne,Eth",Mosiah 27 Mosiah 28 Mosiah 29 Alma 1 Alma 2 Alma 3 Alma 4 Alma 5 Alma 6 Alma 8 Alma 9 Alma 10 Alma 11 Alma 12 Alma 13 Alma 14 Alma 15 Alma 16 Alma 17 Alma 27 Alma 30 Alma 31 Alma 32 Alma 33 Alma 34 Alma 35 Alma 43 Alma 44 Alma 45 Alma 48 Alma 50 Alma 58 Alma 63 Helaman 4 Helaman 5 Helaman 6 3 Nephi 5 Ether 12
+Moses,mortal,36,81,272,"1Ne,2Ne,Jac,Jar,Mos,Alm,Hel,3Ne,4Ne,Eth",1 Nephi 4 1 Nephi 5 1 Nephi 17 1 Nephi 19 1 Nephi 22 2 Nephi 3 2 Nephi 5 2 Nephi 11 2 Nephi 25 Jacob 4 Jacob 7 Jarom 1 Mosiah 2 Mosiah 3 Mosiah 12 Mosiah 13 Mosiah 16 Mosiah 24 Alma 25 Alma 30 Alma 31 Alma 33 Alma 34 Alma 45 Helaman 8 Helaman 13 Helaman 15 3 Nephi 1 3 Nephi 9 3 Nephi 15 3 Nephi 20 3 Nephi 21 3 Nephi 25 3 Nephi 27 4 Nephi 1 Ether 12
+Ammon (son of Mosiah),mortal,23,61,183,"Mos,Alm,Hel,Eth",Mosiah 27 Alma 17 Alma 18 Alma 19 Alma 20 Alma 21 Alma 22 Alma 23 Alma 24 Alma 25 Alma 26 Alma 27 Alma 28 Alma 30 Alma 31 Alma 35 Alma 37 Alma 48 Alma 49 Alma 53 Alma 56 Helaman 5 Ether 12
+Abraham,mortal,23,62,172,"1Ne,2Ne,Jac,Mos,Alm,Hel,3Ne,Mor,Eth",1 Nephi 6 1 Nephi 15 1 Nephi 17 1 Nephi 19 1 Nephi 22 2 Nephi 8 2 Nephi 27 2 Nephi 29 Jacob 4 Mosiah 7 Mosiah 23 Alma 5 Alma 7 Alma 13 Alma 29 Alma 36 Helaman 3 Helaman 8 3 Nephi 4 3 Nephi 20 Mormon 5 Mormon 9 Ether 13
+Laman (son of Lehi),mortal,22,58,219,"1Ne,2Ne,Mos,Alm",1 Nephi 2 1 Nephi 3 1 Nephi 4 1 Nephi 5 1 Nephi 7 1 Nephi 8 1 Nephi 10 1 Nephi 12 1 Nephi 13 1 Nephi 15 1 Nephi 16 1 Nephi 17 1 Nephi 18 1 Nephi 19 1 Nephi 22 2 Nephi 1 2 Nephi 4 Mosiah 24 Alma 3 Alma 18 Alma 43 Alma 55
+Mosiah (son of Benjamin),mortal,22,66,171,"Mos,Alm,Hel,3Ne,Eth",Mosiah 1 Mosiah 2 Mosiah 6 Mosiah 7 Mosiah 21 Mosiah 22 Mosiah 24 Mosiah 25 Mosiah 26 Mosiah 27 Mosiah 28 Mosiah 29 Alma 1 Alma 10 Alma 11 Alma 17 Alma 19 Alma 36 Alma 48 Helaman 4 3 Nephi 2 Ether 4
+Lemuel,mortal,21,52,213,"1Ne,2Ne,Alm",1 Nephi 2 1 Nephi 3 1 Nephi 4 1 Nephi 5 1 Nephi 7 1 Nephi 8 1 Nephi 10 1 Nephi 12 1 Nephi 13 1 Nephi 15 1 Nephi 16 1 Nephi 17 1 Nephi 18 1 Nephi 19 1 Nephi 22 2 Nephi 1 2 Nephi 4 Alma 3 Alma 18 Alma 24 Alma 43
+Helaman (son of Alma),mortal,19,54,134,"Alm,Hel",Alma 31 Alma 36 Alma 37 Alma 38 Alma 45 Alma 46 Alma 48 Alma 49 Alma 50 Alma 53 Alma 56 Alma 57 Alma 58 Alma 59 Alma 60 Alma 62 Alma 63 Helaman 2 Helaman 6
+Moroni (captain),mortal,18,42,117,Alm,Alma 43 Alma 44 Alma 46 Alma 48 Alma 49 Alma 50 Alma 51 Alma 52 Alma 53 Alma 54 Alma 55 Alma 56 Alma 58 Alma 59 Alma 60 Alma 61 Alma 62 Alma 63
+Adam,mortal,17,76,137,"1Ne,2Ne,Mos,Alm,Hel,Mor,Eth,Mni",1 Nephi 5 2 Nephi 2 2 Nephi 9 Mosiah 3 Mosiah 4 Mosiah 28 Alma 12 Alma 18 Alma 22 Alma 40 Alma 42 Helaman 14 Mormon 3 Mormon 9 Ether 1 Moroni 8 Moroni 10
+Jacob (Israel),mortal,17,54,137,"1Ne,2Ne,Mos,Alm,Hel,3Ne,Mor",1 Nephi 5 1 Nephi 6 1 Nephi 17 1 Nephi 19 2 Nephi 12 Mosiah 7 Mosiah 23 Alma 5 Alma 7 Alma 29 Alma 36 Alma 46 Helaman 3 3 Nephi 4 3 Nephi 10 3 Nephi 20 Mormon 9
+Isaiah (prophet),mortal,16,44,102,"1Ne,2Ne,Mos,Hel,3Ne,Mor",1 Nephi 15 1 Nephi 19 1 Nephi 22 2 Nephi 6 2 Nephi 11 2 Nephi 12 2 Nephi 17 2 Nephi 23 2 Nephi 25 Mosiah 14 Mosiah 15 Helaman 8 3 Nephi 16 3 Nephi 20 3 Nephi 23 Mormon 8
+Moroni (son of Mormon),mortal,15,82,132,"WoM,Mor,Eth,Mni",Words of Mormon 1 Mormon 6 Mormon 8 Ether 1 Ether 3 Ether 5 Ether 6 Ether 8 Ether 9 Ether 12 Ether 13 Moroni 1 Moroni 7 Moroni 8 Moroni 10
+Mormon,mortal,15,46,100,"WoM,3Ne,4Ne,Mor,Eth,Mni",Words of Mormon 1 3 Nephi 5 3 Nephi 26 3 Nephi 28 4 Nephi 1 Mormon 1 Mormon 2 Mormon 3 Mormon 4 Mormon 5 Mormon 6 Mormon 8 Ether 15 Moroni 7 Moroni 8
+"Noah (king, son of Zeniff)",mortal,14,39,99,"Mos,Alm",Mosiah 7 Mosiah 11 Mosiah 12 Mosiah 13 Mosiah 17 Mosiah 18 Mosiah 19 Mosiah 20 Mosiah 21 Mosiah 23 Mosiah 29 Alma 5 Alma 25 Alma 43
+Abinadi,mortal,14,34,86,"Mos,Alm,Mor",Mosiah 11 Mosiah 12 Mosiah 13 Mosiah 15 Mosiah 16 Mosiah 17 Mosiah 18 Mosiah 20 Mosiah 21 Mosiah 24 Mosiah 26 Alma 5 Alma 25 Mormon 1
+Limhi,mortal,13,73,125,"Mos,Alm,Hel,Eth",Mosiah 7 Mosiah 8 Mosiah 19 Mosiah 20 Mosiah 21 Mosiah 22 Mosiah 23 Mosiah 25 Mosiah 28 Alma 1 Helaman 5 Ether 1 Ether 15
+Amulek,mortal,13,48,117,"Alm,Hel,Eth",Alma 8 Alma 9 Alma 10 Alma 11 Alma 12 Alma 14 Alma 15 Alma 16 Alma 31 Alma 34 Alma 35 Helaman 5 Ether 12
+Nephi (son of Helaman),mortal,13,46,112,"Hel,3Ne,Eth",Helaman 3 Helaman 4 Helaman 5 Helaman 6 Helaman 7 Helaman 8 Helaman 9 Helaman 10 Helaman 11 Helaman 16 3 Nephi 1 3 Nephi 2 Ether 12
+Isaac,mortal,13,46,107,"1Ne,Jac,Mos,Alm,Hel,3Ne,Mor",1 Nephi 6 1 Nephi 17 1 Nephi 19 Jacob 4 Mosiah 7 Mosiah 23 Alma 5 Alma 7 Alma 29 Alma 36 Helaman 3 3 Nephi 4 Mormon 9
+Jacob (son of Lehi),mortal,13,36,89,"1Ne,2Ne,Jac,WoM,Alm",1 Nephi 18 2 Nephi 2 2 Nephi 5 2 Nephi 6 2 Nephi 10 2 Nephi 11 Jacob 1 Jacob 2 Jacob 3 Jacob 4 Jacob 7 Words of Mormon 1 Alma 3
+Gadianton,mortal,12,44,101,"Hel,3Ne,4Ne,Mor",Helaman 2 Helaman 3 Helaman 6 Helaman 7 Helaman 8 Helaman 11 3 Nephi 1 3 Nephi 2 3 Nephi 3 4 Nephi 1 Mormon 1 Mormon 2
+Alma (the elder),mortal,12,32,88,"Mos,Alm",Mosiah 17 Mosiah 18 Mosiah 21 Mosiah 23 Mosiah 24 Mosiah 25 Mosiah 26 Mosiah 27 Mosiah 28 Mosiah 29 Alma 4 Alma 5
+Twelve Nephite disciples of Jesus,collective,12,35,75,"1Ne,3Ne,4Ne,Mor,Mni",1 Nephi 12 3 Nephi 12 3 Nephi 13 3 Nephi 15 3 Nephi 18 3 Nephi 19 3 Nephi 26 3 Nephi 27 4 Nephi 1 Mormon 3 Mormon 8 Moroni 2
+Gadianton robbers,collective,11,42,93,"Hel,3Ne,4Ne,Mor",Helaman 2 Helaman 6 Helaman 7 Helaman 8 Helaman 11 3 Nephi 1 3 Nephi 2 3 Nephi 3 4 Nephi 1 Mormon 1 Mormon 2
+Joseph (of Egypt),mortal,11,50,88,"1Ne,2Ne,Jac,Alm,3Ne,Eth",1 Nephi 5 1 Nephi 6 2 Nephi 3 2 Nephi 4 2 Nephi 25 Jacob 2 Alma 10 Alma 46 3 Nephi 5 3 Nephi 10 Ether 13
+Benjamin,mortal,11,43,79,"Omn,WoM,Mos,Hel",Omni 1 Words of Mormon 1 Mosiah 1 Mosiah 2 Mosiah 4 Mosiah 5 Mosiah 6 Mosiah 8 Mosiah 26 Mosiah 29 Helaman 5
+Sons of Ishmael,collective,10,41,113,"1Ne,2Ne,Alm",1 Nephi 7 1 Nephi 16 1 Nephi 18 2 Nephi 1 2 Nephi 4 Alma 3 Alma 10 Alma 17 Alma 18 Alma 43
+Aaron (son of Mosiah),mortal,10,32,78,"Mos,Alm",Mosiah 27 Mosiah 29 Alma 20 Alma 21 Alma 22 Alma 23 Alma 25 Alma 26 Alma 27 Alma 31
+Priests of King Noah,collective,10,28,62,"Mos,Alm",Mosiah 11 Mosiah 12 Mosiah 13 Mosiah 17 Mosiah 19 Mosiah 20 Mosiah 21 Mosiah 23 Alma 25 Alma 43
+Ishmael (father-in-law of Nephi),mortal,9,34,98,"1Ne,2Ne,Alm",1 Nephi 7 1 Nephi 16 1 Nephi 18 2 Nephi 1 2 Nephi 4 Alma 3 Alma 17 Alma 18 Alma 43
+Sam,mortal,9,29,93,"1Ne,2Ne,Alm",1 Nephi 2 1 Nephi 4 1 Nephi 5 1 Nephi 7 1 Nephi 8 2 Nephi 1 2 Nephi 4 2 Nephi 5 Alma 3
+Laban,mortal,9,36,88,"1Ne,2Ne,Jac,WoM,Mos",1 Nephi 3 1 Nephi 4 1 Nephi 5 1 Nephi 7 2 Nephi 1 2 Nephi 5 Jacob 1 Words of Mormon 1 Mosiah 1
+Lehi (Nephite commander),mortal,9,41,74,"Alm,Hel",Alma 16 Alma 43 Alma 49 Alma 50 Alma 52 Alma 53 Alma 61 Alma 62 Helaman 1
+Amalickiah,mortal,9,27,56,Alm,Alma 46 Alma 47 Alma 48 Alma 49 Alma 51 Alma 52 Alma 54 Alma 55 Alma 62
+Brother of Jared (Mahonri Moriancumer),mortal_unnamed,8,55,85,Eth,Ether 1 Ether 2 Ether 3 Ether 4 Ether 6 Ether 7 Ether 11 Ether 12
+"Nephi (son of Nephi, disciple of Jesus)",mortal,8,30,57,3Ne,3 Nephi 1 3 Nephi 2 3 Nephi 5 3 Nephi 7 3 Nephi 11 3 Nephi 12 3 Nephi 19 3 Nephi 23
+Ammoron,mortal,8,29,52,"Alm,Hel",Alma 52 Alma 54 Alma 55 Alma 56 Alma 57 Alma 59 Alma 62 Helaman 1
+Zenos,mortal,8,26,50,"1Ne,Jac,Alm,Hel,3Ne",1 Nephi 19 Jacob 5 Jacob 6 Alma 33 Alma 34 Helaman 8 Helaman 15 3 Nephi 10
+Samuel the Lamanite,mortal,8,19,46,"Hel,3Ne,Mor",Helaman 13 Helaman 14 Helaman 16 3 Nephi 1 3 Nephi 8 3 Nephi 23 Mormon 1 Mormon 2
+Zeezrom,mortal,7,38,74,"Alm,Hel",Alma 10 Alma 11 Alma 12 Alma 14 Alma 15 Alma 31 Helaman 5
+Lamoni,mortal,7,27,61,Alm,Alma 17 Alma 18 Alma 19 Alma 20 Alma 21 Alma 22 Alma 24
+Pahoran (chief judge),mortal,7,24,52,"Alm,Hel",Alma 50 Alma 51 Alma 59 Alma 60 Alma 61 Alma 62 Helaman 1
+Nehor,mortal,7,22,43,Alm,Alma 1 Alma 2 Alma 6 Alma 14 Alma 15 Alma 16 Alma 24
+Gideon,mortal,7,18,35,"Mos,Alm",Mosiah 19 Mosiah 20 Mosiah 22 Alma 1 Alma 2 Alma 6 Alma 14
+Ether,mortal,6,53,76,Eth,Ether 1 Ether 11 Ether 12 Ether 13 Ether 14 Ether 15
+Lehi (son of Helaman),mortal,6,35,63,"Hel,Eth",Helaman 3 Helaman 4 Helaman 5 Helaman 6 Helaman 11 Ether 12
+Himni,mortal,6,27,53,"Mos,Alm",Mosiah 27 Alma 22 Alma 23 Alma 25 Alma 27 Alma 31
+Omner,mortal,6,27,53,"Mos,Alm",Mosiah 27 Alma 22 Alma 23 Alma 25 Alma 27 Alma 31
+Sons of Mosiah,collective,6,26,53,"Mos,Alm",Mosiah 27 Mosiah 28 Mosiah 29 Alma 17 Alma 36 Alma 48
+Teancum,mortal,6,20,44,Alm,Alma 50 Alma 51 Alma 52 Alma 53 Alma 61 Alma 62
+Zeniff,mortal,6,22,35,Mos,Mosiah 7 Mosiah 8 Mosiah 9 Mosiah 10 Mosiah 11 Mosiah 25
+Zedekiah (king of Judah),mortal,5,45,63,"1Ne,Omn,Hel",1 Nephi 1 1 Nephi 5 Omni 1 Helaman 6 Helaman 8
+Sariah,mortal,5,27,53,1Ne,1 Nephi 2 1 Nephi 5 1 Nephi 8 1 Nephi 17 1 Nephi 18
+Zoram (servant of Laban),mortal,5,23,46,"1Ne,2Ne,Alm",1 Nephi 4 1 Nephi 16 2 Nephi 1 2 Nephi 5 Alma 54
+Coriantumr (last Jaredite king),mortal,5,34,46,"Omn,Eth",Omni 1 Ether 12 Ether 13 Ether 14 Ether 15
+Zenock,mortal,5,26,45,"1Ne,Alm,Hel,3Ne",1 Nephi 19 Alma 33 Alma 34 Helaman 8 3 Nephi 10
+Joseph (son of Lehi),mortal,5,22,42,"1Ne,2Ne,Jac,Alm",1 Nephi 18 2 Nephi 3 2 Nephi 5 Jacob 1 Alma 3
+Moronihah (son of Captain Moroni),mortal,5,30,42,"Alm,Hel",Alma 62 Alma 63 Helaman 1 Helaman 2 Helaman 4
+Twelve apostles of the Lamb,collective,5,15,41,1Ne,1 Nephi 1 1 Nephi 11 1 Nephi 12 1 Nephi 13 1 Nephi 14
+Amulon,mortal,5,25,41,"Mos,Alm",Mosiah 23 Mosiah 24 Mosiah 25 Alma 21 Alma 25
+Helaman (son of Helaman),mortal,4,26,38,Hel,Helaman 2 Helaman 3 Helaman 4 Helaman 5
+Shiblon (son of Alma),mortal,4,20,32,Alm,Alma 31 Alma 38 Alma 49 Alma 63
+Mary (mother of Jesus),mortal_unnamed,4,24,31,"1Ne,2Ne,Mos,Alm",1 Nephi 11 2 Nephi 17 Mosiah 3 Alma 7
+Ammaron,mortal,4,16,30,"4Ne,Mor",4 Nephi 1 Mormon 1 Mormon 2 Mormon 4
+Ammon (leader of the expedition to Lehi-Nephi),mortal,4,20,29,Mos,Mosiah 7 Mosiah 8 Mosiah 21 Mosiah 22
+Freemen,collective,4,13,28,Alm,Alma 51 Alma 60 Alma 61 Alma 62
+David,mortal,4,19,27,"2Ne,Jac",2 Nephi 17 2 Nephi 19 Jacob 1 Jacob 2
+Solomon,mortal,4,14,25,"2Ne,Jac,3Ne",2 Nephi 5 Jacob 1 Jacob 2 3 Nephi 13
+"Helaman's 2,000 stripling warriors",collective,4,13,24,Alm,Alma 53 Alma 56 Alma 57 Alma 58
+Heth (son of Com),mortal,3,38,59,Eth,Ether 1 Ether 9 Ether 10
+"Com (son of Coriantum, later king)",mortal,3,35,59,Eth,Ether 1 Ether 10 Ether 11
+Omer,mortal,3,43,53,Eth,Ether 1 Ether 8 Ether 9
+Orihah,mortal,3,43,52,Eth,Ether 1 Ether 6 Ether 7
+Moron,mortal,3,38,52,Eth,Ether 1 Ether 7 Ether 11
+Jared,mortal,3,41,47,Eth,Ether 1 Ether 2 Ether 6
+Jeremiah (prophet),mortal,3,31,43,"1Ne,Hel",1 Nephi 5 1 Nephi 7 Helaman 8
+Zarahemla (Mulekite leader),mortal,3,36,38,"Omn,Mos,Hel",Omni 1 Mosiah 7 Helaman 1
+Mulek (son of Zedekiah),mortal,3,29,37,"Mos,Hel",Mosiah 25 Helaman 6 Helaman 8
+Daughters of Ishmael,collective,3,19,35,1Ne,1 Nephi 7 1 Nephi 16 1 Nephi 18
+Lamoni's servants,collective,3,17,30,Alm,Alma 17 Alma 18 Alma 19
+Kishkumen,mortal,3,25,30,Hel,Helaman 1 Helaman 2 Helaman 6
+Lamoni's father (king over all the land),mortal_unnamed,3,19,28,Alm,Alma 18 Alma 20 Alma 22
+Corianton,mortal,3,19,28,Alm,Alma 31 Alma 49 Alma 63
+Noah (Old Testament),mortal,3,23,25,"Alm,3Ne,Eth",Alma 10 3 Nephi 22 Ether 6
+King-men,collective,3,12,22,Alm,Alma 51 Alma 60 Alma 62
+"John (apostle, the Revelator)",mortal,3,12,20,"1Ne,3Ne,Eth",1 Nephi 14 3 Nephi 28 Ether 4
+Rezin,mortal,3,16,20,2Ne,2 Nephi 17 2 Nephi 18 2 Nephi 19
+Nephihah,mortal,3,15,20,Alm,Alma 4 Alma 8 Alma 50
+"Laman (Lamanite king, father)",mortal,3,15,19,Mos,Mosiah 7 Mosiah 9 Mosiah 10
+Lachoneus (chief judge),mortal,3,13,19,3Ne,3 Nephi 1 3 Nephi 3 3 Nephi 6
+Enos,mortal,3,12,17,"Jac,Eno,Jar",Jacob 7 Enos 1 Jarom 1
+Gidgiddoni,mortal,3,11,15,3Ne,3 Nephi 3 3 Nephi 4 3 Nephi 6
+Aaron (Jaredite),mortal,2,35,50,Eth,Ether 1 Ether 10
+Lib (son of Kish),mortal,2,35,50,Eth,Ether 1 Ether 10
+Shez,mortal,2,35,50,Eth,Ether 1 Ether 10
+Kim,mortal,2,35,50,Eth,Ether 1 Ether 10
+Morianton (Jaredite king),mortal,2,35,50,Eth,Ether 1 Ether 10
+Heth (son of Hearthom),mortal,2,35,50,Eth,Ether 1 Ether 10
+Kish,mortal,2,35,50,Eth,Ether 1 Ether 10
+Riplakish,mortal,2,35,50,Eth,Ether 1 Ether 10
+Corom,mortal,2,35,50,Eth,Ether 1 Ether 10
+Coriantum (son of Amnigaddah),mortal,2,35,50,Eth,Ether 1 Ether 10
+Hearthom,mortal,2,35,50,Eth,Ether 1 Ether 10
+Levi (Jaredite),mortal,2,35,50,Eth,Ether 1 Ether 10
+Amnigaddah,mortal,2,35,50,Eth,Ether 1 Ether 10
+Shule,mortal,2,38,43,Eth,Ether 1 Ether 7
+Emer,mortal,2,37,43,Eth,Ether 1 Ether 9
+Coriantum (son of Emer),mortal,2,37,43,Eth,Ether 1 Ether 9
+Ahah,mortal,2,34,43,Eth,Ether 1 Ether 11
+"Com (son of Coriantum, king)",mortal,2,37,43,Eth,Ether 1 Ether 9
+Seth,mortal,2,34,43,Eth,Ether 1 Ether 11
+Shiblon / Shiblom (Jaredite),mortal,2,34,43,Eth,Ether 1 Ether 11
+Ethem,mortal,2,34,43,Eth,Ether 1 Ether 11
+Kib,mortal,2,38,43,Eth,Ether 1 Ether 7
+Coriantor,mortal,2,34,43,Eth,Ether 1 Ether 11
+Cezoram,mortal,2,25,31,Hel,Helaman 5 Helaman 6
+Cain,mortal,2,22,24,"Hel,Eth",Helaman 6 Ether 8
+Pharaoh,mortal,2,15,23,1Ne,1 Nephi 4 1 Nephi 17
+Eve,mortal,2,18,23,"1Ne,2Ne",1 Nephi 5 2 Nephi 2
+Zoram (Zoramite apostate leader),mortal,2,17,23,Alm,Alma 30 Alma 31
+Korihor,mortal,2,17,23,Alm,Alma 30 Alma 31
+Nephi's wife,mortal_unnamed,2,14,22,1Ne,1 Nephi 16 1 Nephi 18
+Amaleki (son of Abinadom),mortal,2,19,21,"Omn,WoM",Omni 1 Words of Mormon 1
+Three Nephites (disciples who tarry),collective,2,15,19,"3Ne,4Ne",3 Nephi 28 4 Nephi 1
+Jared (son of Omer),mortal,2,15,19,Eth,Ether 8 Ether 9
+Akish,mortal,2,15,19,Eth,Ether 8 Ether 9
+Jarom,mortal,2,16,18,"Jar,Omn",Jarom 1 Omni 1
+Omni,mortal,2,16,18,"Jar,Omn",Jarom 1 Omni 1
+Remaliah,mortal,2,15,17,2Ne,2 Nephi 17 2 Nephi 18
+Corihor,mortal,2,15,17,Eth,Ether 7 Ether 13
+Cohor,mortal,2,15,17,Eth,Ether 7 Ether 13
+Morianton (Nephite),mortal,2,13,16,Alm,Alma 50 Alma 51
+Aaron (Lamanite king),mortal,2,14,16,"Mor,Mni",Mormon 2 Moroni 9
+Ammah,mortal,2,10,15,Alm,Alma 20 Alma 21
+Muloki,mortal,2,10,15,Alm,Alma 20 Alma 21
+John the Baptist (unnamed),mortal_unnamed,2,10,14,1Ne,1 Nephi 10 1 Nephi 11
+Shared,mortal,2,11,14,Eth,Ether 13 Ether 14
+Ahaz,mortal,2,12,13,2Ne,2 Nephi 17 2 Nephi 24
+Zerahemnah,mortal,2,10,13,Alm,Alma 43 Alma 44
+Shiz,mortal,2,10,13,Eth,Ether 14 Ether 15
+Uzziah,mortal,2,11,12,2Ne,2 Nephi 16 2 Nephi 17
+Giddianhi,mortal,2,9,11,3Ne,3 Nephi 3 3 Nephi 4
+"Jacob (king of the secret combination, 3 Nephi 7)",mortal,2,7,11,3Ne,3 Nephi 7 3 Nephi 9
+Gid,mortal,2,7,10,Alm,Alma 57 Alma 58
+Amoz (father of Isaiah),mortal,2,3,5,2Ne,2 Nephi 12 2 Nephi 23
+Aminadab,mortal,1,17,17,Hel,Helaman 5
+Jonas (Nephite disciple),mortal,1,16,16,3Ne,3 Nephi 19
+Mathonihah,mortal,1,16,16,3Ne,3 Nephi 19
+Kumenonhi,mortal,1,16,16,3Ne,3 Nephi 19
+Jonas (son of Nephi),mortal,1,16,16,3Ne,3 Nephi 19
+Shemnon,mortal,1,16,16,3Ne,3 Nephi 19
+Isaiah (Nephite disciple),mortal,1,16,16,3Ne,3 Nephi 19
+Jeremiah (Nephite disciple),mortal,1,16,16,3Ne,3 Nephi 19
+Mathoni,mortal,1,16,16,3Ne,3 Nephi 19
+Kumen,mortal,1,16,16,3Ne,3 Nephi 19
+Zedekiah (Nephite disciple),mortal,1,16,16,3Ne,3 Nephi 19
+Timothy (brother of Nephi),mortal,1,16,16,3Ne,3 Nephi 19
+Amgid,mortal,1,16,16,Eth,Ether 10
+Ishmael (grandfather of Amulek),mortal,1,15,15,Alm,Alma 10
+Giddonah (father of Amulek),mortal,1,15,15,Alm,Alma 10
+Aminadi,mortal,1,15,15,Alm,Alma 10
+Manasseh (son of Joseph),mortal,1,15,15,Alm,Alma 10
+Sons of Zedekiah,collective,1,15,15,Hel,Helaman 8
+Ezias,mortal,1,15,15,Hel,Helaman 8
+Neum,mortal,1,14,14,1Ne,1 Nephi 19
+Amaleki (companion of Ammon),mortal,1,14,14,Mos,Mosiah 7
+Hem,mortal,1,14,14,Mos,Mosiah 7
+Helem,mortal,1,14,14,Mos,Mosiah 7
+Abel,mortal,1,14,14,Hel,Helaman 6
+"Shem (Nephite commander, Mormon 6)",mortal,1,14,14,Mor,Mormon 6
+"Moronihah (Nephite commander, Mormon 6)",mortal,1,14,14,Mor,Mormon 6
+"Limhah (Nephite commander, Mormon 6)",mortal,1,14,14,Mor,Mormon 6
+"Cumenihah (Nephite commander, Mormon 6)",mortal,1,14,14,Mor,Mormon 6
+"Gilgal (Nephite commander, Mormon 6)",mortal,1,14,14,Mor,Mormon 6
+"Lamah (Nephite commander, Mormon 6)",mortal,1,14,14,Mor,Mormon 6
+"Jeneum (Nephite commander, Mormon 6)",mortal,1,14,14,Mor,Mormon 6
+"Josh (Nephite commander, Mormon 6)",mortal,1,14,14,Mor,Mormon 6
+"Shiblom (Nephite commander, Mormon 6)",mortal,1,14,14,Mor,Mormon 6
+"Gidgiddonah (Nephite commander, Mormon 6)",mortal,1,14,14,Mor,Mormon 6
+"Antionum (Nephite commander, Mormon 6)",mortal,1,14,14,Mor,Mormon 6
+Ishmael's wife,mortal_unnamed,1,13,13,1Ne,1 Nephi 7
+Abinadom,mortal,1,13,13,Omn,Omni 1
+Amaron,mortal,1,13,13,Omn,Omni 1
+Mosiah (father of Benjamin),mortal,1,13,13,Omn,Omni 1
+Chemish,mortal,1,13,13,Omn,Omni 1
+Nephi's children,collective,1,12,12,1Ne,1 Nephi 18
+Nephi (son of Nephi the disciple),mortal,1,12,12,4Ne,4 Nephi 1
+Amos (son of Amos),mortal,1,12,12,4Ne,4 Nephi 1
+Amos (son of Nephi),mortal,1,12,12,4Ne,4 Nephi 1
+Tabeal,mortal,1,11,11,2Ne,2 Nephi 17
+Pekah,mortal,1,11,11,2Ne,2 Nephi 17
+Shearjashub,mortal,1,11,11,2Ne,2 Nephi 17
+Jotham,mortal,1,11,11,2Ne,2 Nephi 17
+Pachus,mortal,1,11,11,Alm,Alma 62
+Pacumeni,mortal,1,11,11,Hel,Helaman 1
+Paanchi,mortal,1,11,11,Hel,Helaman 1
+Coriantumr (Nephite dissenter),mortal,1,11,11,Hel,Helaman 1
+Tubaloth,mortal,1,11,11,Hel,Helaman 1
+Pahoran (son of Pahoran),mortal,1,11,11,Hel,Helaman 1
+"Columbus (man among the Gentiles, unnamed)",mortal_unnamed,1,10,10,1Ne,1 Nephi 13
+Morianton's maidservant,mortal_unnamed,1,10,10,Alm,Alma 50
+Daughter of Jared,mortal_unnamed,1,10,10,Eth,Ether 8
+Kimnor,mortal,1,10,10,Eth,Ether 8
+Coriantumr (son of Omer),mortal,1,10,10,Eth,Ether 8
+Esrom,mortal,1,10,10,Eth,Ether 8
+Nephi's sisters,collective,1,9,9,2Ne,2 Nephi 5
+Sherem,mortal,1,9,9,Jac,Jacob 7
+Queen (wife of Lamoni's father),mortal_unnamed,1,9,9,Alm,Alma 22
+Giddonah (high priest of Gideon),mortal,1,9,9,Alm,Alma 30
+Mahah (son of Jared),mortal,1,9,9,Eth,Ether 6
+Gilgah (son of Jared),mortal,1,9,9,Eth,Ether 6
+Jacom (son of Jared),mortal,1,9,9,Eth,Ether 6
+Pagag,mortal,1,9,9,Eth,Ether 6
+Noah (Jaredite),mortal,1,9,9,Eth,Ether 7
+Nimrod (son of Cohor),mortal,1,9,9,Eth,Ether 7
+Nimrah,mortal,1,9,9,Eth,Ether 9
+Emron,mortal,1,9,9,Mni,Moroni 9
+Zenephi,mortal,1,9,9,Mni,Moroni 9
+Archeantus,mortal,1,9,9,Mni,Moroni 9
+Luram,mortal,1,9,9,Mni,Moroni 9
+Amoron,mortal,1,9,9,Mni,Moroni 9
+Laban's servants,collective,1,8,8,1Ne,1 Nephi 3
+"Laman (Lamanite king, son of Laman)",mortal,1,8,8,Mos,Mosiah 24
+Amlici,mortal,1,8,8,Alm,Alma 2
+Amnor,mortal,1,8,8,Alm,Alma 2
+Limher,mortal,1,8,8,Alm,Alma 2
+Zeram,mortal,1,8,8,Alm,Alma 2
+"Manti (Nephite spy, Alma 2)",mortal,1,8,8,Alm,Alma 2
+Antionah,mortal,1,8,8,Alm,Alma 12
+Aha (son of Zoram),mortal,1,8,8,Alm,Alma 16
+"Zoram (Nephite chief captain, Alma 16)",mortal,1,8,8,Alm,Alma 16
+Abish,mortal,1,8,8,Alm,Alma 19
+Queen (wife of Lamoni),mortal_unnamed,1,8,8,Alm,Alma 19
+Antipus,mortal,1,8,8,Alm,Alma 56
+Man in a white robe (Lehi's dream),mortal_unnamed,1,7,7,1Ne,1 Nephi 8
+Antiomno,mortal,1,7,7,Alm,Alma 20
+Anti-Nephi-Lehi (king),mortal,1,7,7,Alm,Alma 24
+Hagoth,mortal,1,7,7,Alm,Alma 63
+Samuel (Old Testament prophet),mortal,1,7,7,3Ne,3 Nephi 20
+Zechariah,mortal,1,6,6,2Ne,2 Nephi 18
+Uriah,mortal,1,6,6,2Ne,2 Nephi 18
+Maher-shalal-hash-baz,mortal,1,6,6,2Ne,2 Nephi 18
+Jeberechiah,mortal,1,6,6,2Ne,2 Nephi 18
+Helaman (son of Benjamin),mortal,1,6,6,Mos,Mosiah 1
+Helorum,mortal,1,6,6,Mos,Mosiah 1
+Melchizedek,mortal,1,6,6,Alm,Alma 13
+Teomner,mortal,1,6,6,Alm,Alma 58
+Zemnarihah,mortal,1,6,6,3Ne,3 Nephi 4
+"Lib (Jaredite, opponent of Coriantumr)",mortal,1,6,6,Eth,Ether 14
+Gilead (Jaredite),mortal,1,6,6,Eth,Ether 14
+"Joseph Smith (the choice seer, unnamed)",mortal_unnamed,1,5,5,2Ne,2 Nephi 3
+Helam,mortal,1,5,5,Mos,Mosiah 18
+"Jacob (Zoramite commander, Alma 52)",mortal,1,5,5,Alm,Alma 52
+Laman (Nephite soldier),mortal,1,5,5,Alm,Alma 55
+Isabel,mortal,1,4,4,Alm,Alma 39
+Lachoneus (son of Lachoneus),mortal,1,4,4,3Ne,3 Nephi 6
+Nimrod (mighty hunter),mortal,1,4,4,Eth,Ether 2
+Lehonti,mortal,1,3,3,Alm,Alma 47
+Seezoram,mortal,1,3,3,Hel,Helaman 9
+Seantum,mortal,1,3,3,Hel,Helaman 9
+Sarah,mortal,1,2,2,2Ne,2 Nephi 8
+Jesse,mortal,1,2,2,2Ne,2 Nephi 21
+Malachi,mortal,1,2,2,3Ne,3 Nephi 24
+Elijah,mortal,1,2,2,3Ne,3 Nephi 25
