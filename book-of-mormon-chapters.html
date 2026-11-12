@@ -156,10 +156,10 @@ footer { margin-top:64px; padding-top:20px; border-top:1px solid var(--rule); fo
 
     <div class="card">
       <div class="ctrl">
-        <button id="prev" aria-label="Previous chapter">&larr;</button>
-        <select id="selBook" aria-label="Book"></select>
-        <select id="selCh" aria-label="Chapter"></select>
-        <button id="next" aria-label="Next chapter">&rarr;</button>
+        <button class="js-prev" aria-label="Previous chapter">&larr;</button>
+        <select class="js-book" aria-label="Book"></select>
+        <select class="js-ch" aria-label="Chapter"></select>
+        <button class="js-next" aria-label="Next chapter">&rarr;</button>
       </div>
       <h3 id="chTitle" style="font-family:var(--font-display)"></h3>
       <p id="chLine" class="muted" aria-live="polite"></p>
@@ -176,6 +176,12 @@ footer { margin-top:64px; padding-top:20px; border-top:1px solid var(--rule); fo
   <h2 id="h-net">The whole book at once</h2>
   <p class="read">Here is everyone in the Book of Mormon on one map. Two people sit close together when the same chapters refer to both of them. So Lehi&rsquo;s family is on the left, the Jaredites are on the far right, and the people of Mosiah and Alma are at the bottom. The gold lines run from the Savior to everyone who shares a chapter with Him.</p>
   <p class="read small muted">This map is easier to read on a larger screen.</p>
+  <div class="ctrl" style="margin:14px 0 0">
+    <button class="js-prev" aria-label="Previous chapter">&larr;</button>
+    <select class="js-book" aria-label="Book"></select>
+    <select class="js-ch" aria-label="Chapter"></select>
+    <button class="js-next" aria-label="Next chapter">&rarr;</button>
+  </div>
   <div class="seg" role="group" aria-label="What to highlight">
     <button data-scope="chapter" aria-pressed="true"></button>
     <button data-scope="book" aria-pressed="false"></button>
@@ -244,6 +250,7 @@ function short(label) {   // the qualifier is only needed where a name is shared
 }
 const S = { g:0, focus:SAVIOR, scope:'chapter' };
 const $ = id => document.getElementById(id);
+const all = sel => document.querySelectorAll(sel);
 function el(name, attrs, text) {
   const e = document.createElementNS(NS, name);
   for (const k in attrs) e.setAttribute(k, attrs[k]);
@@ -381,15 +388,17 @@ function renderChapter() {
   });
 
   const b = BOOKS[c.b];
-  $('selBook').value = c.b;
-  const sc = $('selCh');
-  if (sc.dataset.b !== String(c.b)) {
-    sc.textContent = '';
-    for (let k = 1; k <= b.n; k++) { const o = document.createElement('option'); o.value = k; o.textContent = 'Chapter ' + k; sc.appendChild(o); }
-    sc.dataset.b = c.b;
-  }
-  sc.value = c.n;
-  $('prev').disabled = S.g === 0; $('next').disabled = S.g === CH.length - 1;
+  all('.js-book').forEach(sb => { sb.value = c.b; });
+  all('.js-ch').forEach(sc => {
+    if (sc.dataset.b !== String(c.b)) {
+      sc.textContent = '';
+      for (let k = 1; k <= b.n; k++) { const o = document.createElement('option'); o.value = k; o.textContent = 'Chapter ' + k; sc.appendChild(o); }
+      sc.dataset.b = c.b;
+    }
+    sc.value = c.n;
+  });
+  all('.js-prev').forEach(x => { x.disabled = S.g === 0; });
+  all('.js-next').forEach(x => { x.disabled = S.g === CH.length - 1; });
   document.querySelector('[data-scope="chapter"]').textContent = c.label;
   document.querySelector('[data-scope="book"]').textContent = 'All of ' + b.name;
 }
@@ -456,12 +465,13 @@ function setFocus(id) { S.focus = id; hideTip(); paintGrid(); paintWho(); render
 
 function init() {
   buildGrid(); buildNet();
-  const sb = $('selBook');
-  BOOKS.forEach((b, i) => { const o = document.createElement('option'); o.value = i; o.textContent = b.name; sb.appendChild(o); });
-  sb.addEventListener('change', () => setChapter(BOOKS[+sb.value].first));
-  $('selCh').addEventListener('change', e => setChapter(BOOKS[CH[S.g].b].first + (+e.target.value) - 1));
-  $('prev').addEventListener('click', () => setChapter(S.g - 1));
-  $('next').addEventListener('click', () => setChapter(S.g + 1));
+  all('.js-book').forEach(sb => {
+    BOOKS.forEach((b, i) => { const o = document.createElement('option'); o.value = i; o.textContent = b.name; sb.appendChild(o); });
+    sb.addEventListener('change', () => setChapter(BOOKS[+sb.value].first));
+  });
+  all('.js-ch').forEach(sc => sc.addEventListener('change', e => setChapter(BOOKS[CH[S.g].b].first + (+e.target.value) - 1)));
+  all('.js-prev').forEach(x => x.addEventListener('click', () => setChapter(S.g - 1)));
+  all('.js-next').forEach(x => x.addEventListener('click', () => setChapter(S.g + 1)));
   document.addEventListener('keydown', e => {
     if (e.target instanceof Element && e.target.closest('select, input, textarea')) return;
     if (e.key === 'ArrowRight') setChapter(S.g + 1);
