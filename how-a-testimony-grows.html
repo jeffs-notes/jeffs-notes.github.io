@@ -1,0 +1,687 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>How a Testimony Grows | Jeff's Gospel Study Notes</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Figtree:wght@500;600;700&family=Literata:ital,opsz,wght@0,7..72,400;0,7..72,600;1,7..72,400&display=swap" rel="stylesheet">
+<style>
+/* Layout idea: one reading column. Four main questions open to show their sub-questions; each sub-question opens its answer. One open at a time at each level. */
+:root {
+  --bg: #f5f7f6;
+  --surface: #ffffff;
+  --ink: #1b2523;
+  --muted: #586764;
+  --accent: #1d5c54;
+  --accent-soft: #e2eeeb;
+  --rule: #d3dcd9;
+  --invite: #f3ecdc;
+  --invite-ink: #5a4514;
+  --font-display: "Figtree", "Segoe UI", system-ui, sans-serif;
+  --font-body: "Literata", Georgia, "Times New Roman", serif;
+  color-scheme: light;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #111716;
+    --surface: #182120;
+    --ink: #e5ecea;
+    --muted: #9caba7;
+    --accent: #7fc7b9;
+    --accent-soft: #1d2e2b;
+    --rule: #2a3734;
+    --invite: #2b2617;
+    --invite-ink: #e2cf9a;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #111716;
+  --surface: #182120;
+  --ink: #e5ecea;
+  --muted: #9caba7;
+  --accent: #7fc7b9;
+  --accent-soft: #1d2e2b;
+  --rule: #2a3734;
+  --invite: #2b2617;
+  --invite-ink: #e2cf9a;
+  color-scheme: dark;
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--font-body);
+  font-size: 1.0625rem;
+  line-height: 1.7;
+}
+a { color: var(--accent); }
+a:focus-visible, button:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 4px; }
+.page { max-width: 46rem; margin: 0 auto; padding: 2.5rem 1.25rem 5rem; }
+.kicker {
+  font-family: var(--font-display);
+  font-size: 0.8125rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin: 0 0 0.75rem;
+}
+h1, h2, h3, h4 { font-family: var(--font-display); text-wrap: balance; line-height: 1.2; margin: 0; }
+h1 { font-size: clamp(2.1rem, 6vw, 3rem); font-weight: 700; margin-bottom: 0.75rem; letter-spacing: -0.01em; }
+.deck { font-size: 1.2rem; color: var(--muted); margin: 0 0 2rem; }
+p { margin: 0 0 1.1rem; }
+.intro { padding-bottom: 1.5rem; }
+.source-note { font-size: 0.95rem; color: var(--muted); font-style: italic; }
+.howto { font-family: var(--font-display); font-size: 0.9rem; color: var(--muted); margin: 0 0 1rem; }
+
+/* Main questions */
+.parts { display: grid; gap: 0.75rem; }
+.part { background: var(--surface); border: 1px solid var(--rule); border-radius: 8px; overflow: hidden; scroll-margin-top: 0.75rem; }
+.part.open { border-color: var(--accent); }
+button { font: inherit; color: inherit; background: none; border: 0; padding: 0; margin: 0; text-align: left; cursor: pointer; width: 100%; }
+.part-btn { display: grid; grid-template-columns: 1fr auto; gap: 1rem; align-items: center; padding: 1.1rem 1.25rem; }
+.part-btn .label { display: block; font-size: 0.78rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); margin-bottom: 0.15rem; }
+.part-btn .title { display: block; font-size: 1.45rem; font-weight: 700; }
+.part.open .part-btn { background: var(--accent-soft); }
+.chev { width: 0.7rem; height: 0.7rem; border-right: 2px solid var(--accent); border-bottom: 2px solid var(--accent); transform: rotate(45deg); transition: transform 0.15s ease; margin-right: 0.3rem; }
+[aria-expanded="true"] > .chev { transform: rotate(-135deg); }
+@media (prefers-reduced-motion: reduce) { .chev { transition: none; } }
+.part-panel { padding: 0.25rem 1.25rem 0.75rem; }
+.js [hidden] { display: none; }
+
+/* Sub-questions */
+.q { border-top: 1px solid var(--rule); scroll-margin-top: 0.75rem; }
+.q:first-child { border-top: 0; }
+.q-btn { display: grid; grid-template-columns: 1fr auto; gap: 1rem; align-items: center; padding: 0.85rem 0; font-family: var(--font-display); font-size: 1.1rem; font-weight: 600; }
+.q-btn:hover, .q.open .q-btn { color: var(--accent); }
+.q-btn .chev { width: 0.5rem; height: 0.5rem; }
+.q-panel { padding: 0.25rem 0 1rem; }
+.lead { font-size: 1.2rem; line-height: 1.5; font-weight: 600; margin-bottom: 1.2rem; }
+h4 { font-size: 1.05rem; font-weight: 700; margin: 1.6rem 0 0.5rem; }
+blockquote { margin: 0 0 1.1rem; padding: 0 0 0 1.1rem; border-left: 2px solid var(--accent); font-style: italic; }
+blockquote cite { font-style: normal; font-family: var(--font-display); font-size: 0.875rem; color: var(--muted); white-space: nowrap; }
+ul, ol { margin: 0 0 1.1rem; padding-left: 1.3rem; display: grid; gap: 0.45rem; }
+.sentences { list-style: none; padding: 0; }
+.sentences li { background: var(--bg); border: 1px solid var(--rule); border-radius: 6px; padding: 0.65rem 1rem; }
+.sentences b { font-family: var(--font-display); color: var(--accent); }
+.invite { background: var(--invite); color: var(--invite-ink); padding: 0.9rem 1.1rem; border-radius: 6px; margin: 1.5rem 0 1.1rem; }
+.invite .label { display: block; font-family: var(--font-display); font-size: 0.78rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 0.25rem; }
+.invite p { margin: 0; }
+.more { font-family: var(--font-display); font-size: 0.875rem; line-height: 1.5; color: var(--muted); margin: 0; }
+.more strong { color: var(--ink); font-weight: 600; }
+.tablewrap { overflow-x: auto; margin: 0 0 1.25rem; }
+table { border-collapse: collapse; width: 100%; font-family: var(--font-display); font-size: 0.95rem; }
+th, td { text-align: left; padding: 0.55rem 0.75rem; border-bottom: 1px solid var(--rule); vertical-align: top; }
+th { font-size: 0.78rem; letter-spacing: 0.06em; text-transform: uppercase; color: var(--muted); font-weight: 600; }
+.closing { margin-top: 2.5rem; }
+.closing h2 { font-size: 1.4rem; margin-bottom: 0.75rem; }
+footer { margin-top: 2.5rem; padding-top: 1.25rem; border-top: 1px solid var(--rule); font-family: var(--font-display); font-size: 0.875rem; color: var(--muted); line-height: 1.55; }
+footer h2 { font-size: 0.8125rem; letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 0.5rem; }
+</style>
+</head>
+<body>
+<div class="page">
+
+<nav class="site" aria-label="Site" style="display:flex;flex-wrap:wrap;gap:1.25rem;font-family:var(--font-display);font-size:0.9rem;font-weight:600;padding-bottom:2rem;margin-top:-1rem;">
+  <a href="index.html" style="text-decoration:none;">Notes</a>
+  <a href="about.html" style="text-decoration:none;">About</a>
+</nav>
+
+<header>
+  <p class="kicker">Four questions, and the twenty inside them</p>
+  <h1>How a Testimony Grows</h1>
+  <p class="deck">A testimony grows a piece at a time, and it grows in more than one way.</p>
+</header>
+
+<div class="intro">
+  <p>In the Church we talk a lot about having a testimony. We say we “have” one, or we’re trying to “get” one. And when we share one, we usually tell a single story. The night a prayer was answered. The verse that seemed written just for us.</p>
+  <p>Those stories are true. But each one is a single facet of a gem. If all you and I ever hear are facets, it’s easy to think the facet is the whole gem, and that ours has to look like theirs.</p>
+  <p>It doesn’t.</p>
+  <p>Perhaps you have been a member all your life and wonder why you can’t point to a moment like the ones you hear about. Perhaps you are new and wonder what happens when the first strong feelings grow quiet. Perhaps you stepped back for a season because you measured what you had against someone else’s story and decided you never had it.</p>
+  <p>Wherever you are starting from, you and I have this in common. Neither of us is finished. A testimony grows a piece at a time, and it helps a great deal to understand how.</p>
+  <p>So this page is built around questions. There are four big ones, and inside each are the questions people really ask. Open the one that is yours.</p>
+  <blockquote>“He inviteth them all to come unto him and partake of his goodness; and he denieth none that come unto him.” <cite>2 Nephi 26:33</cite></blockquote>
+</div>
+
+<p class="howto">Select a main question to see what is inside it. Then select any question to read the answer.</p>
+
+<div class="parts">
+
+<!-- ===================== PART ONE ===================== -->
+<section class="part" id="where-am-i">
+  <h2><button class="part-btn" type="button" aria-expanded="true" aria-controls="panel-1"><span><span class="label">Part One · 5 questions</span><span class="title">Where am I?</span></span><span class="chev" aria-hidden="true"></span></button></h2>
+  <div class="part-panel" id="panel-1">
+
+  <article class="q" id="do-i-have-a-testimony">
+    <h3><button class="q-btn" type="button" aria-expanded="true" aria-controls="a-1"><span>Do I have a testimony?</span><span class="chev" aria-hidden="true"></span></button></h3>
+    <div class="q-panel" id="a-1">
+      <p class="lead">Probably more of one than you think.</p>
+      <p>Most of us ask this as a yes-or-no question. I think that is where the trouble starts.</p>
+      <p>Think about the word for a moment. In a courtroom, a witness gives testimony, and a witness may speak only to what he or she has personally seen or heard. Nobody expects one witness to know the whole case. They say what they know, and it counts.</p>
+      <p>Elder Gary E. Stevenson defined a testimony as “your belief or knowledge of truth given as a spiritual witness through the influence of the Holy Ghost” (October 2022). Did you catch the two words in the middle? Belief <em>or</em> knowledge. Both are in the definition.</p>
+      <p>Elder Craig C. Christensen said, “Some people speak of a testimony as if it were a light switch—it’s either on or off; you either have a testimony, or you do not. In reality, a testimony is more like a tree” (October 2014). President Dieter F. Uchtdorf taught that gaining a testimony “is not once and done” (October 2014).</p>
+      <p>Alma teaches the same thing in the middle of his sermon on the seed, and it is easy to read right past it. After the seed swells and sprouts, he says, “your knowledge is perfect in that thing” (Alma 32:34). Then he asks, “After ye have tasted this light is your knowledge perfect? Behold I say unto you, Nay; neither must ye lay aside your faith” (Alma 32:35–36).</p>
+      <p>Let me repeat that phrase. <em>In that thing.</em> Knowledge comes one thing at a time. So you can know one truth, believe another, and only hope for a third, all on the same Sunday. That is what a growing testimony looks like.</p>
+      <p>So here is a better question than “Do I have a testimony?” What have I come to know so far, and what am I still planting?</p>
+      <div class="invite"><span class="label">An invitation</span><p>Write down one gospel truth you would say you know, even a small one. “God is there.” “Prayer helps me.” That is where your tree is already growing.</p></div>
+      <p class="more"><strong>To study more:</strong> Alma 32:26–43 · Craig C. Christensen, “I Know These Things of Myself,” October 2014 · Gary E. Stevenson, “Nourishing and Bearing Your Testimony,” October 2022 · Dieter F. Uchtdorf, “Receiving a Testimony of Light and Truth,” October 2014</p>
+    </div>
+  </article>
+
+  <article class="q" id="is-it-enough-to-believe">
+    <h3><button class="q-btn" type="button" aria-expanded="true" aria-controls="a-2"><span>Is it enough to say “I believe”?</span><span class="chev" aria-hidden="true"></span></button></h3>
+    <div class="q-panel" id="a-2">
+      <p class="lead">Yes. Believing is a gift of the Spirit, and Alma says even wanting to believe is a real place to begin.</p>
+      <p>We sometimes talk as if “I know” is the only acceptable place to stand. The Lord doesn’t talk that way.</p>
+      <blockquote>“To some it is given by the Holy Ghost to know that Jesus Christ is the Son of God, and that he was crucified for the sins of the world. To others it is given to believe on their words, that they also might have eternal life if they continue faithful.” <cite>D&amp;C 46:13–14</cite></blockquote>
+      <p>Note the promise at the end. Eternal life, to the one who believes and continues faithful.</p>
+      <p>Alma starts even lower. “Even if ye can no more than desire to believe, let this desire work in you” (Alma 32:27). And a father who brought his son to Jesus gave what may be the most honest prayer in scripture. “Lord, I believe; help thou mine unbelief” (Mark 9:24). The Savior healed the boy.</p>
+      <p>So there are three honest sentences, and each one is testimony.</p>
+      <ul class="sentences">
+        <li><b>“I know…”</b> What experience has already shown you.</li>
+        <li><b>“I believe…”</b> What you trust but could not yet prove.</li>
+        <li><b>“I want to believe…”</b> What you are still planting.</li>
+      </ul>
+      <p>Elder Jeffrey R. Holland told of a 14-year-old boy who said to him, a little hesitantly, “Brother Holland, I can’t say yet that I know the Church is true, but I believe it is.” Elder Holland told him that belief is a precious word, and that “he need never apologize for ‘only believing’” (April 2013).</p>
+      <p>Elder Gérald Caussé told of his niece, who stood at Young Women camp and managed two sentences. “I know that God loves me” and “I know that God has a plan for me.” Afterward she felt discouraged. Her mother asked, “Do you believe what you said?” She did. “Then that’s all that matters.” Elder Caussé added that a testimony “only needs to be true” (October 2026).</p>
+      <p>Now, one caution. Believing is a good place to stand, and the promise is to those who “continue faithful.” We keep walking toward knowing.</p>
+      <div class="invite"><span class="label">An invitation</span><p>Write your three sentences. One thing you know, one thing you believe, one thing you want to believe. Use the verb that is true for each.</p></div>
+      <p class="more"><strong>To study more:</strong> D&amp;C 46:13–14 · Mark 9:14–27 · Alma 32:27 · Jeffrey R. Holland, “Lord, I Believe,” April 2013 · Gérald Caussé, “The Gift of Testimony,” October 2026</p>
+    </div>
+  </article>
+
+  <article class="q" id="is-there-a-place-for-me">
+    <h3><button class="q-btn" type="button" aria-expanded="true" aria-controls="a-3"><span>Is there a place for me while I’m still unsure?</span><span class="chev" aria-hidden="true"></span></button></h3>
+    <div class="q-panel" id="a-3">
+      <p class="lead">Yes. The Church is where a testimony grows.</p>
+      <p>Have you ever sat in a meeting feeling like the only person in the room who isn’t sure? You aren’t the only one. You may be sitting next to another.</p>
+      <p>President Uchtdorf spoke to this directly. “Regardless of your circumstances, your personal history, or the strength of your testimony, there is room for you in this Church” (October 2013). Did you notice what he named? The strength of your testimony.</p>
+      <p>There is a practical reason as well. Alma’s experiment only works if the seed gets planted, and the Savior said, “If any man will do his will, he shall know of the doctrine” (John 7:17). Doing comes before knowing. So when you worship, serve, and keep your covenants while you are still unsure, you are running the experiment.</p>
+      <p>Adam offered sacrifice for many days before he understood why. When the angel asked him, he said, “I know not, save the Lord commanded me” (Moses 5:6). The explanation came afterward.</p>
+      <p>Paul adds that the body needs every member. “The eye cannot say unto the hand, I have no need of thee” (1 Corinthians 12:21). Your ward needs what you bring, and that includes your honesty.</p>
+      <p>What about when you are asked to teach or to testify? Say what is true for you, with the true verb. “I believe this.” “I am learning this.” “I hope this is so.” A class is helped more by one honest sentence than by ten borrowed ones.</p>
+      <div class="invite"><span class="label">An invitation</span><p>The next time you are asked to pray, teach, or share a thought, say only what is true for you. I think you will find it is enough.</p></div>
+      <p class="more"><strong>To study more:</strong> Dieter F. Uchtdorf, “Come, Join with Us,” October 2013 · John 7:17 · Moses 5:5–8 · 1 Corinthians 12:12–27</p>
+    </div>
+  </article>
+
+  <article class="q" id="what-to-know-first">
+    <h3><button class="q-btn" type="button" aria-expanded="true" aria-controls="a-4"><span>What should I be trying to know first?</span><span class="chev" aria-hidden="true"></span></button></h3>
+    <div class="q-panel" id="a-4">
+      <p class="lead">Start with the few questions everything else depends on. Is God our Father? Is Jesus the Christ?</p>
+      <p>You and I can spend years on the wrong question. The question may be a good one. It just depends on another one we haven’t settled yet.</p>
+      <p>Elder Corbridge teaches that “not all questions are equal, and not all truths are equal.” He calls the most important ones primary questions, and he lists four.</p>
+      <ul>
+        <li>Is there a God who is our Father?</li>
+        <li>Is Jesus Christ the Son of God, the Savior of the World?</li>
+        <li>Was Joseph Smith a prophet?</li>
+        <li>Is The Church of Jesus Christ of Latter-day Saints the kingdom of God on the earth?</li>
+      </ul>
+      <p>Everything else is a secondary question. Secondary questions are real, and there is no end to them. But here is his promise. “If you answer the primary questions, the secondary questions get answered too, or they pale in significance” (<em>Stand Forever</em>, Ep. 28).</p>
+      <p>Is there an order even among the four? Alma says so. After his whole sermon on planting and nourishing, he finally tells us what the seed is. “Begin to believe in the Son of God, that he will come to redeem his people.” And then, “I desire that ye shall plant this word in your hearts” (Alma 33:22–23).</p>
+      <p>The seed is Christ. Start there.</p>
+      <p>Nephi shows what it looks like to stand on a primary truth. When an angel asked him something he could not answer, he said, “I know that he loveth his children; nevertheless, I do not know the meaning of all things” (1 Nephi 11:17).</p>
+      <div class="invite"><span class="label">An invitation</span><p>Choose one primary question and make it your one question for the next month. Let the others wait. They will still be there, and some of them will look different afterward.</p></div>
+      <p class="more"><strong>To study more:</strong> <em>Stand Forever</em>, Ep. 28, “Primary and Secondary Questions” · Alma 33:22–23 · 1 Nephi 11:16–17 · John 17:3</p>
+    </div>
+  </article>
+
+  <article class="q" id="why-not-just-tell-me">
+    <h3><button class="q-btn" type="button" aria-expanded="true" aria-controls="a-5"><span>Why doesn’t God just tell me?</span><span class="chev" aria-hidden="true"></span></button></h3>
+    <div class="q-panel" id="a-5">
+      <p class="lead">Because He wants more than our agreement. He wants us to choose Him, and He wants us to grow.</p>
+      <p>If God is a loving Father and He wants you to know, why is the answer so quiet and so slow? I think that is an honest question, and scripture treats it as one. Joseph Smith cried from Liberty Jail, “O God, where art thou?” (D&amp;C 121:1). The answer did come. “My son, peace be unto thy soul” (D&amp;C 121:7). But it came after the asking.</p>
+      <p>So why does He work this way? Let me offer three reasons from the scriptures.</p>
+      <h4>First, the choosing is the point</h4>
+      <p>The Lord said we are here so that He can “prove them herewith, to see if they will do all things whatsoever the Lord their God shall command them” (Abraham 3:25). Paul said it in seven words. “We walk by faith, not by sight” (2 Corinthians 5:7). If the answer were forced on us, there would be nothing left for us to choose.</p>
+      <h4>Second, dramatic answers don’t last</h4>
+      <p>You might be thinking, “If I saw an angel, I would be settled for life.” Laman and Lemuel saw an angel. Nephi later told them the Lord “hath spoken unto you in a still small voice, but ye were past feeling, that ye could not feel his words” (1 Nephi 17:45). And after the signs of the Savior’s birth, the people “began to be less and less astonished at a sign or a wonder from heaven” (3 Nephi 2:1).</p>
+      <p>Elder David A. Bednar quoted President Joseph F. Smith on this. “It is not by marvelous manifestations unto us that we shall be established in the truth, but it is by humility and faithful obedience” (April 2011).</p>
+      <h4>Third, what comes slowly stays</h4>
+      <p>“I will give unto the children of men line upon line, precept upon precept, here a little and there a little” (2 Nephi 28:30). A truth learned a piece at a time becomes part of us. Elijah learned that the Lord was not in the wind, or the earthquake, or the fire. He was in “a still small voice” (1 Kings 19:12).</p>
+      <p>So He does tell us. Usually it is quieter than we expected, and usually it does not come all at once. “Blessed are they that have not seen, and yet have believed” (John 20:29).</p>
+      <div class="invite"><span class="label">An invitation</span><p>Read 1 Kings 19:9–13. Then ask yourself what wind, earthquake, or fire you have been waiting for, and whether a quieter answer may already be there.</p></div>
+      <p class="more"><strong>To study more:</strong> Abraham 3:24–26 · 1 Kings 19:9–13 · 1 Nephi 17:45 · D&amp;C 121:1–8 · David A. Bednar, “The Spirit of Revelation,” April 2011</p>
+    </div>
+  </article>
+
+  </div>
+</section>
+
+<!-- ===================== PART TWO ===================== -->
+<section class="part" id="how-do-i-learn">
+  <h2><button class="part-btn" type="button" aria-expanded="true" aria-controls="panel-2"><span><span class="label">Part Two · 6 questions</span><span class="title">How do I learn truth?</span></span><span class="chev" aria-hidden="true"></span></button></h2>
+  <div class="part-panel" id="panel-2">
+
+  <article class="q" id="how-we-learn-truth">
+    <h3><button class="q-btn" type="button" aria-expanded="true" aria-controls="a-6"><span>How do we learn truth?</span><span class="chev" aria-hidden="true"></span></button></h3>
+    <div class="q-panel" id="a-6">
+      <p class="lead">In four ways. By experience, by reason, by study, and by revelation. We need all four, and revelation has the last word.</p>
+      <p>Elder Corbridge teaches that “truth is known by experience, study, reason, and revelation,” and that “all four methods are necessary to know the truth” (<em>Stand Forever</em>, Ep. 35). The Lord said much the same in one line. “Seek learning, even by study and also by faith” (D&amp;C 88:118).</p>
+      <p>All four begin the same way. With a question. So a question is no enemy of faith. It is where learning starts.</p>
+      <h4>Experience</h4>
+      <p>This is learning by trying. Alma’s word for it is <em>experiment</em>. “Awake and arouse your faculties, even to an experiment upon my words” (Alma 32:27). The Savior gave the same test. “If any man will do his will, he shall know of the doctrine” (John 7:17). We live a principle and watch what it does.</p>
+      <h4>Reason</h4>
+      <p>This is gathering the evidence, weighing it, and drawing a conclusion. The Lord corrected Oliver Cowdery for skipping it. “You took no thought save it was to ask me. But, behold, I say unto you, that you must study it out in your mind; then you must ask me if it be right” (D&amp;C 9:7–8). And through Isaiah, “Come now, and let us reason together, saith the Lord” (Isaiah 1:18).</p>
+      <h4>Study</h4>
+      <p>This is learning from the written word. Somebody before us learned something and wrote it down. “Feast upon the words of Christ; for behold, the words of Christ will tell you all things what ye should do” (2 Nephi 32:3). Elder Ian S. Ardern said, “Asking of God is to be preceded by careful study” (October 2017).</p>
+      <h4>Revelation</h4>
+      <p>This is truth made known by God through the Holy Ghost. The first three take us a long way, and then they run out. “The things of God knoweth no man, but the Spirit of God” (1 Corinthians 2:11). Moroni’s promise is that “by the power of the Holy Ghost ye may know the truth of all things” (Moroni 10:5). Elder Corbridge says the first three “go a long way to know the truth, but not far enough. They won’t get you to the end.”</p>
+      <h4>Joseph Smith used all four</h4>
+      <p>His experience was confusion among the churches. He reasoned about it and could not settle it. Then he studied. “I was one day reading the Epistle of James, first chapter and fifth verse.” And then he concluded, “I must either remain in darkness and confusion, or else I must do as James directs, that is, ask of God” (Joseph Smith—History 1:11, 13).</p>
+      <div class="tablewrap">
+        <table>
+          <thead><tr><th>Way</th><th>We learn by</th><th>A key verse</th></tr></thead>
+          <tbody>
+            <tr><td>Scientific</td><td>Experience</td><td>Alma 32:27</td></tr>
+            <tr><td>Analytical</td><td>Reason</td><td>D&amp;C 9:8</td></tr>
+            <tr><td>Academic</td><td>Study</td><td>D&amp;C 88:118</td></tr>
+            <tr><td>Divine</td><td>Revelation</td><td>Moroni 10:4–5</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="invite"><span class="label">An invitation</span><p>Take your one question. Write what each of the four ways has shown you about it so far. Notice which lines are full and which are blank.</p></div>
+      <p class="more"><strong>To study more:</strong> <em>Stand Forever</em>, Eps. 28 and 35 · D&amp;C 88:118 · D&amp;C 9:7–9 · Joseph Smith—History 1:8–13 · Dallin H. Oaks, “Truth and the Plan,” October 2018</p>
+    </div>
+  </article>
+
+  <article class="q" id="why-not-like-theirs">
+    <h3><button class="q-btn" type="button" aria-expanded="true" aria-controls="a-7"><span>Why doesn’t my experience look like theirs?</span><span class="chev" aria-hidden="true"></span></button></h3>
+    <div class="q-panel" id="a-7">
+      <p class="lead">Because the gifts are handed out differently, and because what you hear from others is one facet of a much larger gem.</p>
+      <p>We tend to think of revelation as the gift and the other three ways as our own work. The scriptures don’t divide it that way.</p>
+      <blockquote>“For all have not every gift given unto them; for there are many gifts, and to every man is given a gift by the Spirit of God. To some is given one, and to some is given another, that all may be profited thereby.” <cite>D&amp;C 46:11–12</cite></blockquote>
+      <p>Look at what is on that list of gifts. “To some is given, by the Spirit of God, the word of wisdom. To another is given the word of knowledge” (D&amp;C 46:17–18). Even our ability to reason runs on His light, which “is the same light that quickeneth your understandings” (D&amp;C 88:11).</p>
+      <p>Think about what this means. A strong analytical mind is one of the Spirit’s gifts. So is the ability to sit with a book and understand it. So is the ability to feel the still, small voice. And we are not all given the same ones.</p>
+      <p>Most of us are lopsided. Some of us reason easily and struggle to feel. Some feel readily and struggle to explain. Very few of us have all four firing on the same cylinder.</p>
+      <p>That is why someone else’s story may not match yours. The Lord “speaketh unto men according to their language, unto their understanding” (2 Nephi 31:3). There are “diversities of gifts, but the same Spirit” (1 Corinthians 12:4). Elder Caussé said, “Your testimony may be different from mine” (October 2026). Elder Alexander Dushku spoke to those who worry because they “haven’t had overwhelming spiritual experiences,” and he taught that light can come “one ray at a time” (April 2024).</p>
+      <p>Now, let me be careful here. A testimony is individual in how it comes. What it is of is the same for all of us. Same truths. Same Spirit.</p>
+      <p>And other people’s testimonies still matter. Why are the gifts spread around? “That all may be profited thereby.” While my weak gift is growing, I can lean on someone whose strong gift it is. That is what it means to “believe on their words.”</p>
+      <p>Can we ask for the gifts we lack? We can. “Seek ye earnestly the best gifts” (D&amp;C 46:8). “Then will I make weak things become strong unto them” (Ether 12:27).</p>
+      <div class="invite"><span class="label">An invitation</span><p>In the next testimony meeting, listen for <em>what</em> each person knows and set aside <em>how</em> they came to know it. Then name which of the four ways comes most easily to you, and which comes least.</p></div>
+      <p class="more"><strong>To study more:</strong> D&amp;C 46:8–26 · 1 Corinthians 12 · 2 Nephi 31:3 · Alexander Dushku, “Pillars and Rays,” April 2024</p>
+    </div>
+  </article>
+
+  <article class="q" id="mind-and-heart">
+    <h3><button class="q-btn" type="button" aria-expanded="true" aria-controls="a-8"><span>What if my mind and my heart disagree?</span><span class="chev" aria-hidden="true"></span></button></h3>
+    <div class="q-panel" id="a-8">
+      <p class="lead">Then the picture isn’t finished yet. Hold both, and keep learning.</p>
+      <p>Sometimes you have felt something you cannot yet explain. Sometimes you have reasoned your way to something you have not yet felt. Either one can be unsettling. Both are in the scriptures.</p>
+      <p>Mary felt before she understood. When Jesus was twelve and His parents found Him in the temple, “they understood not the saying which he spake unto them… but his mother kept all these sayings in her heart” (Luke 2:50–51). She did not understand. She kept it anyway.</p>
+      <p>Oliver understood before he felt. He was told to “study it out in your mind” first. The sense that it was right came afterward (D&amp;C 9:8).</p>
+      <p>Paul says this is the normal condition. “For we know in part… But when that which is perfect is come, then that which is in part shall be done away” (1 Corinthians 13:9–10).</p>
+      <p>The Lord intends to speak to both. “I will tell you in your mind and in your heart, by the Holy Ghost” (D&amp;C 8:2). And truth is one thing. It is “knowledge of things as they are, and as they were, and as they are to come” (D&amp;C 93:24). So if two ways of learning seem to disagree, truth has not split in two. Our picture is incomplete.</p>
+      <p>What do we do in the meantime?</p>
+      <p>We can hold two pieces without knowing yet how they join. There is no deadline on that.</p>
+      <p>We can give the weaker side a fair hearing. If you always analyze, try “Be still, and know that I am God” (Psalm 46:10). If you always feel, try “study it out in your mind.”</p>
+      <p>And we can let the primary truths steady the rest. Elder Corbridge describes trusting the Lord as “reason deferring to the primary truths when beliefs collide” (<em>Stand Forever</em>, Ep. 28).</p>
+      <p>The promise is that it comes together. “He that receiveth light, and continueth in God, receiveth more light; and that light groweth brighter and brighter until the perfect day” (D&amp;C 50:24).</p>
+      <div class="invite"><span class="label">An invitation</span><p>Write the disagreement as two sentences. “My mind says…” and “My heart says…” Then ask which of the four ways you have used least on this question, and spend the next few weeks there.</p></div>
+      <p class="more"><strong>To study more:</strong> D&amp;C 8:2–3 · Luke 2:41–51 · 1 Corinthians 13:9–12 · D&amp;C 50:24 · D&amp;C 93:24</p>
+    </div>
+  </article>
+
+  <article class="q" id="quiet-my-mind">
+    <h3><button class="q-btn" type="button" aria-expanded="true" aria-controls="a-9"><span>How do I quiet my mind enough to hear?</span><span class="chev" aria-hidden="true"></span></button></h3>
+    <div class="q-panel" id="a-9">
+      <p class="lead">Keep thinking. Just shift from analyzing to pondering, and give it a set time and place.</p>
+      <p>If your mind always runs to evidence and argument, “just be still” can sound impossible. It helps to see that stillness is a skill. Analysis doesn’t train it. It has to be practiced on its own.</p>
+      <p>Two words are worth a look here. To <em>analyze</em> comes from a Greek word that means to loosen or take apart. To <em>ponder</em> comes from a Latin word that means to weigh. When we analyze, we take a thing apart to test it. When we ponder, we hold it and feel its weight.</p>
+      <p>Now look at when some of the great revelations came.</p>
+      <blockquote>“As I sat pondering in mine heart I was caught away in the Spirit of the Lord.” <cite>1 Nephi 11:1</cite></blockquote>
+      <blockquote>“While we meditated upon these things, the Lord touched the eyes of our understandings and they were opened.” <cite>D&amp;C 76:19</cite></blockquote>
+      <blockquote>“As I pondered over these things which are written, the eyes of my understanding were opened.” <cite>D&amp;C 138:11</cite></blockquote>
+      <p>Each of them was thinking about scripture when it happened. So pondering is a doorway that fits a thinking person. It starts where you already are.</p>
+      <p>Elder Corbridge warns that the still, small voice “can easily be lost in the clamor of ambient noise” (<em>Stand Forever</em>, Ep. 24). So part of this is simply turning the noise down. A few things help.</p>
+      <p>Set apart a time and a place. Joseph went to a grove. Enos went to the forest. Jesus “withdrew himself into the wilderness, and prayed” (Luke 5:16).</p>
+      <p>Take one question, not ten.</p>
+      <p>Stay after the prayer. Most of us say amen and stand up.</p>
+      <p>Write down what comes, even if it seems small.</p>
+      <p>And go serve somebody. “When ye are in the service of your fellow beings ye are only in the service of your God” (Mosiah 2:17). If you are a doer, the Spirit may find you in the doing.</p>
+      <div class="invite"><span class="label">An invitation</span><p>For one week, take ten minutes a day with one verse and no phone. Read it slowly. Pray about your one question. Then sit for five more minutes and write a single line about what came to mind.</p></div>
+      <p class="more"><strong>To study more:</strong> 1 Nephi 11:1 · D&amp;C 76:15–19 · D&amp;C 138:1–11 · Psalm 46:10 · Luke 5:16</p>
+    </div>
+  </article>
+
+  <article class="q" id="how-to-ask">
+    <h3><button class="q-btn" type="button" aria-expanded="true" aria-controls="a-10"><span>How should I ask?</span><span class="chev" aria-hidden="true"></span></button></h3>
+    <div class="q-panel" id="a-10">
+      <p class="lead">Ask one specific thing. Ask before you have it all figured out. And ask ready to act on the answer.</p>
+      <p>“If any of you lack wisdom, let him ask of God” (James 1:5). Experience, reason, and study prepare us. In the end, you and I still have to ask. The scriptures say a few things about how.</p>
+      <h4>Bring a conclusion</h4>
+      <p>The Lord told Oliver to study it out and then “ask me if it be right” (D&amp;C 9:8). He asked Oliver for a conclusion. He did not ask him for a proof. That is good news for a careful thinker, because the evidence is never complete. “Dispute not because ye see not, for ye receive no witness until after the trial of your faith” (Ether 12:6). You are allowed to ask at “I think this is true.”</p>
+      <h4>Remember His mercy first</h4>
+      <p>We usually shorten Moroni’s promise to “pray about it.” Moroni starts earlier than that. He asks us to “remember how merciful the Lord hath been unto the children of men” and to ponder it (Moroni 10:3). Elder James R. Rasband taught that for those who struggle to feel answers, seeking the Lord’s mercy “is one of the most powerful ways to feel the witness of the Holy Ghost” (April 2025).</p>
+      <h4>Ask with real intent</h4>
+      <p>Moroni’s conditions are “a sincere heart” and “real intent” (Moroni 10:4). What is real intent? It means we plan to do something with the answer. James adds, “Let him ask in faith, nothing wavering” (James 1:6).</p>
+      <h4>Does it matter how I live while I ask?</h4>
+      <p>It does. “He that keepeth his commandments receiveth truth and light” (D&amp;C 93:28). Every week the sacrament prayer promises that we “may always have his Spirit to be with” us (Moroni 4:3). President Russell M. Nelson taught that purity, obedience, earnest seeking, daily time in the Book of Mormon, and time in the temple open the heavens (April 2018).</p>
+      <p>Please hear this the right way. This is about where we stand to listen. It says nothing about whether you are worth answering. Elder Corbridge writes that believing in yourself is “to know that you are imperfect but worthy” (<em>Stand Forever</em>, Ep. 21).</p>
+      <h4>Keep asking</h4>
+      <p>The Savior taught “that men ought always to pray, and not to faint” (Luke 18:1). Elder Corbridge says, “If the petition remains open and unanswered, then persevere in your righteous petition and don’t lose heart.”</p>
+      <div class="invite"><span class="label">An invitation</span><p>Write your question in one sentence. Before you ask it, list three mercies the Lord has shown you. Then ask, tell Him what you think the answer is, and wait.</p></div>
+      <p class="more"><strong>To study more:</strong> James 1:5–6 · D&amp;C 9:7–9 · Moroni 10:3–5 · Russell M. Nelson, “Revelation for the Church, Revelation for Our Lives,” April 2018 · James R. Rasband, “The Plan of Mercy,” April 2025</p>
+    </div>
+  </article>
+
+  <article class="q" id="choosing-to-believe">
+    <h3><button class="q-btn" type="button" aria-expanded="true" aria-controls="a-11"><span>Is choosing to believe just fooling myself?</span><span class="chev" aria-hidden="true"></span></button></h3>
+    <div class="q-panel" id="a-11">
+      <p class="lead">No. Choosing to believe is choosing to run the experiment honestly, and then choosing how to read what happens, again and again, until the pattern is plain.</p>
+      <p>If I decide what I want to be true and then go looking for it, haven’t I rigged the result? A careful person should worry about that. So let me walk through it in four steps.</p>
+      <h4>1. We test</h4>
+      <p>Think about how research starts. (I’m a professor. I can’t help it.) Nobody tests everything at once. We pick a hypothesis, commit time to it, and see whether the evidence holds up. Picking the hypothesis isn’t cheating. Ignoring the results would be.</p>
+      <p>Alma describes faith the same way. “Faith is not to have a perfect knowledge of things” (Alma 32:21). He asks only that we “give place, that a seed may be planted” (Alma 32:28). The word is the hypothesis. Living it is the test.</p>
+      <h4>2. We experience</h4>
+      <p>Then something happens. Alma tells us what to look for. The word “beginneth to enlarge my soul; yea, it beginneth to enlighten my understanding, yea, it beginneth to be delicious to me” (Alma 32:28). We feel something, or we see an outcome, or we find we understand what we didn’t before.</p>
+      <h4>3. We interpret</h4>
+      <p>This is where agency comes in. An experience doesn’t arrive with a label on it. You and I decide what it means.</p>
+      <p>Scripture shows the very same event read two ways. When the Father’s voice came from heaven, “the people therefore, that stood by, and heard it, said that it thundered: others said, An angel spake to him” (John 12:29). Same sound. Two readings. Laman and Lemuel saw an angel and explained it away. After the signs of the Savior’s birth, many grew “less and less astonished” (3 Nephi 2:1).</p>
+      <p>So we can justify the experience away, or excuse it. Or we can receive it as from God. And note this. Explaining it away is also a choice. There is no neutral place to stand. Alma warns that we can “cast it out by your unbelief” (Alma 32:28). A seed left on the shelf never grows, and that tells us nothing about the seed.</p>
+      <h4>4. We accumulate</h4>
+      <p>No single moment settles it. The light turns on a little, and then a little more. Taken together, those moments are the sunrise.</p>
+      <blockquote>“He that receiveth light, and continueth in God, receiveth more light; and that light groweth brighter and brighter until the perfect day.” <cite>D&amp;C 50:24</cite></blockquote>
+      <p>This is what answers “fooling myself.” One experience can be dismissed. Many of them, across years and across different ways of learning, are much harder to dismiss. An auditor never says a set of books is certainly right. She gathers enough evidence to be reasonably sure, and nobody accuses her of fooling herself.</p>
+      <h4>How do I stay honest?</h4>
+      <p>Use honest verbs. Say “I believe” when you believe and “I know” when you know. Elder Holland said, “I am not asking you to pretend to faith you do not have” (April 2013).</p>
+      <p>Judge by fruit over time. “By their fruits ye shall know them” (Matthew 7:20). One good evening proves little. A year of growth says more.</p>
+      <p>And check one way of learning against another. Experience, reason, study, and the Spirit are separate lines of evidence. When they begin to agree, wishful thinking gets hard to argue.</p>
+      <h4>What if nothing grows?</h4>
+      <p>Alma is direct about it. “If a seed groweth it is good, but if it groweth not, behold it is not good, therefore it is cast away” (Alma 32:32). So the experiment can fail. But he also says a tree can wither for a different reason. “It is because your ground is barren, and ye will not nourish the tree” (Alma 32:39).</p>
+      <p>Is that having it both ways? I don’t think so. Any experiment needs fair conditions and enough time. A seed dropped on a shelf and checked the next morning has not been tested. Alma asks for diligence and patience before we reach a verdict.</p>
+      <h4>Why does God leave room for the choice?</h4>
+      <p>Because the choosing is what He is after. (See <a href="#why-not-just-tell-me">Why doesn’t God just tell me?</a>) President Uchtdorf said, “There is no magic to belief. But wanting to believe is the necessary first step!” (October 2015).</p>
+      <div class="invite"><span class="label">An invitation</span><p>Write down one thing you are choosing to believe, and what you would expect to notice over the next three months if it is true. Keep a short list of what happens. Then come back and read the list as a whole.</p></div>
+      <p class="more"><strong>To study more:</strong> Alma 32:21–43 · John 12:28–30 · D&amp;C 50:24 · Jeffrey R. Holland, “Lord, I Believe,” April 2013 · Dieter F. Uchtdorf, “Be Not Afraid, Only Believe,” October 2015 · Kevin G. Brown, “The Eternal Gift of Testimony,” October 2025</p>
+    </div>
+  </article>
+
+  </div>
+</section>
+
+<!-- ===================== PART THREE ===================== -->
+<section class="part" id="how-do-i-recognize">
+  <h2><button class="part-btn" type="button" aria-expanded="true" aria-controls="panel-3"><span><span class="label">Part Three · 3 questions</span><span class="title">How do I recognize an answer?</span></span><span class="chev" aria-hidden="true"></span></button></h2>
+  <div class="part-panel" id="panel-3">
+
+  <article class="q" id="what-the-spirit-feels-like">
+    <h3><button class="q-btn" type="button" aria-expanded="true" aria-controls="a-12"><span>What does the Spirit actually feel like?</span><span class="chev" aria-hidden="true"></span></button></h3>
+    <div class="q-panel" id="a-12">
+      <p class="lead">More ways than we usually name. For many of us it is a quiet clarity, a settled sense that something is right, or a pull toward doing good.</p>
+      <p>Many of us have decided we don’t feel the Spirit because we don’t cry in testimony meeting, or because we have never felt a burning. But look at how the scriptures describe it.</p>
+      <ul>
+        <li><strong>Clarity.</strong> “I did enlighten thy mind” (D&amp;C 6:15). “It beginneth to enlighten my understanding” (Alma 32:28).</li>
+        <li><strong>A thought that arrives.</strong> “The voice of the Lord came into my mind” (Enos 1:10).</li>
+        <li><strong>Peace.</strong> “Did I not speak peace to your mind concerning the matter?” (D&amp;C 6:23).</li>
+        <li><strong>A sense that something is right.</strong> “You shall feel that it is right” (D&amp;C 9:8).</li>
+        <li><strong>A pull toward doing good.</strong> “Put your trust in that Spirit which leadeth to do good” (D&amp;C 11:12).</li>
+        <li><strong>Changed desires.</strong> “No more disposition to do evil, but to do good continually” (Mosiah 5:2).</li>
+        <li><strong>Character over time.</strong> “The fruit of the Spirit is love, joy, peace, longsuffering, gentleness, goodness, faith” (Galatians 5:22).</li>
+        <li><strong>Things brought to mind.</strong> The Comforter will “bring all things to your remembrance” (John 14:26).</li>
+      </ul>
+      <p>Several of these aren’t feelings at all. If you are slowly becoming more patient and more honest, you are showing the fruit of the Spirit, whether or not your eyes water.</p>
+      <p>And notice how many of them are about the mind. Enlighten. Understanding. Remembrance. The Lord said, “I will tell you in your mind and in your heart” (D&amp;C 8:2). So if you have been waiting for a feeling, the answer may have been coming as clarity. That counts.</p>
+      <p>Elder Richard G. Scott acknowledged that spiritual guidance often comes with powerful emotions. Then he said, “But a testimony is not emotion” (October 2010).</p>
+      <div class="invite"><span class="label">An invitation</span><p>Read the list again and mark each one you have experienced, even once. I think you will mark more than you expected.</p></div>
+      <p class="more"><strong>To study more:</strong> D&amp;C 6:14–15, 22–23 · D&amp;C 8:2–3 · D&amp;C 11:12–14 · Galatians 5:22–23 · Richard G. Scott, “The Transforming Power of Faith and Character,” October 2010</p>
+    </div>
+  </article>
+
+  <article class="q" id="spirit-or-my-own-thoughts">
+    <h3><button class="q-btn" type="button" aria-expanded="true" aria-controls="a-13"><span>How do I know it’s the Spirit and not just my own thoughts or emotions?</span><span class="chev" aria-hidden="true"></span></button></h3>
+    <div class="q-panel" id="a-13">
+      <p class="lead">Test it by where it leads, by what it produces, and by whether it holds up over time.</p>
+      <p>This may be the hardest question on the page, so let me start by being honest. In the moment, you and I often cannot tell. The scriptures don’t promise a label on every impression. They give us tests.</p>
+      <h4>Where does it lead?</h4>
+      <blockquote>“Every thing which inviteth to do good, and to persuade to believe in Christ, is sent forth by the power and gift of Christ.” <cite>Moroni 7:16</cite></blockquote>
+      <p>Mormon’s test is about direction. Does this thought move me toward Christ and toward doing good?</p>
+      <h4>What does it produce?</h4>
+      <p>“That which doth not edify is not of God, and is darkness” (D&amp;C 50:23). To <em>edify</em> means to build, as in building a house. So does this build me? The Lord described His Spirit as one that “shall enlighten your mind, which shall fill your soul with joy” (D&amp;C 11:13). Confusion and contempt come from somewhere else.</p>
+      <h4>Does it agree with what God has already said?</h4>
+      <p>Elder Dale G. Renlund taught that the Holy Ghost works within a framework, and that personal revelation “will be in harmony with the commandments of God and the covenants we have made with Him” (October 2022). An impression that leads away from those deserves a second look.</p>
+      <h4>Does it hold up?</h4>
+      <p>One impression is one data point. A pattern tells us more. That is why writing things down matters. Looking back over months, we can see what proved true.</p>
+      <p>Two more things are worth knowing.</p>
+      <p>First, “my own thoughts” and “the Spirit” are not always opposites. Enos said the voice of the Lord “came into my mind.” The Spirit often speaks through our thinking. So an idea that felt like your own may still have been given to you.</p>
+      <p>Second, we don’t have to be certain before we act on something good. If a thought invites you to forgive, or to serve, or to pray, go and do it. It is right whatever its source. And acting on small promptings is how we learn the voice.</p>
+      <p>Until we are sure, honest labels protect us. “I felt.” “I think.” “It seemed to me.” We don’t need to claim more than we know.</p>
+      <div class="invite"><span class="label">An invitation</span><p>When an impression comes, write it down with the date. Beside it, answer three questions. Does it lead toward Christ? Does it build me? Does it agree with scripture? Read the list again in a month.</p></div>
+      <p class="more"><strong>To study more:</strong> Moroni 7:12–19 · D&amp;C 50:23–24 · D&amp;C 11:12–14 · Dale G. Renlund, “A Framework for Personal Revelation,” October 2022</p>
+    </div>
+  </article>
+
+  <article class="q" id="already-answered">
+    <h3><button class="q-btn" type="button" aria-expanded="true" aria-controls="a-14"><span>Have I already been answered and missed it?</span><span class="chev" aria-hidden="true"></span></button></h3>
+    <div class="q-panel" id="a-14">
+      <p class="lead">Quite possibly. People in the scriptures usually recognized the Spirit afterward, looking back.</p>
+      <p>Two disciples walked for miles on the road to Emmaus with the risen Lord and did not know Him. Only after He was gone did they say, “Did not our heart burn within us, while he talked with us by the way?” (Luke 24:32).</p>
+      <p>Jacob woke from his dream and said, “Surely the Lord is in this place; and I knew it not” (Genesis 28:16).</p>
+      <p>Oliver Cowdery wanted a further witness. The Lord answered, “Cast your mind upon the night that you cried unto me in your heart… Did I not speak peace to your mind concerning the matter? What greater witness can you have than from God?” (D&amp;C 6:22–23). Oliver already had an answer. He just hadn’t counted it as one.</p>
+      <p>And the Savior said of the converted Lamanites that they “were baptized with fire and with the Holy Ghost, and they knew it not” (3 Nephi 9:20).</p>
+      <p>They knew it not. Could that be true of you and me? Here are some questions to sit with.</p>
+      <ul>
+        <li>When has a verse or a talk suddenly made sense in a way it hadn’t before?</li>
+        <li>When did I feel settled about a decision before I could fully explain why?</li>
+        <li>When have I wanted to be better, or to help someone, without anyone asking me to?</li>
+        <li>When did words come to me while I was teaching or comforting someone?</li>
+        <li>When have I felt uneasy about a course and later been glad I stopped?</li>
+      </ul>
+      <p>Elder Neil L. Andersen called these spiritually defining memories. He said they “are like luminous stones that help brighten the road ahead” (April 2020). Elder Dushku said that as he treasured his small experiences, he recognized and remembered more of them.</p>
+      <p>One caution. This is something each of us does for ourselves. Nobody else can tell you what you felt.</p>
+      <div class="invite"><span class="label">An invitation</span><p>Answer the five questions in writing, with a date and a place for each one you can remember. Keep the page. It is the start of your own record.</p></div>
+      <p class="more"><strong>To study more:</strong> Luke 24:13–32 · D&amp;C 6:22–23 · 3 Nephi 9:20 · Neil L. Andersen, “Spiritually Defining Memories,” April 2020 · Alexander Dushku, “Pillars and Rays,” April 2024</p>
+    </div>
+  </article>
+
+  </div>
+</section>
+
+<!-- ===================== PART FOUR ===================== -->
+<section class="part" id="how-do-i-keep-going">
+  <h2><button class="part-btn" type="button" aria-expanded="true" aria-controls="panel-4"><span><span class="label">Part Four · 6 questions</span><span class="title">How do I keep going?</span></span><span class="chev" aria-hidden="true"></span></button></h2>
+  <div class="part-panel" id="panel-4">
+
+  <article class="q" id="while-i-wait">
+    <h3><button class="q-btn" type="button" aria-expanded="true" aria-controls="a-15"><span>What do I do while I wait?</span><span class="chev" aria-hidden="true"></span></button></h3>
+    <div class="q-panel" id="a-15">
+      <p class="lead">Keep acting, keep asking, and trust the Lord’s timing.</p>
+      <p>Waiting is hard. It helps to hear a prophet admit it. President Nelson said, “There may be times when you feel as though the heavens are closed.” Then he promised that as we stay obedient, give thanks, and patiently honor the Lord’s timetable, we will be given the knowledge we seek (April 2018).</p>
+      <h4>The answer usually comes like a sunrise</h4>
+      <p>Elder Bednar compared two kinds of light. One is a light switch in a dark room. The other is a sunrise. He taught that the sunrise is the more common pattern. Then he added a third picture. A foggy morning, when we can’t say exactly when the sun came up, but we have enough light to go about our day (April 2011).</p>
+      <p>So if you have been waiting for the light switch, you may be standing in a sunrise.</p>
+      <h4>The timing is His</h4>
+      <p>“It shall be in his own time, and in his own way, and according to his own will” (D&amp;C 88:68). “Ye receive no witness until after the trial of your faith” (Ether 12:6). Even Alma, who had seen an angel, said, “I have fasted and prayed many days that I might know these things of myself” (Alma 5:46). Many days.</p>
+      <h4>Waiting is something we do</h4>
+      <p>What does it mean to wait on the Lord? Elder Robert D. Hales taught, “In the scriptures, the word <em>wait</em> means to hope, to anticipate, and to trust” (October 2011). Isaiah fills it with motion.</p>
+      <blockquote>“They that wait upon the Lord shall renew their strength; they shall mount up with wings as eagles; they shall run, and not be weary; and they shall walk, and not faint.” <cite>Isaiah 40:31</cite></blockquote>
+      <p>Look at the verbs. Mount up. Run. Walk. President M. Russell Ballard taught, “Waiting upon the Lord implies action,” and that we should never feel like we are in a waiting room (April 2021).</p>
+      <h4>How long? And what if it never comes the way I hoped?</h4>
+      <p>There is no schedule. President Dallin H. Oaks said that overcoming uncertainty “can be a lengthy process,” and he counseled, “While you wait, wait upon the Lord” (October 2026).</p>
+      <p>And remember what is promised to the one who believes. Eternal life, “if they continue faithful” (D&amp;C 46:14). A life of faithful believing is no consolation prize.</p>
+      <div class="invite"><span class="label">An invitation</span><p>Choose one thing you will keep doing every day, however you feel that day. A prayer, a chapter, a kindness. Let that be your waiting.</p></div>
+      <p class="more"><strong>To study more:</strong> Isaiah 40:28–31 · D&amp;C 88:63–68 · Alma 5:45–46 · David A. Bednar, “The Spirit of Revelation,” April 2011 · Robert D. Hales, “Waiting upon the Lord: Thy Will Be Done,” October 2011 · M. Russell Ballard, “Hope in Christ,” April 2021</p>
+    </div>
+  </article>
+
+  <article class="q" id="unanswered-questions">
+    <h3><button class="q-btn" type="button" aria-expanded="true" aria-controls="a-16"><span>What do I do with questions no one can answer?</span><span class="chev" aria-hidden="true"></span></button></h3>
+    <div class="q-panel" id="a-16">
+      <p class="lead">Say what you do know first. Sort the question. Then keep it open without letting it cancel what you have.</p>
+      <p>Sooner or later each of us asks something nobody around us can answer. Having the question is no failing. What matters is what we do with it.</p>
+      <h4>Start with what you know</h4>
+      <p>An angel asked Nephi something he could not answer. He said, “I know that he loveth his children; nevertheless, I do not know the meaning of all things” (1 Nephi 11:17). Note the order. He said what he knew first. Then he admitted what he didn’t. And he did not let the second cancel the first.</p>
+      <p>Peter did the same. Many disciples had just walked away over a hard teaching. Jesus asked the Twelve, “Will ye also go away?” Peter answered, “Lord, to whom shall we go? thou hast the words of eternal life” (John 6:67–68). Peter never claimed to understand the teaching. President Ballard pointed out that the Apostles “chose to focus on what they did believe and know” (October 2016).</p>
+      <h4>Sort the question</h4>
+      <p>Is it one of the few primary questions, or one of the many secondary ones? (See <a href="#what-to-know-first">What should I be trying to know first?</a>) A secondary question that feels enormous often shrinks once a primary one is settled.</p>
+      <h4>Choose your sources</h4>
+      <p>President Nelson counseled, “Take your questions to the Lord and to other faithful sources” (April 2021). Not every source is trying to help you find the truth. It is fair to ask of any source what it hopes you will conclude.</p>
+      <h4>Let some answers wait</h4>
+      <p>Some answers will not come in this life. “In that day when the Lord shall come, he shall reveal all things” (D&amp;C 101:32). King Benjamin asked us to “believe that man doth not comprehend all the things which the Lord can comprehend” (Mosiah 4:9). Elder W. Mark Bassett said, “Nor do I need to know all things” (October 2016).</p>
+      <p>Sister Tamara W. Runia said it in one line. “Not understanding is not the same as not believing” (October 2026). And Elder Holland, “Hold the ground you have already won, even if that ground is limited” (April 2013).</p>
+      <div class="invite"><span class="label">An invitation</span><p>Write the question at the top of a page. Under it, write three things you do know. Then mark the question primary or secondary, and decide who you will take it to.</p></div>
+      <p class="more"><strong>To study more:</strong> 1 Nephi 11:16–17 · John 6:60–69 · D&amp;C 101:32–34 · M. Russell Ballard, “To Whom Shall We Go?” October 2016 · Russell M. Nelson, “Christ Is Risen; Faith in Him Will Move Mountains,” April 2021</p>
+    </div>
+  </article>
+
+  <article class="q" id="felt-it-once">
+    <h3><button class="q-btn" type="button" aria-expanded="true" aria-controls="a-17"><span>What if I felt it once and it’s gone?</span><span class="chev" aria-hidden="true"></span></button></h3>
+    <div class="q-panel" id="a-17">
+      <p class="lead">What you felt was real, and it has not been erased. A tree that isn’t nourished wilts. It can be nourished again.</p>
+      <p>Maybe you remember a time when it was clear. A mission. Your baptism. A season when prayers seemed to be answered. And now it is quiet, and you wonder whether it was ever real.</p>
+      <p>Alma knew this would happen. He asked a congregation of Church members, “If ye have experienced a change of heart, and if ye have felt to sing the song of redeeming love, I would ask, can ye feel so now?” (Alma 5:26). Why would he ask that? Because sometimes the honest answer is no. It was common enough to preach about.</p>
+      <p>He also explains it. If we “neglect the tree, and take no thought for its nourishment,” it gets no root, and “when the heat of the sun cometh and scorcheth it… it withers away.” Then he says why. “It is because your ground is barren” (Alma 32:38–39). The seed was still good.</p>
+      <p>If you are new in the Church, this often comes as the first strong feelings settle. Your testimony is not leaving. The light switch is giving way to the sunrise, which is quieter and lasts longer.</p>
+      <p>So what do we do? Three things.</p>
+      <p>Remember. The Lord’s counsel to Oliver was to “cast your mind upon the night.” A feeling fades. The fact that it happened does not.</p>
+      <p>Go back to what you were doing then. The Lord told one of the early churches, “Thou hast left thy first love. Remember therefore from whence thou art fallen, and repent, and do the first works” (Revelation 2:4–5).</p>
+      <p>And choose to reconnect. Elder Kevin G. Brown said that when a testimony weakens, “the testimony has not gone anywhere. We just need to choose to reconnect with it” (October 2025).</p>
+      <p>Know also that there is opposition. President Henry B. Eyring said, “There is an enemy of your soul who does not want you” to find peace (April 2023). Discouragement about what you once felt is one of his tools.</p>
+      <div class="invite"><span class="label">An invitation</span><p>Write down the memory in as much detail as you can. Where you were, what you were doing, what you understood. Then pick one thing you were doing in that season and start it again this week.</p></div>
+      <p class="more"><strong>To study more:</strong> Alma 5:14, 26 · Alma 32:37–43 · Revelation 2:4–5 · Kevin G. Brown, “The Eternal Gift of Testimony,” October 2025 · Dieter F. Uchtdorf, “Nourish the Roots, and the Branches Will Grow,” October 2024</p>
+    </div>
+  </article>
+
+  <article class="q" id="something-in-the-way">
+    <h3><button class="q-btn" type="button" aria-expanded="true" aria-controls="a-18"><span>What if something else is in the way?</span><span class="chev" aria-hidden="true"></span></button></h3>
+    <div class="q-panel" id="a-18">
+      <p class="lead">Sometimes the difficulty isn’t spiritual at all. It is worth asking honestly whether something is muting the signal.</p>
+      <p>So far we have talked as if the only question is how to recognize the Spirit. Sometimes something is in the way. Naming it helps.</p>
+      <h4>Depression and anxiety</h4>
+      <p>Elder John C. Pingree Jr. noted that depression, anxiety, and similar conditions can make the Holy Ghost harder to recognize. In such cases, he said, the Lord invites us to keep living the gospel, and He will bless us (October 2023). Elder Holland gave an entire conference address, “Like a Broken Vessel,” on mental and emotional illness (October 2013).</p>
+      <p>If this might be you, please see a doctor. Trouble feeling the Spirit is not always a spiritual problem. Elder Dushku pointed out that even then we can look back and recognize past “tender mercies of the Lord” (April 2024).</p>
+      <h4>Noise and busyness</h4>
+      <p>The Savior said to a good woman doing a good thing, “Martha, Martha, thou art careful and troubled about many things: But one thing is needful” (Luke 10:41–42). A still, small voice is easy to crowd out, even with good things.</p>
+      <h4>Comparison</h4>
+      <p>If we measure ourselves against someone else’s facet of the gem, we will always come up short. (See <a href="#why-not-like-theirs">Why doesn’t my experience look like theirs?</a>)</p>
+      <h4>Something unresolved</h4>
+      <p>It would not be honest to leave this one out. Nephi told his brothers they were “past feeling.” Sin does dull our sense of the Spirit. But repentance is the door back in. Enos heard the Lord’s voice after he prayed for forgiveness. Elder Rasband taught that seeking mercy is one of the most powerful ways to feel the Holy Ghost (April 2025).</p>
+      <h4>What this does not mean</h4>
+      <p>It does not mean you are unworthy of an answer. Elder Corbridge writes that weak faith is usually doubt about ourselves more than doubt about God. “You accept God and His power to bless others, but you may doubt He will bless you” (<em>Stand Forever</em>, Ep. 21).</p>
+      <p>He will.</p>
+      <div class="invite"><span class="label">An invitation</span><p>Ask yourself plainly which of these might apply. Then tell one person. A doctor, your bishop, or a trusted friend. These are hard to sort out alone.</p></div>
+      <p class="more"><strong>To study more:</strong> Luke 10:38–42 · Enos 1:1–8 · Jeffrey R. Holland, “Like a Broken Vessel,” October 2013 · John C. Pingree Jr., “Eternal Truth,” October 2023 · James R. Rasband, “The Plan of Mercy,” April 2025</p>
+    </div>
+  </article>
+
+  <article class="q" id="what-i-have">
+    <h3><button class="q-btn" type="button" aria-expanded="true" aria-controls="a-19"><span>What do I do with what I have?</span><span class="chev" aria-hidden="true"></span></button></h3>
+    <div class="q-panel" id="a-19">
+      <p class="lead">Use it. A testimony grows when it is nourished, spoken, acted on, and remembered.</p>
+      <p>Whatever you have right now, a little or a lot, the scriptures are plain about what to do with it.</p>
+      <h4>Nourish it</h4>
+      <p>“Let us nourish it with great care, that it may get root” (Alma 32:37). President Nelson’s counsel was, “Take charge of your testimony. Work for it. Own it. Care for it. Nurture it so that it will grow” (2022 devotional for young adults, quoted in general conference).</p>
+      <h4>Say it</h4>
+      <p>Elder Caussé taught that a testimony need not be long, eloquent, or dramatic. It “only needs to be true” (October 2026). Saying out loud what you know and believe, with honest verbs, makes it stronger. So does living it. Elder Stevenson invited us to bear testimony “in word and in deed” (October 2022).</p>
+      <h4>Act on it</h4>
+      <p>“When ye are in the service of your fellow beings ye are only in the service of your God” (Mosiah 2:17). Light grows when it is used. “He that receiveth light, and continueth in God, receiveth more light” (D&amp;C 50:24).</p>
+      <h4>Remember it</h4>
+      <p>Keep a record of what you have received. In a dry season, a written page is easier to trust than a memory.</p>
+      <h4>Strengthen someone else</h4>
+      <p>The Savior told Peter, “When thou art converted, strengthen thy brethren” (Luke 22:32). Somebody near you is asking the same questions you have been working through.</p>
+      <p>That verse also shows where a testimony is headed. Elder Bednar taught, “Knowing that the gospel is true is the essence of a testimony. Consistently being true to the gospel is the essence of conversion” (October 2012). A testimony is what we know. Conversion is what we become because of it.</p>
+      <div class="invite"><span class="label">An invitation</span><p>This week, tell one person one thing you know or believe. One sentence, in an ordinary conversation.</p></div>
+      <p class="more"><strong>To study more:</strong> Alma 32:37–43 · Luke 22:31–32 · Mosiah 2:17 · David A. Bednar, “Converted unto the Lord,” October 2012 · Gary E. Stevenson, “Nourishing and Bearing Your Testimony,” October 2022</p>
+    </div>
+  </article>
+
+  <article class="q" id="where-this-leads">
+    <h3><button class="q-btn" type="button" aria-expanded="true" aria-controls="a-20"><span>Where does all this lead?</span><span class="chev" aria-hidden="true"></span></button></h3>
+    <div class="q-panel" id="a-20">
+      <p class="lead">To a Person. The four ways of learning help us find truths. Their purpose is to help us come to know Jesus Christ.</p>
+      <p>Everything on this page has been about how we come to know that certain things are true. But Jesus said more than that He teaches the truth. He said, “I am the way, the truth, and the life” (John 14:6).</p>
+      <p>How do we come to know a person? We can learn facts about someone from a book. We come to know them by spending time with them, trusting them, and finding them faithful.</p>
+      <blockquote>“This is life eternal, that they might know thee the only true God, and Jesus Christ, whom thou hast sent.” <cite>John 17:3</cite></blockquote>
+      <p>That is why Alma, at the end of his sermon, tells us what the seed is. It is belief in the Son of God. “Plant this word in your hearts, and as it beginneth to swell even so nourish it by your faith. And behold, it will become a tree, springing up in you unto everlasting life” (Alma 33:23).</p>
+      <p>And what is the fruit of that tree? Nephi was told. “It is the love of God, which sheddeth itself abroad in the hearts of the children of men; wherefore, it is the most desirable above all things.” The angel added, “Yea, and the most joyous to the soul” (1 Nephi 11:22–23).</p>
+      <p>So the end of all this is a relationship. “Every one that loveth is born of God, and knoweth God” (1 John 4:7).</p>
+      <p>I think that changes how the waiting feels. You and I are getting to know Someone, and that takes time for the best of reasons.</p>
+      <div class="invite"><span class="label">An invitation</span><p>Read one chapter of the Savior’s life this week, in any of the Gospels or in 3 Nephi 11–27. As you read, ask one question. What is He like?</p></div>
+      <p class="more"><strong>To study more:</strong> John 14:6 · John 17:3 · Alma 33:22–23 · 1 Nephi 11:21–23 · 1 John 4:7–8</p>
+    </div>
+  </article>
+
+  </div>
+</section>
+
+</div>
+
+<div class="closing">
+  <h2>Where to begin</h2>
+  <p>If this is a lot, start with three small things.</p>
+  <p>Write your three sentences. One thing you know, one thing you believe, and one thing you want to believe.</p>
+  <p>Choose one question. Make it a primary one.</p>
+  <p>Choose one practice. Ten quiet minutes, a record of what you notice, or one thing you will keep doing while you wait.</p>
+  <p>Neither of us is finished. May you and I keep planting, keep asking, and hold the ground we have already won.</p>
+  <blockquote>“Ask, and it shall be given you; seek, and ye shall find; knock, and it shall be opened unto you.” <cite>Luke 11:9</cite></blockquote>
+</div>
+
+<footer>
+  <h2>Sources</h2>
+  <p>Two ideas on this page come from <em>Stand Forever</em>, an unpublished book by Elder Lawrence E. Corbridge, an emeritus General Authority Seventy, presented as a series by Scripture Central at <a href="https://scripturecentral.org/shows/stand-forever">scripturecentral.org/shows/stand-forever</a>. One is that we learn truth in four ways. The other is that some questions are primary and some are secondary. Episodes 21, 24, 28, and 35 are quoted here.</p>
+  <p>The doctrine comes from the standard works and general conference. Scripture quotations are from the 2013 edition of the standard works of The Church of Jesus Christ of Latter-day Saints. General conference quotations are from the conference issues of the <em>Ensign</em> and <em>Liahona</em>, 2010 to 2026, cited by speaker and date in each answer.</p>
+</footer>
+
+</div>
+<script>
+(function () {
+  var root = document.documentElement;
+  root.classList.add('js');
+  var parts = Array.prototype.slice.call(document.querySelectorAll('.part'));
+  var qs = Array.prototype.slice.call(document.querySelectorAll('.q'));
+
+  function setQ(q, open) {
+    q.querySelector('.q-btn').setAttribute('aria-expanded', open ? 'true' : 'false');
+    q.querySelector('.q-panel').hidden = !open;
+    q.classList.toggle('open', open);
+  }
+  function setPart(s, open) {
+    s.querySelector('.part-btn').setAttribute('aria-expanded', open ? 'true' : 'false');
+    s.querySelector('.part-panel').hidden = !open;
+    s.classList.toggle('open', open);
+    if (!open) {
+      Array.prototype.forEach.call(s.querySelectorAll('.q'), function (q) { setQ(q, false); });
+    }
+  }
+  function openPart(s) {
+    parts.forEach(function (x) { setPart(x, x === s); });
+  }
+  function openQ(q) {
+    var s = q.closest('.part');
+    if (!s.classList.contains('open')) { openPart(s); }
+    qs.forEach(function (x) { setQ(x, x === q); });
+    q.scrollIntoView({ block: 'start' });
+  }
+
+  parts.forEach(function (s) {
+    s.querySelector('.part-btn').addEventListener('click', function () {
+      if (s.classList.contains('open')) { setPart(s, false); }
+      else { openPart(s); s.scrollIntoView({ block: 'start' }); }
+    });
+  });
+  qs.forEach(function (q) {
+    q.querySelector('.q-btn').addEventListener('click', function () {
+      if (q.classList.contains('open')) { setQ(q, false); }
+      else { openQ(q); }
+    });
+  });
+
+  function fromHash() {
+    var id = location.hash.slice(1);
+    var el = id ? document.getElementById(id) : null;
+    if (el && el.classList.contains('q')) { openQ(el); return true; }
+    if (el && el.classList.contains('part')) { openPart(el); el.scrollIntoView({ block: 'start' }); return true; }
+    return false;
+  }
+
+  parts.forEach(function (s) { setPart(s, false); });
+  if (!fromHash()) { setPart(parts[0], true); }
+  window.addEventListener('hashchange', fromHash);
+})();
+</script>
+</body>
+</html>
