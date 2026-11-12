@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Fifty Chapters in Ten Sessions | Jeff's Gospel Study Notes</title>
+<meta name="description" content="A Book of Mormon reading plan: fifty chapters in ten sessions, five chapters at a time, with verses to mark, what to watch for, and questions to think about.">
+<meta name="author" content="Jeff McMullin">
+<link rel="canonical" href="https://jeffs-notes.github.io/book-of-mormon-reading-plan.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Figtree:wght@500;600;700&family=Literata:ital,opsz,wght@0,7..72,400;0,7..72,600;1,7..72,400&display=swap" rel="stylesheet">
+<style>
+/* Layout idea: one reading column. Intro and the twelve things to watch for up top, then ten sessions as cards that open one at a time when tapped. */
+:root {
+  --bg: #f6f7f9;
+  --surface: #ffffff;
+  --ink: #1c2430;
+  --muted: #566070;
+  --accent: #1f5f8b;
+  --accent-soft: #e8eef5;
+  --rule: #d9dde4;
+  --note: #f3ecdc;
+  --note-ink: #5a4514;
+  --font-display: "Figtree", "Segoe UI", system-ui, sans-serif;
+  --font-body: "Literata", Georgia, "Times New Roman", serif;
+  color-scheme: light;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #15191f; --surface: #1d232b; --ink: #e8ebef; --muted: #a3abb7;
+    --accent: #7db3dd; --accent-soft: #1f2a36; --rule: #2e3640;
+    --note: #2b2617; --note-ink: #e2cf9a;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #15191f; --surface: #1d232b; --ink: #e8ebef; --muted: #a3abb7;
+  --accent: #7db3dd; --accent-soft: #1f2a36; --rule: #2e3640;
+  --note: #2b2617; --note-ink: #e2cf9a;
+  color-scheme: dark;
+}
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--bg); color: var(--ink); font-family: var(--font-body); font-size: 1.0625rem; line-height: 1.7; }
+a { color: var(--accent); }
+a:focus-visible, button:focus-visible, summary:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 4px; }
+.page { max-width: 46rem; margin: 0 auto; padding: 1.5rem 1.25rem 5rem; }
+nav.site { display: flex; flex-wrap: wrap; gap: 1.25rem; font-family: var(--font-display); font-size: 0.9rem; font-weight: 600; padding-bottom: 2rem; }
+nav.site a { text-decoration: none; }
+.kicker { font-family: var(--font-display); font-size: 0.8125rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--accent); margin: 0 0 0.75rem; }
+h1, h2, h3 { font-family: var(--font-display); text-wrap: balance; line-height: 1.2; margin: 0; }
+h1 { font-size: clamp(2.1rem, 6vw, 3rem); font-weight: 700; margin-bottom: 0.75rem; letter-spacing: -0.01em; }
+.deck { font-size: 1.2rem; color: var(--muted); margin: 0 0 1.5rem; }
+p { margin: 0 0 1.1rem; }
+.meta { font-family: var(--font-display); font-size: 0.9rem; color: var(--muted); margin: -0.75rem 0 1.5rem; }
+.print { display: inline-flex; align-items: center; gap: 0.5rem; font-family: var(--font-display); font-weight: 600; font-size: 0.95rem; text-decoration: none; background: var(--accent); color: var(--bg); padding: 0.55rem 1rem; border-radius: 6px; margin: 0 0 2.25rem; }
+.print:hover { filter: brightness(1.08); }
+.print svg { width: 1.05rem; height: 1.05rem; }
+h2.section { font-size: 1.45rem; font-weight: 700; margin: 2.5rem 0 0.9rem; }
+.intro p:last-child { font-style: italic; }
+
+/* Twelve things to watch for */
+ol.themes { list-style: none; counter-reset: t; margin: 0; padding: 0; display: grid; gap: 0.6rem; }
+ol.themes li { counter-increment: t; position: relative; background: var(--surface); border: 1px solid var(--rule); border-radius: 8px; padding: 0.8rem 1rem 0.8rem 3.1rem; }
+ol.themes li::before { content: counter(t); position: absolute; left: 1rem; top: 0.8rem; font-family: var(--font-display); font-weight: 700; color: var(--accent); width: 1.5rem; text-align: right; }
+ol.themes p { margin: 0; line-height: 1.55; }
+ol.themes .where { font-family: var(--font-display); font-size: 0.9rem; color: var(--muted); margin-top: 0.3rem; }
+
+/* Sessions */
+.controls { display: flex; flex-wrap: wrap; gap: 0.5rem 1rem; align-items: baseline; justify-content: space-between; margin: 0 0 0.75rem; font-family: var(--font-display); font-size: 0.9rem; color: var(--muted); }
+.controls p { margin: 0; }
+.controls button { font: inherit; font-weight: 600; color: var(--accent); background: none; border: 0; padding: 0; cursor: pointer; }
+.controls button:hover { text-decoration: underline; }
+.sessions { display: grid; gap: 0.75rem; }
+details.session { background: var(--surface); border: 1px solid var(--rule); border-radius: 8px; overflow: hidden; scroll-margin-top: 0.75rem; }
+details.session[open] { border-color: var(--accent); }
+details.session > summary { list-style: none; cursor: pointer; display: grid; grid-template-columns: 1fr auto; column-gap: 1rem; padding: 1rem 1.25rem; font-family: var(--font-display); }
+details.session > summary::-webkit-details-marker { display: none; }
+details.session > summary::after { content: ""; grid-column: 2; grid-row: 1 / span 4; align-self: center; width: 0.7rem; height: 0.7rem; border-right: 2px solid var(--accent); border-bottom: 2px solid var(--accent); transform: rotate(45deg); transition: transform 0.15s ease; margin-right: 0.3rem; }
+details.session[open] > summary::after { transform: rotate(-135deg); }
+details.session[open] > summary { background: var(--accent-soft); }
+details.session > summary:hover .name { color: var(--accent); }
+summary > span { grid-column: 1; }
+.num { font-size: 0.78rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); }
+.name { font-size: 1.4rem; font-weight: 700; line-height: 1.25; }
+.tag { font-family: var(--font-body); color: var(--muted); font-size: 1rem; line-height: 1.5; margin-top: 0.2rem; }
+.chaps { font-size: 0.875rem; font-weight: 600; color: var(--accent); margin-top: 0.4rem; }
+details.session[open] .chaps { display: none; }
+@media (prefers-reduced-motion: reduce) { details.session > summary::after { transition: none; } }
+.body { padding: 0.5rem 1.25rem 1.25rem; }
+.body h3 { font-size: 0.8125rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); margin: 1.6rem 0 0.6rem; }
+.body > h3:first-child { margin-top: 1rem; }
+ol.readlist { margin: 0; padding-left: 1.5rem; display: grid; gap: 0.2rem; font-family: var(--font-display); font-weight: 600; font-size: 1.05rem; }
+ol.readlist li::marker { color: var(--muted); font-weight: 500; }
+.before { border-left: 2px solid var(--accent); padding-left: 1rem; margin-top: 1.6rem; }
+.before h3 { margin-top: 0 !important; }
+.before p { margin: 0; }
+ul.think { margin: 0 0 1.1rem; padding-left: 1.3rem; display: grid; gap: 0.6rem; }
+.notes { background: var(--note); color: var(--note-ink); padding: 1rem 1.15rem; border-radius: 6px; margin-top: 1.75rem; }
+.notes h3 { color: inherit; margin: 0 0 0.4rem !important; }
+.notes p { margin: 0 0 0.5rem; }
+.notes ul { margin: 0; padding-left: 1.3rem; font-family: var(--font-display); font-weight: 600; display: grid; gap: 0.2rem; }
+
+/* Tables */
+.tablewrap { overflow-x: auto; margin: 0 0 1.1rem; }
+table { border-collapse: collapse; width: 100%; font-family: var(--font-display); font-size: 0.95rem; line-height: 1.5; }
+th, td { text-align: left; padding: 0.55rem 0.75rem 0.55rem 0; border-bottom: 1px solid var(--rule); vertical-align: top; }
+thead th { font-size: 0.75rem; letter-spacing: 0.06em; text-transform: uppercase; color: var(--muted); font-weight: 600; }
+tbody th { font-weight: 700; white-space: nowrap; }
+table.chapters td:last-child { white-space: nowrap; color: var(--accent); font-weight: 600; }
+table.more tbody th { white-space: normal; min-width: 9rem; }
+@media (max-width: 34rem) {
+  table.chapters thead { display: none; }
+  table.chapters, table.chapters tbody, table.chapters tr, table.chapters th, table.chapters td { display: block; }
+  table.chapters tr { padding: 0.6rem 0; border-bottom: 1px solid var(--rule); }
+  table.chapters th, table.chapters td { border: 0; padding: 0.1rem 0; }
+  table.chapters td:last-child::before { content: "Mark: "; color: var(--muted); font-weight: 500; }
+}
+
+footer { margin-top: 3rem; padding-top: 1.25rem; border-top: 1px solid var(--rule); font-family: var(--font-display); font-size: 0.875rem; color: var(--muted); line-height: 1.55; }
+footer p { margin: 0 0 0.5rem; }
+</style>
+</head>
+<body>
+<div class="page">
+
+<nav class="site" aria-label="Site">
+  <a href="index.html">Jeff&rsquo;s Notes</a>
+  <a href="about.html">About</a>
+</nav>
+
+<header>
+  <p class="kicker">A Book of Mormon reading plan</p>
+  <h1>Fifty Chapters in Ten Sessions</h1>
+  <p class="deck">Five chapters at a time. You read, and then we talk.</p>
+  <p class="meta">Last updated <time datetime="2026-11-07">November 7, 2026</time></p>
+  <a class="print" href="book-of-mormon-reading-plan.pdf" target="_blank" rel="noopener">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9V3h12v6"/><rect x="3" y="9" width="18" height="8" rx="2"/><path d="M6 14h12v7H6z"/></svg>
+    Printable version (PDF)
+  </a>
+</header>
+
+<main>
+<section class="intro" aria-labelledby="how">
+  <h2 class="section" id="how">How to use this</h2>
+<p>Fifty chapters, ten sessions, five chapters at a time. You read, and then we talk. Each session below gives you the chapters, a few verses to mark in each one, what to watch for, some questions to think about, and room for your notes.</p>
+<p>Before Session 1, read the Title Page and the Introduction at the front of the book. Moroni, the last writer, wrote the Title Page, and it says in one paragraph what the book is for. Those pages do not count toward the fifty.</p>
+<p>The first three sessions follow the book’s order. After that we move by theme, so each session builds on the one before it. The last session ends where the book ends. Most sessions are 150 to 190 verses, about an hour of reading.</p>
+<p>Two requests. Pray before you read, even if you are not sure anyone is listening. And in each session, mark one verse that stood out to you and write it in your notes. That is where we will start when we talk.</p>
+<p>You do not have to agree with any of it to do this. You just have to read it honestly and ask.</p>
+</section>
+
+<section aria-labelledby="look">
+  <h2 class="section" id="look">What to look for</h2>
+<p>Twelve things this book will try to teach you. When you notice one of them, write down where you found it.</p>
+<ol class="themes">
+<li><p><strong>The book is about Jesus Christ from the first page to the last.</strong> Prophets 600 years before Bethlehem knew His name and His mission.</p><p class="where">1 Nephi 11; 2 Nephi 25; Mosiah 3; Alma 7; Helaman 14</p></li>
+<li><p><strong>Why you need a Savior.</strong> The Fall, agency, and an Atonement that answers justice and offers mercy.</p><p class="where">2 Nephi 2, 9; Alma 34, 42</p></li>
+<li><p><strong>God answers prayer.</strong> Nephi, Enos, Alma, a Lamanite king and the brother of Jared all asked and were answered. The book invites you to do the same thing.</p><p class="where">1 Nephi 2, 11; Enos 1; Alma 22; Ether 3</p></li>
+<li><p><strong>Repentance is a change of heart, not a checklist.</strong> The book calls it being born again.</p><p class="where">Mosiah 5, 27; Alma 5, 36</p></li>
+<li><p><strong>Faith grows like a seed, and the witness comes after the trial of faith, not before it..</strong> </p><p class="where">Alma 32; Ether 12</p></li>
+<li><p><strong>The plan.</strong> Where you came from, why you are here, what happens after you die. Spirit world, resurrection, judgment, restoration.</p><p class="where">2 Nephi 2, 9; Alma 40, 41; Helaman 14</p></li>
+<li><p><strong>What a disciple looks like.</strong> Service, the baptismal covenant, the sacrament, charity.</p><p class="where">Mosiah 2, 4, 18; 3 Nephi 18; Moroni 7</p></li>
+<li><p><strong>Christ came in person to these people.</strong> His visit is the center of the book.</p><p class="where">3 Nephi 11, 15, 17, 18, 27</p></li>
+<li><p><strong>Prophets predict, and the record shows the fulfillment.</strong> Samuel the Lamanite names the signs; 3 Nephi records them.</p><p class="where">Helaman 14; 3 Nephi 1, 8</p></li>
+<li><p><strong>The pattern of pride.</strong> Prosperity, forgetting God, collapse. The writers say plainly they are warning us.</p><p class="where">Helaman 12; 4 Nephi 1; Mormon 6, 8</p></li>
+<li><p><strong>Why another book? The record defends its own existence and speaks straight to you, the reader..</strong> </p><p class="where">2 Nephi 28, 29; Mormon 7, 8; Title Page</p></li>
+<li><p><strong>How to know for yourself.</strong> Ask God, and judge the book by whether it invites you to do good.</p><p class="where">Moroni 7, 10; 2 Nephi 32</p></li>
+</ol>
+
+</section>
+
+<section aria-labelledby="sess">
+  <h2 class="section" id="sess">The ten sessions</h2>
+  <div class="controls">
+    <p>Select a session to open it.</p>
+    <button type="button" id="toggle-all" hidden>Open all</button>
+  </div>
+  <div class="sessions">
+
+<details class="session" id="session-1">
+  <summary>
+    <span class="num">Session 1</span>
+    <span class="name">Beginnings</span>
+    <span class="tag">A family leaves Jerusalem, and a young man asks God a question and is shown Christ.</span>
+    <span class="chaps">1 Nephi 1 · 1 Nephi 2 · 1 Nephi 3 · 1 Nephi 8 · 1 Nephi 11</span>
+  </summary>
+  <div class="body">
+<h3>Read</h3>
+<ol class="readlist"><li>1 Nephi 1</li><li>1 Nephi 2</li><li>1 Nephi 3</li><li>1 Nephi 8</li><li>1 Nephi 11</li></ol>
+<div class="before"><h3>Before you read</h3><p>Jerusalem, about 600 BC. Nephi is a young man writing about his own family. You will skip chapter 4, where Nephi gets the brass plates, and chapter 7, where another family joins them. Ask me about them if you want the story.</p></div>
+<h3>The chapters</h3>
+<div class="tablewrap"><table class="chapters"><thead><tr><th scope="col">Chapter</th><th scope="col">What happens</th><th scope="col">Verses to mark</th></tr></thead><tbody>
+<tr><th scope="row">1 Nephi 1</th><td>Nephi introduces himself. His father Lehi sees God on His throne and the Messiah, and warns Jerusalem.</td><td>v. 1, 20</td></tr>
+<tr><th scope="row">1 Nephi 2</th><td>The family leaves. Laman and Lemuel murmur. Nephi prays, and his heart is softened so he can believe.</td><td>v. 16–20</td></tr>
+<tr><th scope="row">1 Nephi 3</th><td>Nephi is sent back for the records. “I will go and do the things which the Lord hath commanded.”</td><td>v. 7</td></tr>
+<tr><th scope="row">1 Nephi 8</th><td>Lehi’s dream. The tree, the fruit, the iron rod, the mist, the great and spacious building.</td><td>v. 10–12, 24–28, 30</td></tr>
+<tr><th scope="row">1 Nephi 11</th><td>Nephi asks to see what his father saw. He is shown Mary, the birth of Christ, His baptism, His ministry and the cross. The tree is the love of God.</td><td>v. 16–23, 27, 32–33</td></tr>
+</tbody></table></div>
+<h3>What to take from it</h3>
+<p>This is a real family with real friction, written by a man who says he saw Christ 600 years before Bethlehem. The pattern of the whole book shows up in chapter 2 and again in chapter 11. Someone wants to know, asks God, and is answered. And the tree in Lehi’s dream is the love of God, which Nephi is then shown as the life of Jesus Christ.</p>
+<h3>Think about</h3>
+<ul class="think"><li>Nephi says he prayed and his heart was softened so he could believe (1 Nephi 2:16). What do you think it takes for that to happen to a person?</li><li>Where would you put yourself in Lehi’s dream right now?</li><li>Nephi asks about a tree and the angel shows him the birth of Jesus. Why would that be the answer?</li></ul>
+<div class="notes"><h3>Your notes</h3><p>Before we talk, take a few minutes and write about these. A notebook, the margins of your book, or your phone all work.</p><ul><li>A verse that stood out to me</li><li>What I noticed or felt</li><li>Questions I want to bring up</li></ul></div>
+  </div>
+</details>
+
+<details class="session" id="session-2">
+  <summary>
+    <span class="num">Session 2</span>
+    <span class="name">Why we need a Savior</span>
+    <span class="tag">The Fall, the Atonement, and the way back. This is the heart of the book’s doctrine in one sitting.</span>
+    <span class="chaps">2 Nephi 2 · 2 Nephi 4 · 2 Nephi 9 · 2 Nephi 25 · 2 Nephi 31</span>
+  </summary>
+  <div class="body">
+<h3>Read</h3>
+<ol class="readlist"><li>2 Nephi 2</li><li>2 Nephi 4</li><li>2 Nephi 9</li><li>2 Nephi 25</li><li>2 Nephi 31</li></ol>
+<div class="before"><h3>Before you read</h3><p>Lehi is dying and blesses his sons; chapter 2 is to his son Jacob. Jacob gives the sermon in chapter 9. You will skip chapters 6 through 8 and 12 through 24, which are Isaiah. Nephi himself explains in 25:1–8 why Isaiah is hard and promises to speak plainly.</p></div>
+<h3>The chapters</h3>
+<div class="tablewrap"><table class="chapters"><thead><tr><th scope="col">Chapter</th><th scope="col">What happens</th><th scope="col">Verses to mark</th></tr></thead><tbody>
+<tr><th scope="row">2 Nephi 2</th><td>Lehi teaches Jacob about opposition, the Fall, agency and the Messiah. “Adam fell that men might be; and men are, that they might have joy.”</td><td>v. 11, 22–27</td></tr>
+<tr><th scope="row">2 Nephi 4</th><td>Nephi’s psalm. A prophet grieves over his own sins and turns to God. “O wretched man that I am!”</td><td>v. 17–20, 28–30, 34–35</td></tr>
+<tr><th scope="row">2 Nephi 9</th><td>Jacob on the Atonement. Death and hell are an “awful monster,” and only an infinite Atonement escapes it.</td><td>v. 6–10, 20–21, 41, 50–51</td></tr>
+<tr><th scope="row">2 Nephi 25</th><td>“We talk of Christ, we rejoice in Christ.” Grace, and why Nephi included Isaiah.</td><td>v. 23, 26, 28–29</td></tr>
+<tr><th scope="row">2 Nephi 31</th><td>The doctrine of Christ. Faith, repentance, baptism, the Holy Ghost, enduring to the end. Why Jesus was baptized.</td><td>v. 5–13, 19–21</td></tr>
+</tbody></table></div>
+<h3>What to take from it</h3>
+<p>The Fall was part of the plan, not a disaster. That is probably different from what you have heard, and it changes how you see agency, death and sin. Death and sin are real problems, and Jacob says only an infinite Atonement solves them. Chapter 4 shows a prophet struggling with his own weakness and still trusting God. And chapter 31 lays out the way back in a few plain verses.</p>
+<h3>Think about</h3>
+<ul class="think"><li>2 Nephi 2:25 says Adam fell “that men might be,” and that we exist to have joy. How is that different from how you have understood the Fall?</li><li>In chapter 4 Nephi says, “O wretched man that I am.” Did it surprise you to hear a prophet talk that way? What does he do with the feeling?</li><li>Jacob calls death and hell an “awful monster” (9:10). What does he say overcomes it, and why does it have to be infinite?</li></ul>
+<div class="notes"><h3>Your notes</h3><p>Before we talk, take a few minutes and write about these. A notebook, the margins of your book, or your phone all work.</p><ul><li>A verse that stood out to me</li><li>What I noticed or felt</li><li>Questions I want to bring up</li></ul></div>
+  </div>
+</details>
+
+<details class="session" id="session-3">
+  <summary>
+    <span class="num">Session 3</span>
+    <span class="name">King Benjamin and the covenant</span>
+    <span class="tag">What a disciple of Christ looks like, and what a person actually promises at baptism.</span>
+    <span class="chaps">Mosiah 2 · Mosiah 3 · Mosiah 4 · Mosiah 5 · Mosiah 18</span>
+  </summary>
+  <div class="body">
+<h3>Read</h3>
+<ol class="readlist"><li>Mosiah 2</li><li>Mosiah 3</li><li>Mosiah 4</li><li>Mosiah 5</li><li>Mosiah 18</li></ol>
+<div class="before"><h3>Before you read</h3><p>King Benjamin gathers his whole people at the temple for his last sermon (chapters 2 through 5). Mosiah 18 comes from the record of a separate group that had left Zarahemla two generations earlier. Alma was a priest of their wicked king, Noah. He believed the prophet Abinadi, fled for his life, and taught in secret at a place called the Waters of Mormon. Mosiah 17 tells that story if you want it.</p></div>
+<h3>The chapters</h3>
+<div class="tablewrap"><table class="chapters"><thead><tr><th scope="col">Chapter</th><th scope="col">What happens</th><th scope="col">Verses to mark</th></tr></thead><tbody>
+<tr><th scope="row">Mosiah 2</th><td>Benjamin gives account of his reign. “When ye are in the service of your fellow beings ye are only in the service of your God.” We are all unprofitable servants.</td><td>v. 17, 20–24, 41</td></tr>
+<tr><th scope="row">Mosiah 3</th><td>An angel tells Benjamin about Christ: His name, His mother’s name, His miracles, His blood. The natural man is an enemy to God.</td><td>v. 5–11, 17, 19</td></tr>
+<tr><th scope="row">Mosiah 4</th><td>The people fall to the earth and are forgiven. How to keep a remission of sins. “Are we not all beggars?”</td><td>v. 1–3, 9–12, 16–21, 26–27</td></tr>
+<tr><th scope="row">Mosiah 5</th><td>The mighty change of heart. Taking the name of Christ.</td><td>v. 2, 7–9, 12–13</td></tr>
+<tr><th scope="row">Mosiah 18</th><td>Alma at the Waters of Mormon. The baptismal covenant: bear one another’s burdens, mourn with those that mourn.</td><td>v. 8–11, 21–22, 30</td></tr>
+</tbody></table></div>
+<h3>What to take from it</h3>
+<p>The gospel is not only something to believe. It changes how you treat people. Benjamin’s people hear about Christ, feel their need, ask, and receive a change of heart. Same pattern as Session 1. Mosiah 18 shows what a person is promising when they are baptized. If you have wondered why Latter-day Saints baptize the way we do, this is the chapter.</p>
+<h3>Think about</h3>
+<ul class="think"><li>Mosiah 2:17 ties serving people to serving God. Have you ever felt closer to God while you were helping someone?</li><li>Benjamin’s people say they have “no more disposition to do evil” (5:2). What happened to them between chapter 2 and chapter 5?</li><li>Read the covenant in Mosiah 18:8–10 slowly. Which part would be hardest to keep? Which part would you most want from the people around you?</li></ul>
+<div class="notes"><h3>Your notes</h3><p>Before we talk, take a few minutes and write about these. A notebook, the margins of your book, or your phone all work.</p><ul><li>A verse that stood out to me</li><li>What I noticed or felt</li><li>Questions I want to bring up</li></ul></div>
+  </div>
+</details>
+
+<details class="session" id="session-4">
+  <summary>
+    <span class="num">Session 4</span>
+    <span class="name">Born of God</span>
+    <span class="tag">Four conversions, and then a sermon that asks whether it has happened to you.</span>
+    <span class="chaps">Enos 1 · Mosiah 27 · Alma 36 · Alma 22 · Alma 5</span>
+  </summary>
+  <div class="body">
+<h3>Read</h3>
+<ol class="readlist"><li>Enos 1</li><li>Mosiah 27</li><li>Alma 36</li><li>Alma 22</li><li>Alma 5</li></ol>
+<div class="before"><h3>Before you read</h3><p>Enos is Jacob’s son, about 500 BC. Alma the Younger is the son of the Alma from Mosiah 18. In Alma 22, a missionary named Aaron teaches the king over all the Lamanites, a man who has never prayed in his life. Alma 5 is Alma’s sermon after he gave up being chief judge to preach full time.</p></div>
+<h3>The chapters</h3>
+<div class="tablewrap"><table class="chapters"><thead><tr><th scope="col">Chapter</th><th scope="col">What happens</th><th scope="col">Verses to mark</th></tr></thead><tbody>
+<tr><th scope="row">Enos 1</th><td>Enos prays all day and into the night. First for his own soul, then for his people, then for his enemies.</td><td>v. 2–8, 9–12, 27</td></tr>
+<tr><th scope="row">Mosiah 27</th><td>Alma and the sons of Mosiah are tearing down the church. An angel stops them. Alma is struck down and born again.</td><td>v. 11–16, 24–29</td></tr>
+<tr><th scope="row">Alma 36</th><td>Years later, Alma tells his son exactly what happened inside him. “O Jesus, thou Son of God, have mercy on me.”</td><td>v. 12–21, 24, 26</td></tr>
+<tr><th scope="row">Alma 22</th><td>A Lamanite king prays for the first time. “If there is a God, and if thou art God, wilt thou make thyself known unto me, and I will give away all my sins to know thee.”</td><td>v. 15–18</td></tr>
+<tr><th scope="row">Alma 5</th><td>Alma asks his people more than forty questions. “Have ye spiritually been born of God?” “Can ye feel so now?”</td><td>v. 14, 26–27, 45–46</td></tr>
+</tbody></table></div>
+<h3>What to take from it</h3>
+<p>Four very different people. A young man alone in the woods, a rebel struck down by an angel, a pagan king on his knees, and a whole congregation being asked hard questions. Same result every time: a changed heart, forgiveness, and a joy they wanted to share.</p>
+<p>Look closely at Alma 5:45–46. Alma had seen an angel, and he says that is not how he knows. He fasted and prayed many days and the Holy Spirit told him. The angel got his attention. The witness came the ordinary way. Keep that in mind if you have ever thought you would believe if you could just see a miracle.</p>
+<h3>Think about</h3>
+<ul class="think"><li>Enos calls his prayer a wrestle. Have you ever prayed like that? What were you wrestling with?</li><li>The Lamanite king said he would give away all his sins to know God (22:18). What do you think he meant? What would that look like for you?</li><li>Alma 5:45–46. Alma had seen an angel. Why does he say that is not how he knows?</li></ul>
+<div class="notes"><h3>Your notes</h3><p>Before we talk, take a few minutes and write about these. A notebook, the margins of your book, or your phone all work.</p><ul><li>A verse that stood out to me</li><li>What I noticed or felt</li><li>Questions I want to bring up</li></ul></div>
+  </div>
+</details>
+
+<details class="session" id="session-5">
+  <summary>
+    <span class="num">Session 5</span>
+    <span class="name">Experiment upon the word</span>
+    <span class="tag">Faith as a seed, prayer, and why the Atonement had to be infinite. This is the heaviest doctrine of the ten sessions. Take your time.</span>
+    <span class="chaps">Alma 7 · Alma 32 · Alma 33 · Alma 34 · Alma 42</span>
+  </summary>
+  <div class="body">
+<h3>Read</h3>
+<ol class="readlist"><li>Alma 7</li><li>Alma 32</li><li>Alma 33</li><li>Alma 34</li><li>Alma 42</li></ol>
+<div class="before"><h3>Before you read</h3><p>Alma 7 is Alma’s sermon in the city of Gideon. Alma 32 through 34 is Alma and Amulek teaching a group of poor people who had been thrown out of their own synagogues. Alma 42 is Alma to his son Corianton, who thinks it is unfair of God to punish sinners.</p></div>
+<h3>The chapters</h3>
+<div class="tablewrap"><table class="chapters"><thead><tr><th scope="col">Chapter</th><th scope="col">What happens</th><th scope="col">Verses to mark</th></tr></thead><tbody>
+<tr><th scope="row">Alma 7</th><td>Christ will take on our pains, sicknesses and infirmities “that he may know according to the flesh how to succor his people.”</td><td>v. 11–13, 14–16, 23–24</td></tr>
+<tr><th scope="row">Alma 32</th><td>Faith is not a perfect knowledge. Try the word like a seed. If it swells and grows, you know it is good.</td><td>v. 21, 26–28, 33–34, 41–43</td></tr>
+<tr><th scope="row">Alma 33</th><td>How to plant it. Pray wherever you are, and look to the Son.</td><td>v. 4–11, 19–23</td></tr>
+<tr><th scope="row">Alma 34</th><td>Amulek on the infinite Atonement. How and when to pray. “Do not procrastinate the day of your repentance.”</td><td>v. 8–16, 17–27, 32–33</td></tr>
+<tr><th scope="row">Alma 42</th><td>Why there has to be a Savior. Justice must be answered, and “mercy cannot rob justice.”</td><td>v. 13–15, 22–26, 29–30</td></tr>
+</tbody></table></div>
+<h3>What to take from it</h3>
+<p>Alma 32 is the chapter for anyone who feels they cannot believe without proof. It gives you a way to start that does not require certainty. Desire, then try, then watch what happens. Alma 7 and 34 tell you who you are trying: a Savior who knows your pain from the inside. Alma 42 answers the question people are usually too polite to ask, which is why God could not just forgive everyone and skip the cross.</p>
+<h3>Think about</h3>
+<ul class="think"><li>Alma 32:27 asks for no more than a desire to believe. Is that a fair place to start? Where are you on that scale?</li><li>Alma 7:12 says Jesus suffered so He would know how to help us. Does it change anything to think He knows what your hardest day felt like?</li><li>Alma 42:25 says mercy cannot rob justice. Why can’t God just excuse sin? What does the chapter say had to happen instead?</li></ul>
+<div class="notes"><h3>Your notes</h3><p>Before we talk, take a few minutes and write about these. A notebook, the margins of your book, or your phone all work.</p><ul><li>A verse that stood out to me</li><li>What I noticed or felt</li><li>Questions I want to bring up</li></ul></div>
+  </div>
+</details>
+
+<details class="session" id="session-6">
+  <summary>
+    <span class="num">Session 6</span>
+    <span class="name">Remember, remember</span>
+    <span class="tag">A father’s counsel to his sons about small things, death, and what comes after. Then the editor stops the story to tell you what he thinks of human nature.</span>
+    <span class="chaps">Alma 37 · Alma 40 · Alma 41 · Helaman 5 · Helaman 12</span>
+  </summary>
+  <div class="body">
+<h3>Read</h3>
+<ol class="readlist"><li>Alma 37</li><li>Alma 40</li><li>Alma 41</li><li>Helaman 5</li><li>Helaman 12</li></ol>
+<div class="before"><h3>Before you read</h3><p>Alma is old and gives final counsel to his sons Helaman (37) and Corianton (40 and 41). A generation later, Helaman names his own sons Nephi and Lehi so they will remember, and they go preach to the Lamanites and end up in prison (Helaman 5). Helaman 12 is Mormon, the man who compiled the book, pausing to speak for himself.</p></div>
+<h3>The chapters</h3>
+<div class="tablewrap"><table class="chapters"><thead><tr><th scope="col">Chapter</th><th scope="col">What happens</th><th scope="col">Verses to mark</th></tr></thead><tbody>
+<tr><th scope="row">Alma 37</th><td>The records are kept for a wise purpose. “By small and simple things are great things brought to pass.” Counsel with the Lord in all thy doings. The Liahona as a picture of the word of Christ.</td><td>v. 6–7, 35–37, 38–46</td></tr>
+<tr><th scope="row">Alma 40</th><td>What happens between death and resurrection. Paradise and spirit prison. Every soul restored to its body.</td><td>v. 11–14, 21–23</td></tr>
+<tr><th scope="row">Alma 41</th><td>The law of restoration. You get back what you send out. “Wickedness never was happiness.”</td><td>v. 3–7, 10–15</td></tr>
+<tr><th scope="row">Helaman 5</th><td>“Remember, remember.” Build on the rock of our Redeemer. Nephi and Lehi are encircled by fire in prison, and a voice of perfect mildness speaks.</td><td>v. 6–12, 29–33, 43–47</td></tr>
+<tr><th scope="row">Helaman 12</th><td>Mormon’s lament. How quick people are to forget God when things go well, and how slow to remember Him.</td><td>v. 1–6, 23–26</td></tr>
+</tbody></table></div>
+<h3>What to take from it</h3>
+<p>The book keeps saying one word: remember. A father passes faith to his sons by naming them after good men and telling them why. The counsel to Helaman and Corianton is practical. Small habits. Counsel with God. A clear picture of what death is and is not. Helaman 12 is a mirror. Mormon says we forget God when things go well. See if you recognize yourself in it. I do.</p>
+<h3>Think about</h3>
+<ul class="think"><li>Alma 37:6–7, small and simple things. What small thing has made a real difference in your life?</li><li>Alma 40 describes what happens right after death. How does it compare to what you were taught, or what you hoped?</li><li>Helaman 12:2–3. Mormon says we forget God when we prosper and remember Him when we are afflicted. Is he right about people? Is he right about you and me?</li></ul>
+<div class="notes"><h3>Your notes</h3><p>Before we talk, take a few minutes and write about these. A notebook, the margins of your book, or your phone all work.</p><ul><li>A verse that stood out to me</li><li>What I noticed or felt</li><li>Questions I want to bring up</li></ul></div>
+  </div>
+</details>
+
+<details class="session" id="session-7">
+  <summary>
+    <span class="num">Session 7</span>
+    <span class="name">The signs fulfilled and the Savior comes</span>
+    <span class="tag">A prophet names the signs years ahead. The record shows them happening. Then the risen Christ comes down to the temple at Bountiful.</span>
+    <span class="chaps">Helaman 14 · 3 Nephi 1 · 3 Nephi 8 · 3 Nephi 9 · 3 Nephi 11</span>
+  </summary>
+  <div class="body">
+<h3>Read</h3>
+<ol class="readlist"><li>Helaman 14</li><li>3 Nephi 1</li><li>3 Nephi 8</li><li>3 Nephi 9</li><li>3 Nephi 11</li></ol>
+<div class="before"><h3>Before you read</h3><p>About 6 BC, Samuel, a Lamanite, preaches from the city wall and names the signs of Christ’s birth and death. 3 Nephi 1 records the birth sign five years later. Chapters 8 and 9 are thirty-three years after that, at His death. 3 Nephi 11 is the center of the whole book.</p></div>
+<h3>The chapters</h3>
+<div class="tablewrap"><table class="chapters"><thead><tr><th scope="col">Chapter</th><th scope="col">What happens</th><th scope="col">Verses to mark</th></tr></thead><tbody>
+<tr><th scope="row">Helaman 14</th><td>Samuel prophesies a new star and a night with no darkness at His birth, and three days of darkness at His death. He also teaches why Christ must die.</td><td>v. 2–8, 14–19, 20–27, 30–31</td></tr>
+<tr><th scope="row">3 Nephi 1</th><td>Unbelievers set a day to kill the believers if the sign does not come. Nephi prays. The voice: “On the morrow come I into the world.”</td><td>v. 9–15, 19–21</td></tr>
+<tr><th scope="row">3 Nephi 8</th><td>The storm, the earthquake, the cities lost, three days of thick darkness.</td><td>v. 5–7, 17–23</td></tr>
+<tr><th scope="row">3 Nephi 9</th><td>A voice in the darkness. “I am Jesus Christ the Son of God.” He asks for a broken heart and a contrite spirit.</td><td>v. 13–22</td></tr>
+<tr><th scope="row">3 Nephi 11</th><td>The Father’s voice. Christ descends. Twenty-five hundred people feel the prints of the nails one by one. He teaches His doctrine.</td><td>v. 1–17, 29–40</td></tr>
+</tbody></table></div>
+<h3>What to take from it</h3>
+<p>This is the book’s own test of itself. A prophet names specific signs, with a date, and the record shows them arriving. Then the Savior comes, not to a few, but to a crowd who each touch His wounds. Read 3 Nephi 11:13–17 slowly, out loud if you can. Everything before this has been pointing here, and everything after is people trying to hold on to what they saw.</p>
+<h3>Think about</h3>
+<ul class="think"><li>Samuel named the signs years before they came. What do you think it felt like to believe him while waiting, with a deadline hanging over you (3 Nephi 1:9)?</li><li>In 3 Nephi 9:20 Christ asks for a broken heart and a contrite spirit instead of a burnt offering. What does He mean?</li><li>Why do you think Christ had everyone come forward one by one to feel His hands (11:14–15)? What was He giving them?</li></ul>
+<div class="notes"><h3>Your notes</h3><p>Before we talk, take a few minutes and write about these. A notebook, the margins of your book, or your phone all work.</p><ul><li>A verse that stood out to me</li><li>What I noticed or felt</li><li>Questions I want to bring up</li></ul></div>
+  </div>
+</details>
+
+<details class="session" id="session-8">
+  <summary>
+    <span class="num">Session 8</span>
+    <span class="name">At His feet</span>
+    <span class="tag">What He taught them, what He did for them, and what it did to a whole people for two hundred years.</span>
+    <span class="chaps">3 Nephi 15 · 3 Nephi 17 · 3 Nephi 18 · 3 Nephi 27 · 4 Nephi 1</span>
+  </summary>
+  <div class="body">
+<h3>Read</h3>
+<ol class="readlist"><li>3 Nephi 15</li><li>3 Nephi 17</li><li>3 Nephi 18</li><li>3 Nephi 27</li><li>4 Nephi 1</li></ol>
+<div class="before"><h3>Before you read</h3><p>3 Nephi 12 through 14 is the Sermon on the Mount given again. It is not on the list, but read it beside Matthew 5 through 7 if you are curious. Chapters 15 through 18 finish the first day of His visit. 3 Nephi 27 is later, to the twelve disciples. 4 Nephi covers almost three hundred years in one chapter.</p></div>
+<h3>The chapters</h3>
+<div class="tablewrap"><table class="chapters"><thead><tr><th scope="col">Chapter</th><th scope="col">What happens</th><th scope="col">Verses to mark</th></tr></thead><tbody>
+<tr><th scope="row">3 Nephi 15</th><td>The law is fulfilled in Him. “I am the law, and the light.” These people are the “other sheep” of John 10:16.</td><td>v. 9, 11–24</td></tr>
+<tr><th scope="row">3 Nephi 17</th><td>He starts to leave, sees their faces, and stays. He heals every sick person. He prays for them. He blesses the children one by one and weeps.</td><td>v. 1–10, 11–25</td></tr>
+<tr><th scope="row">3 Nephi 18</th><td>He gives them the sacrament and tells them what it means. “Pray always.” “Hold up your light.”</td><td>v. 1–12, 15–25</td></tr>
+<tr><th scope="row">3 Nephi 27</th><td>The church should carry His name. “This is my gospel.” “What manner of men ought ye to be?”</td><td>v. 5–8, 13–22, 27</td></tr>
+<tr><th scope="row">4 Nephi 1</th><td>Everyone is converted. No rich or poor, no contention, “because of the love of God.” Two hundred years of peace. Then pride.</td><td>v. 1–3, 15–18, 23–27, 43–46</td></tr>
+</tbody></table></div>
+<h3>What to take from it</h3>
+<p>Two things. First, who He is. The Savior in these chapters is tender and specific. He stays when He was leaving. He heals one by one. He weeps. Second, what His gospel does when people actually live it. 4 Nephi is the only account anywhere of a whole people at peace for two centuries, and the writer tells you why. Then he tells you what undid it: pride, fine clothes, and not sharing anymore. Notice the fruit, and notice what spoiled it.</p>
+<h3>Think about</h3>
+<ul class="think"><li>3 Nephi 17:5–7. Jesus was leaving and stayed because He saw their faces. What does that tell you about Him?</li><li>3 Nephi 18 describes the sacrament. If you have taken communion before, what is the same here and what is different?</li><li>4 Nephi 1:15–16 says there was no contention “because of the love of God.” What broke it (v. 24–26)? Do you see that pattern anywhere today?</li></ul>
+<div class="notes"><h3>Your notes</h3><p>Before we talk, take a few minutes and write about these. A notebook, the margins of your book, or your phone all work.</p><ul><li>A verse that stood out to me</li><li>What I noticed or felt</li><li>Questions I want to bring up</li></ul></div>
+  </div>
+</details>
+
+<details class="session" id="session-9">
+  <summary>
+    <span class="num">Session 9</span>
+    <span class="name">Written for our day</span>
+    <span class="tag">Two writers a thousand years apart both saw our day and wrote to us.</span>
+    <span class="chaps">2 Nephi 28 · 2 Nephi 29 · Mormon 6 · Mormon 7 · Mormon 8</span>
+  </summary>
+  <div class="body">
+<h3>Read</h3>
+<ol class="readlist"><li>2 Nephi 28</li><li>2 Nephi 29</li><li>Mormon 6</li><li>Mormon 7</li><li>Mormon 8</li></ol>
+<div class="before"><h3>Before you read</h3><p>Nephi, around 550 BC, describes the churches and attitudes of the last days and answers the objection “we already have a Bible.” Mormon and his son Moroni, around AD 385 to 400, watch their whole nation destroyed and then turn and speak to whoever will one day hold this record. That is you.</p></div>
+<h3>The chapters</h3>
+<div class="tablewrap"><table class="chapters"><thead><tr><th scope="col">Chapter</th><th scope="col">What happens</th><th scope="col">Verses to mark</th></tr></thead><tbody>
+<tr><th scope="row">2 Nephi 28</th><td>The last days. Churches teaching their own learning, “all is well,” “eat, drink, and be merry.” How the devil works: he pacifies, he flatters, he rages. Line upon line.</td><td>v. 3–9, 20–22, 24–31</td></tr>
+<tr><th scope="row">2 Nephi 29</th><td>“A Bible! A Bible! We have got a Bible, and there cannot be any more Bible.” God speaks to more than one nation.</td><td>v. 3–14</td></tr>
+<tr><th scope="row">Mormon 6</th><td>The last battle at Cumorah. Mormon counts his dead by tens of thousands. “O ye fair ones, how could ye have departed from the ways of the Lord!”</td><td>v. 6–22</td></tr>
+<tr><th scope="row">Mormon 7</th><td>Mormon’s last words to the future reader. Know your fathers, lay down your weapons, believe in Christ. This record and the Bible are one.</td><td>v. 1–10</td></tr>
+<tr><th scope="row">Mormon 8</th><td>Moroni, alone. “My father hath been slain in battle… and I even remain alone.” He sees our day. “I speak unto you as if ye were present.”</td><td>v. 1–5, 12–17, 26–41</td></tr>
+</tbody></table></div>
+<h3>What to take from it</h3>
+<p>The book says it was written for us, not for the people in it, and this is where it says so. Nephi’s description of the last days reads like a description of now. 2 Nephi 29 is the chapter for anyone who has asked why God would need to give another book. Mormon 6 through 8 lets you hear the two men who finished the record, one watching his people die and the other alone with the plates, knowing we would read them.</p>
+<p>One more thing. 2 Nephi 28 is pointed about churches. React to it honestly and write down what you think. Nephi says even the humble followers of Christ are sometimes taught wrong things (28:14). That includes us. We can talk about it.</p>
+<h3>Think about</h3>
+<ul class="think"><li>2 Nephi 28:21 says the devil leads people away “carefully.” What does careful look like? Does 28:20–22 describe anything you have seen?</li><li>2 Nephi 29:7–8. God says He speaks the same words to more than one nation. Why do you think people resist the idea of more scripture?</li><li>Mormon 8:35. Moroni says he saw us and is speaking as if we were in the room. Did it feel that way as you read? What does he seem most worried about for us?</li></ul>
+<div class="notes"><h3>Your notes</h3><p>Before we talk, take a few minutes and write about these. A notebook, the margins of your book, or your phone all work.</p><ul><li>A verse that stood out to me</li><li>What I noticed or felt</li><li>Questions I want to bring up</li></ul></div>
+  </div>
+</details>
+
+<details class="session" id="session-10">
+  <summary>
+    <span class="num">Session 10</span>
+    <span class="name">How you can know for yourself</span>
+    <span class="tag">The invitation. The book ends by telling you exactly what to do, and promising what will happen.</span>
+    <span class="chaps">2 Nephi 32 · Ether 3 · Ether 12 · Moroni 7 · Moroni 10</span>
+  </summary>
+  <div class="body">
+<h3>Read</h3>
+<ol class="readlist"><li>2 Nephi 32</li><li>Ether 3</li><li>Ether 12</li><li>Moroni 7</li><li>Moroni 10</li></ol>
+<div class="before"><h3>Before you read</h3><p>2 Nephi 32 picks up right after chapter 31 (Session 2): now that you know the way, what next? The book of Ether is Moroni’s summary of a much older people, the Jaredites, who left at the time of the tower of Babel. In Ether 3 their prophet, called only “the brother of Jared,” asks the Lord to touch sixteen stones so they will give light in his boats. Moroni 7 is a sermon of Mormon’s that Moroni copied in. Moroni 10 is the last chapter of the book.</p></div>
+<h3>The chapters</h3>
+<div class="tablewrap"><table class="chapters"><thead><tr><th scope="col">Chapter</th><th scope="col">What happens</th><th scope="col">Verses to mark</th></tr></thead><tbody>
+<tr><th scope="row">2 Nephi 32</th><td>Feast on the words of Christ. The Holy Ghost will show you what to do. “If ye cannot understand them it will be because ye ask not.”</td><td>v. 3–5, 8–9</td></tr>
+<tr><th scope="row">Ether 3</th><td>The brother of Jared’s faith is so great that he sees the Lord’s finger, and then the Lord. “Never has man come before me with such exceeding faith.”</td><td>v. 6–16</td></tr>
+<tr><th scope="row">Ether 12</th><td>“Ye receive no witness until after the trial of your faith.” Weak things made strong. Faith, hope and charity.</td><td>v. 4–6, 12, 19–21, 27, 41</td></tr>
+<tr><th scope="row">Moroni 7</th><td>How to tell good from evil. Whatever invites you to do good and to believe in Christ is of God. The light of Christ is given to everyone. Charity is the pure love of Christ.</td><td>v. 13–19, 33, 44–48</td></tr>
+<tr><th scope="row">Moroni 10</th><td>The promise. Read, remember, ponder, and ask with a sincere heart and real intent. Moroni’s last testimony.</td><td>v. 3–5, 32–34</td></tr>
+</tbody></table></div>
+<h3>What to take from it</h3>
+<p>Moroni 7:16–17 gives you a test you can run on the book itself. Has reading it invited you to do good and to believe in Christ? If so, the book says that comes from God. Ether 12:6 tells you what to expect: the witness comes after the trial of faith, not before it. Then Moroni 10:3–5 tells you what to do. I am asking you to do it. Not to agree with it. To do it.</p>
+<h3>Think about</h3>
+<ul class="think"><li>Moroni 7:16–17. Run the test on the fifty chapters you have read. What have they invited you to do?</li><li>Ether 12:6. Why do you think God waits until after the trial of faith to give the witness? What would be lost if He did not?</li><li>Moroni 10:4 names the conditions: a sincere heart, real intent, faith in Christ. Which of those is hardest for you? Would you be willing to ask?</li></ul>
+<div class="notes"><h3>Your notes</h3><p>Before we talk, take a few minutes and write about these. A notebook, the margins of your book, or your phone all work.</p><ul><li>A verse that stood out to me</li><li>What I noticed or felt</li><li>Questions I want to bring up</li><li>What I am going to do with Moroni 10:4</li></ul></div>
+  </div>
+</details>
+
+  </div>
+</section>
+
+<section aria-labelledby="more">
+  <h2 class="section" id="more">If you want more</h2>
+<p>These chapters are not in the fifty, either because they take more background or because the fifty already make the point. They are worth reading when we are done. If you only read one more story, read Ammon (Alma 17 through 19). If you only read one more chapter, read Alma 30.</p>
+<div class="tablewrap"><table class="more"><thead><tr><th scope="col">Chapters</th><th scope="col">What they are</th><th scope="col">Read them if</th></tr></thead><tbody>
+<tr><th scope="row">The Isaiah chapters (1 Nephi 20–21; 2 Nephi 6–8, 12–24; 3 Nephi 22)</th><td>Nephi quoting Isaiah. Nephi himself says Isaiah is hard without knowing the Jewish way of prophesying (2 Nephi 25:1–6).</td><td>You love the Old Testament. Start with Mosiah 14, which is Isaiah 53.</td></tr>
+<tr><th scope="row">Jacob 5, the olive tree</th><td>77 verses of allegory about the scattering and gathering of Israel.</td><td>You are interested in Israel and the covenant. Read Jacob 4 and 6 with it.</td></tr>
+<tr><th scope="row">Abinadi (Mosiah 11–17)</th><td>A prophet who would not take back his words. Mosiah 15 is some of the hardest doctrine in the book.</td><td>You like courage stories. Mosiah 13 and 17 are the most readable, and 17 tells you who Alma is before Mosiah 18.</td></tr>
+<tr><th scope="row">Ammon and King Lamoni (Alma 17–19, 26)</th><td>One of the best stories in the book. A missionary becomes a king’s servant, and the king’s whole household is converted.</td><td>You like a good story. Alma 26 is Ammon’s joy afterward.</td></tr>
+<tr><th scope="row">Korihor (Alma 30)</th><td>An argument between a prophet and a skeptic who says you cannot know what you cannot see.</td><td>Your doubts sound like his (v. 13–18). Alma’s answer is v. 40–44, and Korihor’s own admission is v. 52–53.</td></tr>
+<tr><th scope="row">The war chapters (Alma 43–63)</th><td>Twenty chapters of battles, with lessons scattered through them.</td><td>You want them. Alma 46 (the title of liberty), 48 (Captain Moroni), and 56–57 (two thousand young soldiers and their mothers, 56:47–48).</td></tr>
+<tr><th scope="row">The Sermon at the Temple (3 Nephi 12–14)</th><td>The Sermon on the Mount again, nearly word for word, with changes.</td><td>You want to compare. Read it beside Matthew 5–7 and mark the differences.</td></tr>
+<tr><th scope="row">The covenant chapters of 3 Nephi (16, 20–26)</th><td>The house of Israel, the Gentiles and the last days.</td><td>You want to know what the book says about Israel and the Second Coming.</td></tr>
+<tr><th scope="row">Mormon 9; Moroni 8 and 9</th><td>Mormon 9 is Moroni writing to people who do not believe in Christ. Moroni 8 is on infant baptism. Moroni 9 is a letter about the worst of the war.</td><td>Mormon 9 if you doubt miracles. Moroni 8 if infant baptism is a question for you.</td></tr>
+<tr><th scope="row">1 Nephi 4, 13, 17; Omni; Words of Mormon</th><td>1 Nephi 4 (Laban) and 17 (the ship) finish the story of Session 1. 1 Nephi 13 is Nephi’s vision of the Bible and of this record. Omni and Words of Mormon connect the records.</td><td>You want the full 1 Nephi story. 1 Nephi 13:26–40 explains “plain and precious things” and pairs with 2 Nephi 29.</td></tr>
+<tr><th scope="row">Jacob 4</th><td>Jacob’s own testimony that “we knew of Christ” hundreds of years before He came (v. 4–6).</td><td>You wonder how Nephite prophets could know Christ’s name in 600 BC. Read it with Mosiah 3.</td></tr>
+</tbody></table></div>
+
+</section>
+</main>
+
+<footer>
+  <p>These notes are my own and are not an official publication of The Church of Jesus Christ of Latter-day Saints. <a href="about.html">About these notes</a></p>
+</footer>
+
+</div>
+<script>
+(function () {
+  var sessions = Array.prototype.slice.call(document.querySelectorAll('details.session'));
+  var btn = document.getElementById('toggle-all');
+  var bulk = false;
+  function label() {
+    var allOpen = sessions.every(function (d) { return d.open; });
+    btn.textContent = allOpen ? 'Close all' : 'Open all';
+  }
+  sessions.forEach(function (d) {
+    d.addEventListener('toggle', function () {
+      if (d.open && !bulk) {
+        sessions.forEach(function (x) { if (x !== d) x.open = false; });
+        d.scrollIntoView({ block: 'start' });
+      }
+      label();
+    });
+  });
+  btn.hidden = false;
+  btn.addEventListener('click', function () {
+    var open = !sessions.every(function (d) { return d.open; });
+    bulk = true;
+    sessions.forEach(function (d) { d.open = open; });
+    setTimeout(function () { bulk = false; label(); }, 0);
+  });
+  function fromHash() {
+    var el = location.hash ? document.getElementById(location.hash.slice(1)) : null;
+    if (el && el.classList.contains('session')) { el.open = true; }
+  }
+  fromHash();
+  window.addEventListener('hashchange', fromHash);
+})();
+</script>
+</body>
+</html>
